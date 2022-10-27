@@ -9,9 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-class IntroViewController: UIViewController {
-    private let bounds = UIScreen.main.bounds
-
+class IntroViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -58,13 +56,13 @@ class IntroViewController: UIViewController {
         $0.layer.cornerRadius = 30
     }
     
-    private func addView() {
+    override func addView() {
         [background,mainText,signupText,nowText,loginButton,signupButton].forEach {
             view.addSubview($0)
         }
     }
     
-    private func setLayout() {
+    override func setLayout() {
         background.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().offset(0)
             $0.bottom.equalTo(view.snp.bottom).offset(0)
