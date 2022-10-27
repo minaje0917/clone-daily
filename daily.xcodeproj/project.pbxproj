@@ -20,6 +20,8 @@
 		77F13A64290AA6D500F7354A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F13A63290AA6D500F7354A /* background.png */; };
 		77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A6A290AA76D00F7354A /* IntroViewModel.swift */; };
 		77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A6D290AA79700F7354A /* BaseViewController.swift */; };
+		77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A71290B520000F7354A /* IntroCoordinator.swift */; };
+		77F13A74290B523D00F7354A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A73290B523D00F7354A /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		77F13A63290AA6D500F7354A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../background.png; sourceTree = "<group>"; };
 		77F13A6A290AA76D00F7354A /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		77F13A6D290AA79700F7354A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		77F13A71290B520000F7354A /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		77F13A73290B523D00F7354A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		77F13A66290AA75200F7354A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A70290B51ED00F7354A /* Coordinator */,
+				77F13A73290B523D00F7354A /* Coordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -129,6 +135,14 @@
 				77F13A6D290AA79700F7354A /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		77F13A70290B51ED00F7354A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A71290B520000F7354A /* IntroCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +234,8 @@
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
+				77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */,
+				77F13A74290B523D00F7354A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
