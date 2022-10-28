@@ -23,6 +23,10 @@
 		77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A71290B520000F7354A /* IntroCoordinator.swift */; };
 		77F13A74290B523D00F7354A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A73290B523D00F7354A /* Coordinator.swift */; };
 		77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A77290B566800F7354A /* BaseViewModel.swift */; };
+		77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A79290B64CB00F7354A /* SignInViewController.swift */; };
+		77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A7D290B64F000F7354A /* SignInViewModel.swift */; };
+		77F13A83290B657C00F7354A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A82290B657C00F7354A /* SignUpViewModel.swift */; };
+		77F13A85290B658800F7354A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A84290B658800F7354A /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		77F13A71290B520000F7354A /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
 		77F13A73290B523D00F7354A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		77F13A77290B566800F7354A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		77F13A79290B64CB00F7354A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		77F13A7D290B64F000F7354A /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		77F13A82290B657C00F7354A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		77F13A84290B658800F7354A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +99,9 @@
 		77F13A65290AA74A00F7354A /* Scense */ = {
 			isa = PBXGroup;
 			children = (
-				77F13A75290B543F00F7354A /* SignIn */,
+				77F13A7F290B656500F7354A /* SignUp */,
 				77F13A6C290AA78500F7354A /* Base */,
+				77F13A75290B543F00F7354A /* SignIn */,
 				77F13A67290AA75700F7354A /* Intro */,
 			);
 			path = Scense;
@@ -152,6 +161,8 @@
 		77F13A75290B543F00F7354A /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A7C290B64E300F7354A /* VM */,
+				77F13A7B290B64DF00F7354A /* VC */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -162,6 +173,47 @@
 				77F13A73290B523D00F7354A /* Coordinator.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		77F13A7B290B64DF00F7354A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A79290B64CB00F7354A /* SignInViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		77F13A7C290B64E300F7354A /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A7D290B64F000F7354A /* SignInViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		77F13A7F290B656500F7354A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A81290B656F00F7354A /* VM */,
+				77F13A80290B656A00F7354A /* VC */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		77F13A80290B656A00F7354A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A84290B658800F7354A /* SignUpViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		77F13A81290B656F00F7354A /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A82290B657C00F7354A /* SignUpViewModel.swift */,
+			);
+			path = VM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +304,13 @@
 				77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */,
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
+				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
+				77F13A85290B658800F7354A /* SignUpViewController.swift in Sources */,
+				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
 				77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */,
+				77F13A83290B657C00F7354A /* SignUpViewModel.swift in Sources */,
 				77F13A74290B523D00F7354A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
