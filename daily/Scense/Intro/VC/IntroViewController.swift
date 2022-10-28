@@ -9,12 +9,10 @@ import UIKit
 import Then
 import SnapKit
 
-class IntroViewController: BaseViewController {
+class IntroViewController: BaseViewController<IntroViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        addView()
-        setLayout()
     }
     
     let background = UIImageView().then{
