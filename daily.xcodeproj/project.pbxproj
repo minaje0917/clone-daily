@@ -22,6 +22,7 @@
 		77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A6D290AA79700F7354A /* BaseViewController.swift */; };
 		77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A71290B520000F7354A /* IntroCoordinator.swift */; };
 		77F13A74290B523D00F7354A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A73290B523D00F7354A /* Coordinator.swift */; };
+		77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A77290B566800F7354A /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		77F13A6D290AA79700F7354A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		77F13A71290B520000F7354A /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
 		77F13A73290B523D00F7354A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		77F13A77290B566800F7354A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				77F13A6D290AA79700F7354A /* BaseViewController.swift */,
+				77F13A77290B566800F7354A /* BaseViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
+				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
 				77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */,
 				77F13A74290B523D00F7354A /* Coordinator.swift in Sources */,
 			);
