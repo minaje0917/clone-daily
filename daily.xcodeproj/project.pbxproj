@@ -89,6 +89,7 @@
 		77F13A65290AA74A00F7354A /* Scense */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A75290B543F00F7354A /* SignIn */,
 				77F13A6C290AA78500F7354A /* Base */,
 				77F13A67290AA75700F7354A /* Intro */,
 			);
@@ -98,8 +99,8 @@
 		77F13A66290AA75200F7354A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A76290B544F00F7354A /* Protocol */,
 				77F13A70290B51ED00F7354A /* Coordinator */,
-				77F13A73290B523D00F7354A /* Coordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -143,6 +144,21 @@
 				77F13A71290B520000F7354A /* IntroCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		77F13A75290B543F00F7354A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		77F13A76290B544F00F7354A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				77F13A73290B523D00F7354A /* Coordinator.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
