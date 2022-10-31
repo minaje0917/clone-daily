@@ -13,6 +13,15 @@ class IntroViewController: BaseViewController<IntroViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        bindViewModel()
+    }
+
+    private func bindViewModel() {
+        let input = IntroViewModel.Input(
+            signInButtonTap: signInButton.rx.tap.asObservable(),
+            signUpButtonTap: signUpButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     let background = UIImageView().then{
@@ -37,7 +46,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
         $0.textColor = UIColor(red: 165 / 255, green: 165 / 255, blue: 165 / 255, alpha: 1.00)
     }
     
-    lazy var loginButton = UIButton().then {
+    lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "Login")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -45,7 +54,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
         $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
         $0.layer.cornerRadius = 30
     }
-    lazy var signupButton = UIButton().then {
+    lazy var signUpButton = UIButton().then {
         let text = NSAttributedString(string: "Sign Up")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -55,7 +64,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
     }
     
     override func addView() {
-        [background,mainText,signupText,nowText,loginButton,signupButton].forEach {
+        [background,mainText,signupText,nowText,signInButton,signUpButton].forEach {
             view.addSubview($0)
         }
     }
@@ -77,16 +86,16 @@ class IntroViewController: BaseViewController<IntroViewModel> {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(signupText.snp.bottom).offset(4)
         }
-        loginButton.snp.makeConstraints {
+        signInButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.leading.equalTo(view.snp.leading).offset(16)
             $0.top.equalTo(nowText.snp.bottom).offset((bounds.height) / 16.57)
             $0.height.equalTo((bounds.height) / 14.5)
         }
-        signupButton.snp.makeConstraints {
+        signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.leading.equalTo(view.snp.leading).offset(16)
-            $0.top.equalTo(loginButton.snp.bottom).offset(12)
+            $0.top.equalTo(signInButton.snp.bottom).offset(12)
             $0.height.equalTo((bounds.height) / 14.5)
         }
     }

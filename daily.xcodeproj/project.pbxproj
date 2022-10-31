@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				77F13A66290AA75200F7354A /* App */,
-				77F13A65290AA74A00F7354A /* Scense */,
+				77F13A65290AA74A00F7354A /* Scene */,
 				77F13A3F290AA4E000F7354A /* AppDelegate.swift */,
 				77F13A41290AA4E000F7354A /* SceneDelegate.swift */,
 				77F13A48290AA4E100F7354A /* Assets.xcassets */,
@@ -96,7 +96,7 @@
 			path = daily;
 			sourceTree = "<group>";
 		};
-		77F13A65290AA74A00F7354A /* Scense */ = {
+		77F13A65290AA74A00F7354A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				77F13A7F290B656500F7354A /* SignUp */,
@@ -104,13 +104,12 @@
 				77F13A75290B543F00F7354A /* SignIn */,
 				77F13A67290AA75700F7354A /* Intro */,
 			);
-			path = Scense;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		77F13A66290AA75200F7354A /* App */ = {
 			isa = PBXGroup;
 			children = (
-				77F13A76290B544F00F7354A /* Protocol */,
 				77F13A70290B51ED00F7354A /* Coordinator */,
 			);
 			path = App;
@@ -153,6 +152,7 @@
 		77F13A70290B51ED00F7354A /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A76290B544F00F7354A /* Protocol */,
 				77F13A71290B520000F7354A /* IntroCoordinator.swift */,
 			);
 			path = Coordinator;
