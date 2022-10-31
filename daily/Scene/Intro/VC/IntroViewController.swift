@@ -8,6 +8,8 @@
 import UIKit
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class IntroViewController: BaseViewController<IntroViewModel> {
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
     }
     
     let background = UIImageView().then{
-        $0.image = UIImage(named: "background.png")
+        $0.image = UIImage(named: "IntroBackground.png")
     }
     
     let mainText = UILabel().then {

@@ -17,7 +17,7 @@
 		77F13A5B290AA5C900F7354A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 77F13A5A290AA5C900F7354A /* Then */; };
 		77F13A5E290AA5DB00F7354A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 77F13A5D290AA5DB00F7354A /* RxCocoa */; };
 		77F13A60290AA5DB00F7354A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77F13A5F290AA5DB00F7354A /* RxSwift */; };
-		77F13A64290AA6D500F7354A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F13A63290AA6D500F7354A /* background.png */; };
+		77F13A64290AA6D500F7354A /* IntroBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F13A63290AA6D500F7354A /* IntroBackground.png */; };
 		77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A6A290AA76D00F7354A /* IntroViewModel.swift */; };
 		77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A6D290AA79700F7354A /* BaseViewController.swift */; };
 		77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A71290B520000F7354A /* IntroCoordinator.swift */; };
@@ -37,7 +37,7 @@
 		77F13A48290AA4E100F7354A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77F13A4B290AA4E100F7354A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77F13A4D290AA4E100F7354A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77F13A63290AA6D500F7354A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../background.png; sourceTree = "<group>"; };
+		77F13A63290AA6D500F7354A /* IntroBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IntroBackground.png; path = ../../../IntroBackground.png; sourceTree = "<group>"; };
 		77F13A6A290AA76D00F7354A /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		77F13A6D290AA79700F7354A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		77F13A71290B520000F7354A /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 				77F13A48290AA4E100F7354A /* Assets.xcassets */,
 				77F13A4A290AA4E100F7354A /* LaunchScreen.storyboard */,
 				77F13A4D290AA4E100F7354A /* Info.plist */,
-				77F13A63290AA6D500F7354A /* background.png */,
+				77F13A63290AA6D500F7354A /* IntroBackground.png */,
 			);
 			path = daily;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F13A4C290AA4E100F7354A /* LaunchScreen.storyboard in Resources */,
-				77F13A64290AA6D500F7354A /* background.png in Resources */,
+				77F13A64290AA6D500F7354A /* IntroBackground.png in Resources */,
 				77F13A49290AA4E100F7354A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
