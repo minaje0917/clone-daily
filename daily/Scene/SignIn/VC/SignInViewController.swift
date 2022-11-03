@@ -16,7 +16,6 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.navigationController?.navigationBar.tintColor = .black
     }
     
     let backImage = UIImageView().then {
@@ -35,8 +34,15 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.textColor = UIColor(red: 166 / 255, green: 73 / 255, blue: 141 / 255, alpha: 1.00)
     }
     
+    lazy var emailTextField = UITextField().then {
+        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.00)
+        $0.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.00)])
+        $0.textColor = .black
+        $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.4)
+    }
+    
     override func addView() {
-        [backImage,signInText,subText].forEach {
+        [backImage,signInText,subText,emailTextField].forEach {
             view.addSubview($0)
         }
     }
@@ -53,6 +59,11 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         subText.snp.makeConstraints {
             $0.top.equalTo(signInText.snp.bottom).offset(8)
             $0.centerX.equalToSuperview()
+        }
+        emailTextField.snp.makeConstraints {
+            $0.top.equalTo(backImage.snp.bottom).offset(0)
+            $0.centerX.equalToSuperview()
+            $0.trailing.leading.equalToSuperview().inset(16.5)
         }
     }
 
