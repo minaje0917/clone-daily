@@ -41,8 +41,23 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.4)
     }
     
+    let emailUnderLine = UIView().then {
+        $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
+    }
+    
+    lazy var pwTextField = UITextField().then {
+        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.00)
+        $0.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.00)])
+        $0.textColor = .black
+        $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.4)
+    }
+    
+    let pwUnderLine = UIView().then {
+        $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
+    }
+
     override func addView() {
-        [backImage,signInText,subText,emailTextField].forEach {
+        [backImage,signInText,subText,emailTextField,emailUnderLine,pwTextField,pwUnderLine].forEach {
             view.addSubview($0)
         }
     }
@@ -63,8 +78,26 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         emailTextField.snp.makeConstraints {
             $0.top.equalTo(backImage.snp.bottom).offset(0)
             $0.centerX.equalToSuperview()
-            $0.trailing.leading.equalToSuperview().inset(16.5)
+            $0.trailing.leading.equalToSuperview().inset(16)
         }
+        emailUnderLine.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(1.5)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(10)
+            $0.trailing.leading.equalToSuperview().inset(16)
+        }
+        pwTextField.snp.makeConstraints {
+            $0.top.equalTo(emailUnderLine.snp.bottom).offset(32)
+            $0.centerX.equalToSuperview()
+            $0.trailing.leading.equalToSuperview().inset(16)
+        }
+        pwUnderLine.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(1.5)
+            $0.top.equalTo(pwTextField.snp.bottom).offset(10)
+            $0.trailing.leading.equalToSuperview().inset(16)
+        }
+        
     }
 
 }
