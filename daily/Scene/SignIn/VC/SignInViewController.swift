@@ -16,6 +16,14 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = SignInViewModel.Input(
+            signInButtonTap: signInButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     let backImage = UIImageView().then {
@@ -50,6 +58,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.00)])
         $0.textColor = .black
         $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.4)
+        $0.isSecureTextEntry = true
     }
     
     let pwUnderLine = UIView().then {

@@ -18,10 +18,17 @@ class SignInViewModel:BaseViewModel {
 
     struct Input {
         let signInButtonTap: Observable<Void>
-        let signUpButtonTap: Observable<Void>
     }
 
     struct Output {
         
+    }
+    func transVC(input:Input) {
+        input.signInButtonTap.subscribe(
+        onNext: pushMainVC
+        ) .disposed(by: disposeBag)
+    }
+    private func pushMainVC() {
+        coordinator.pushMainVC()
     }
 }
