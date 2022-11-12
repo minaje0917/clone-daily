@@ -6,15 +6,20 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class MainViewController: BaseViewController<MainViewModel> {
     
     override func viewDidLoad() {
-        view.backgroundColor = .green
+        super.viewDidLoad()
+        view.backgroundColor = .white
     }
 
     override func addView() {
-        
+        [].forEach {
+            view.addSubview($0)
+        }
     }
 
     override func setLayout() {

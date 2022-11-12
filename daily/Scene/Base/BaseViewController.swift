@@ -27,6 +27,7 @@ class BaseViewController<T>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .black
+        view.backgroundColor = .white
         addView()
         setLayout()
     }
@@ -37,6 +38,10 @@ class BaseViewController<T>: UIViewController {
     
     func setLayout() {
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }

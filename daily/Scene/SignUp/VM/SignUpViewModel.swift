@@ -9,7 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SignUpViewModel{
+class SignUpViewModel:BaseViewModel{
     var coordinator: IntroCoordinator
 
     init(coordinator: IntroCoordinator){

@@ -14,7 +14,6 @@ import RxCocoa
 class IntroViewController: BaseViewController<IntroViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         bindViewModel()
     }
 
