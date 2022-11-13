@@ -15,6 +15,14 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = SignUpViewModel.Input(
+            signUpButtonTap: signUpButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     let backImage = UIImageView().then {
