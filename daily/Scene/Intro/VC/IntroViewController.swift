@@ -102,8 +102,3 @@ class IntroViewController: BaseViewController<IntroViewModel> {
     }
 
 }
-
-extension UIColor {
-    class var Maintext: UIColor?{return UIColor(named: "Maintext")}
-}
-

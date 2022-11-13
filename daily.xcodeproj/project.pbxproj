@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
 		77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725A291DDBE2007FE1DD /* MainViewModel.swift */; };
+		77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725E29209BDF007FE1DD /* DailyShadow.swift */; };
+		77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726029209BF1007FE1DD /* DailyColor.swift */; };
 		77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A3F290AA4E000F7354A /* AppDelegate.swift */; };
 		77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A41290AA4E000F7354A /* SceneDelegate.swift */; };
 		77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A43290AA4E000F7354A /* IntroViewController.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		77F07258291DDBD8007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		77F0725A291DDBE2007FE1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		77F0725E29209BDF007FE1DD /* DailyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyShadow.swift; sourceTree = "<group>"; };
+		77F0726029209BF1007FE1DD /* DailyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyColor.swift; sourceTree = "<group>"; };
 		77F13A3C290AA4E000F7354A /* daily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F13A3F290AA4E000F7354A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F13A41290AA4E000F7354A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,23 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		77F0725C29209BB7007FE1DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				77F0725D29209BBF007FE1DD /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		77F0725D29209BBF007FE1DD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				77F0725E29209BDF007FE1DD /* DailyShadow.swift */,
+				77F0726029209BF1007FE1DD /* DailyColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		77F13A33290AA4E000F7354A = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +132,7 @@
 		77F13A3E290AA4E000F7354A /* daily */ = {
 			isa = PBXGroup;
 			children = (
+				77F0725C29209BB7007FE1DD /* Utils */,
 				77F13A66290AA75200F7354A /* App */,
 				77F13A65290AA74A00F7354A /* Scene */,
 				77F13A3F290AA4E000F7354A /* AppDelegate.swift */,
@@ -327,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */,
+				77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */,
 				77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */,
 				77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */,
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
@@ -338,6 +361,7 @@
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
 				77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */,
+				77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */,
 				77F13A83290B657C00F7354A /* SignUpViewModel.swift in Sources */,
 				77F13A74290B523D00F7354A /* Coordinator.swift in Sources */,
 			);
