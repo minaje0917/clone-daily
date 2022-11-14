@@ -39,7 +39,6 @@ class IntroCoordinator:Coordinator {
     func pushMainVC() {
         let mainVM = MainViewModel(coordinator: self)
         let mainVC = MainViewController(mainVM)
-        mainVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        navigationController.present(mainVC, animated: true)
+        navigationController.pushViewController(mainVC, animated: true)
     }
 }

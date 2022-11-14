@@ -79,6 +79,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.setTitleColor(UIColor(red: 191/255, green: 74/255, blue: 160/255, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
         $0.layer.cornerRadius = 30
+        $0.layer.applySketchShadow(color: .Shadow!, alpha: 0.3, x: 0, y: 4, blur: 4, spread: 0)
     }
 
     lazy var backSignUpButton = UIButton().then {
