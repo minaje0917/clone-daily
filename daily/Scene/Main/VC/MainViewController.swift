@@ -40,6 +40,7 @@ class MainViewController: BaseViewController<MainViewModel> {
 //        toolbarItems = [showDaily,flexibleSpace,showProfile,flexibleSpace,showRoom]
 //    }
     
+    
     lazy var dailyButton = UIButton().then {
         $0.setImage(UIImage(systemName: "book"), for: .normal)
         let text = NSAttributedString(string: "일기보기")
@@ -47,6 +48,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 10, weight: .medium)
         $0.setTitleColor(UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00)
+        $0.alignTextBelow(spacing: 3.5)
     }
     
     lazy var profileButton = UIButton().then {
@@ -54,8 +56,9 @@ class MainViewController: BaseViewController<MainViewModel> {
         let text = NSAttributedString(string: "프로필보기")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 10, weight: .medium)
-        $0.setTitleColor(UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.00), for: .normal)
+        $0.setTitleColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00)
+        $0.alignTextBelow(spacing: 3.5)
     }
     
     lazy var roomButton = UIButton().then {
@@ -63,12 +66,17 @@ class MainViewController: BaseViewController<MainViewModel> {
         let text = NSAttributedString(string: "구경하기")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 10, weight: .medium)
-        $0.setTitleColor(UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.00), for: .normal)
+        $0.setTitleColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00)
+        $0.alignTextBelow(spacing: 3.5)
+    }
+    
+    let toolBarLine = UIView().then {
+        $0.backgroundColor = UIColor(red: 160/255, green: 160/255, blue: 160/255, alpha: 1.0)
     }
     
     override func addView() {
-        [dailyButton,profileButton,roomButton].forEach {
+        [dailyButton,profileButton,roomButton, toolBarLine].forEach {
             view.addSubview($0)
         }
     }
@@ -91,6 +99,12 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.width.equalTo(125)
             $0.trailing.equalTo(view.snp.trailing).inset(0)
             $0.bottom.equalTo(view.snp.bottom).inset(27)
+        }
+        toolBarLine.snp.makeConstraints {
+            $0.height.equalTo(1)
+            $0.centerX.equalToSuperview()
+            $0.trailing.leading.equalToSuperview().inset(0)
+            $0.bottom.equalTo(roomButton.snp.top).offset(0)
         }
     }
     

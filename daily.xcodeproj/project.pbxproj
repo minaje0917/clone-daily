@@ -11,6 +11,8 @@
 		77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725A291DDBE2007FE1DD /* MainViewModel.swift */; };
 		77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725E29209BDF007FE1DD /* DailyShadow.swift */; };
 		77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726029209BF1007FE1DD /* DailyColor.swift */; };
+		77F0726329222FC5007FE1DD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726229222FC5007FE1DD /* TabBarController.swift */; };
+		77F0726529223303007FE1DD /* DailyToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726429223303007FE1DD /* DailyToolBar.swift */; };
 		77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A3F290AA4E000F7354A /* AppDelegate.swift */; };
 		77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A41290AA4E000F7354A /* SceneDelegate.swift */; };
 		77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A43290AA4E000F7354A /* IntroViewController.swift */; };
@@ -37,6 +39,8 @@
 		77F0725A291DDBE2007FE1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		77F0725E29209BDF007FE1DD /* DailyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyShadow.swift; sourceTree = "<group>"; };
 		77F0726029209BF1007FE1DD /* DailyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyColor.swift; sourceTree = "<group>"; };
+		77F0726229222FC5007FE1DD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		77F0726429223303007FE1DD /* DailyToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyToolBar.swift; sourceTree = "<group>"; };
 		77F13A3C290AA4E000F7354A /* daily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F13A3F290AA4E000F7354A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F13A41290AA4E000F7354A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				77F0725D29209BBF007FE1DD /* Extension */,
+				77F0726229222FC5007FE1DD /* TabBarController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			children = (
 				77F0725E29209BDF007FE1DD /* DailyShadow.swift */,
 				77F0726029209BF1007FE1DD /* DailyColor.swift */,
+				77F0726429223303007FE1DD /* DailyToolBar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -354,10 +360,12 @@
 				77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */,
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
+				77F0726329222FC5007FE1DD /* TabBarController.swift in Sources */,
 				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */,
 				77F13A85290B658800F7354A /* SignUpViewController.swift in Sources */,
+				77F0726529223303007FE1DD /* DailyToolBar.swift in Sources */,
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
 				77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */,
