@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import SnapKit
+import FSCalendar
 
 class MainViewController: BaseViewController<MainViewModel> {
     
@@ -17,9 +18,25 @@ class MainViewController: BaseViewController<MainViewModel> {
         self.navigationItem.hidesBackButton = true
     }
     
+    let calender = FSCalendar(frame: .zero).then {
+        $0.locale = Locale(identifier: "ko_KR")
+        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        $0.appearance.todayColor = UIColor(red: 28/255, green: 28/255, blue: 30/255, alpha: 1.0)
+        $0.appearance.headerTitleColor = UIColor(red: 28/255, green: 28/255, blue: 30/255, alpha: 1.0)
+        $0.appearance.weekdayTextColor = UIColor(red: 28/255, green: 28/255, blue: 30/255, alpha: 1.0)
+        $0.appearance.headerDateFormat = "YYYY년 M월"
+        $0.calendarWeekdayView.weekdayLabels[0].text = "S"
+        $0.calendarWeekdayView.weekdayLabels[1].text = "M"
+        $0.calendarWeekdayView.weekdayLabels[2].text = "T"
+        $0.calendarWeekdayView.weekdayLabels[3].text = "W"
+        $0.calendarWeekdayView.weekdayLabels[4].text = "T"
+        $0.calendarWeekdayView.weekdayLabels[5].text = "F"
+        $0.calendarWeekdayView.weekdayLabels[6].text = "S"
+        
+    }
+    
     let springBackground = UIImageView().then{
         $0.image = UIImage(named: "Spring.svg")
-//        $0.contentMode = .scaleAspectFill
     }
     
     let underView = UIView().then {
@@ -63,7 +80,7 @@ class MainViewController: BaseViewController<MainViewModel> {
     }
     
     override func addView() {
-        [springBackground,dailyButton,profileButton,roomButton,toolBarLine,underView].forEach {
+        [springBackground,dailyButton,profileButton,roomButton,toolBarLine,underView,calender].forEach {
             view.addSubview($0)
         }
     }
@@ -102,6 +119,11 @@ class MainViewController: BaseViewController<MainViewModel> {
             $0.center.equalToSuperview()
             $0.top.bottom.equalToSuperview().inset(0)
             $0.leading.trailing.equalToSuperview().inset(0)
+        }
+        calender.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(14)
+            $0.top.bottom.equalToSuperview().inset(226)
+            $0.centerX.equalToSuperview()
         }
     }
     

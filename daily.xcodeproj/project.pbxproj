@@ -13,6 +13,7 @@
 		77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726029209BF1007FE1DD /* DailyColor.swift */; };
 		77F0726329222FC5007FE1DD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726229222FC5007FE1DD /* TabBarController.swift */; };
 		77F0726529223303007FE1DD /* DailyToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726429223303007FE1DD /* DailyToolBar.swift */; };
+		77F072682922547F007FE1DD /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 77F072672922547F007FE1DD /* FSCalendar */; };
 		77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A3F290AA4E000F7354A /* AppDelegate.swift */; };
 		77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A41290AA4E000F7354A /* SceneDelegate.swift */; };
 		77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A43290AA4E000F7354A /* IntroViewController.swift */; };
@@ -65,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F13A55290AA5AF00F7354A /* Moya in Frameworks */,
+				77F072682922547F007FE1DD /* FSCalendar in Frameworks */,
 				77F13A5B290AA5C900F7354A /* Then in Frameworks */,
 				77F13A60290AA5DB00F7354A /* RxSwift in Frameworks */,
 				77F13A5E290AA5DB00F7354A /* RxCocoa in Frameworks */,
@@ -293,6 +295,7 @@
 				77F13A5A290AA5C900F7354A /* Then */,
 				77F13A5D290AA5DB00F7354A /* RxCocoa */,
 				77F13A5F290AA5DB00F7354A /* RxSwift */,
+				77F072672922547F007FE1DD /* FSCalendar */,
 			);
 			productName = daily;
 			productReference = 77F13A3C290AA4E000F7354A /* daily.app */;
@@ -327,6 +330,7 @@
 				77F13A56290AA5BD00F7354A /* XCRemoteSwiftPackageReference "SnapKit" */,
 				77F13A59290AA5C900F7354A /* XCRemoteSwiftPackageReference "Then" */,
 				77F13A5C290AA5DB00F7354A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 77F13A3D290AA4E000F7354A /* Products */;
 			projectDirPath = "";
@@ -579,6 +583,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		77F13A53290AA5AF00F7354A /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -614,6 +626,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		77F072672922547F007FE1DD /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
 		77F13A54290AA5AF00F7354A /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 77F13A53290AA5AF00F7354A /* XCRemoteSwiftPackageReference "Moya" */;
