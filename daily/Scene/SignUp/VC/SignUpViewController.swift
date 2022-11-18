@@ -15,7 +15,6 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isToolbarHidden = false
         bindViewModel()
     }
     
