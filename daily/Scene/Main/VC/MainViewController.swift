@@ -11,11 +11,14 @@ import SnapKit
 import FSCalendar
 
 class MainViewController: BaseViewController<MainViewModel> {
+    let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.navigationItem.hidesBackButton = true
+        calender.delegate = self
+        calender.dataSource = self
     }
     
     let calender = FSCalendar(frame: .zero).then {
@@ -32,7 +35,6 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.calendarWeekdayView.weekdayLabels[4].text = "T"
         $0.calendarWeekdayView.weekdayLabels[5].text = "F"
         $0.calendarWeekdayView.weekdayLabels[6].text = "S"
-        
     }
     
     let springBackground = UIImageView().then{
@@ -79,6 +81,12 @@ class MainViewController: BaseViewController<MainViewModel> {
         $0.backgroundColor = UIColor(red: 160/255, green: 160/255, blue: 160/255, alpha: 1.0)
     }
     
+    @objc func handleCalender() {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        selectText.text = dateFormatter.string(from: calender.date)
+        print(calender.date)
+    }
+
     override func addView() {
         [springBackground,dailyButton,profileButton,roomButton,toolBarLine,underView,calender].forEach {
             view.addSubview($0)

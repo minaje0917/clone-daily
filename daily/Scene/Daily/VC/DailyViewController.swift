@@ -12,10 +12,12 @@ import RxCocoa
 import RxSwift
 
 class DailyViewController: BaseViewController<DailyViewModel> {
+    
+    var date: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.backButton(title: "2022년 09월 17일")
+        self.navigationItem.backButton(title: date)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: .none, action: nil)
     }
     
