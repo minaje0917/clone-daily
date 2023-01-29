@@ -37,6 +37,7 @@
 		77F13A83290B657C00F7354A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A82290B657C00F7354A /* SignUpViewModel.swift */; };
 		77F13A85290B658800F7354A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A84290B658800F7354A /* SignUpViewController.swift */; };
 		77F1F18A2986ACA000ED498E /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 77F1F1892986ACA000ED498E /* RxFlow */; };
+		77F1F18C2986E22200ED498E /* MainStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1F18B2986E22200ED498E /* MainStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		77F13A7D290B64F000F7354A /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		77F13A82290B657C00F7354A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		77F13A84290B658800F7354A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		77F1F18B2986E22200ED498E /* MainStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				77F13A48290AA4E100F7354A /* Assets.xcassets */,
 				77F13A4A290AA4E100F7354A /* LaunchScreen.storyboard */,
 				77F13A4D290AA4E100F7354A /* Info.plist */,
+				77F1F18B2986E22200ED498E /* MainStep.swift */,
 			);
 			path = daily;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				77F0727829271064007FE1DD /* DailyViewModel.swift in Sources */,
 				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
+				77F1F18C2986E22200ED498E /* MainStep.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */,
 				77F13A85290B658800F7354A /* SignUpViewController.swift in Sources */,
 				77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */,
