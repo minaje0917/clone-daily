@@ -9,10 +9,10 @@ import RxFlow
 
 enum MainStep: Step {
     case loginIsRequired
-    case userIsLoggedIn
+//    case userIsLoggedIn
     
     case signUpIsRequired
-    case userIsSignUp
+//    case userIsSignUp
     
     case homeIsRequired
 }

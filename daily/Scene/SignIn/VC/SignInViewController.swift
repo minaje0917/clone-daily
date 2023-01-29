@@ -9,20 +9,14 @@ import UIKit
 import SnapKit
 import Then
 import RxCocoa
-import RxSwift
+import RxFlow
 
 class SignInViewController: BaseViewController<SignInViewModel> {
+    
+    var steps = PublishRelay<Step>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
-    }
-    
-    private func bindViewModel() {
-        let input = SignInViewModel.Input(
-            signInButtonTap: signInButton.rx.tap.asObservable()
-        )
-        viewModel.transVC(input: input)
     }
     
     let backImage = UIImageView().then {
@@ -80,6 +74,7 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
         $0.layer.cornerRadius = 30
         $0.layer.applySketchShadow(color: .Shadow!, alpha: 0.3, x: 0, y: 4, blur: 4, spread: 0)
+        $0.addTarget(self, action: #selector(signInBtnDidTap), for: .touchUpInside)
     }
 
     lazy var backSignUpButton = UIButton().then {
@@ -88,6 +83,15 @@ class SignInViewController: BaseViewController<SignInViewModel> {
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         $0.setTitleColor(UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        $0.addTarget(self, action: #selector(backSignUpBtnDidTap), for: .touchUpInside)
+    }
+    
+    @objc func signInBtnDidTap() {
+        self.steps.accept(MainStep.homeIsRequired)
+    }
+    
+    @objc func backSignUpBtnDidTap() {
+        self.steps.accept(MainStep.signUpIsRequired)
     }
     
     override func addView() {
