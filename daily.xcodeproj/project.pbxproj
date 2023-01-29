@@ -36,6 +36,7 @@
 		77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A7D290B64F000F7354A /* SignInViewModel.swift */; };
 		77F13A83290B657C00F7354A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A82290B657C00F7354A /* SignUpViewModel.swift */; };
 		77F13A85290B658800F7354A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A84290B658800F7354A /* SignUpViewController.swift */; };
+		77F1F18A2986ACA000ED498E /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 77F1F1892986ACA000ED498E /* RxFlow */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F13A55290AA5AF00F7354A /* Moya in Frameworks */,
+				77F1F18A2986ACA000ED498E /* RxFlow in Frameworks */,
 				77F072682922547F007FE1DD /* FSCalendar in Frameworks */,
 				77F13A5B290AA5C900F7354A /* Then in Frameworks */,
 				77F13A60290AA5DB00F7354A /* RxSwift in Frameworks */,
@@ -329,6 +331,7 @@
 				77F13A5D290AA5DB00F7354A /* RxCocoa */,
 				77F13A5F290AA5DB00F7354A /* RxSwift */,
 				77F072672922547F007FE1DD /* FSCalendar */,
+				77F1F1892986ACA000ED498E /* RxFlow */,
 			);
 			productName = daily;
 			productReference = 77F13A3C290AA4E000F7354A /* daily.app */;
@@ -364,6 +367,7 @@
 				77F13A59290AA5C900F7354A /* XCRemoteSwiftPackageReference "Then" */,
 				77F13A5C290AA5DB00F7354A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				77F1F1882986ACA000ED498E /* XCRemoteSwiftPackageReference "RxFlow" */,
 			);
 			productRefGroup = 77F13A3D290AA4E000F7354A /* Products */;
 			projectDirPath = "";
@@ -659,6 +663,14 @@
 				kind = branch;
 			};
 		};
+		77F1F1882986ACA000ED498E /* XCRemoteSwiftPackageReference "RxFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -691,6 +703,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77F13A5C290AA5DB00F7354A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		77F1F1892986ACA000ED498E /* RxFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77F1F1882986ACA000ED498E /* XCRemoteSwiftPackageReference "RxFlow" */;
+			productName = RxFlow;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

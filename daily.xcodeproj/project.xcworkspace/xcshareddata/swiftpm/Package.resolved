@@ -37,6 +37,15 @@
       }
     },
     {
+      "identity" : "rxflow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxFlow",
+      "state" : {
+        "branch" : "main",
+        "revision" : "93f95345e3fe1a73ea504f138b98116f57009783"
+      }
+    },
+    {
       "identity" : "rxswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveX/RxSwift",
