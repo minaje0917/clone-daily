@@ -10,18 +10,5 @@ import RxCocoa
 import RxSwift
 
 class MainViewModel: BaseViewModel {
-    var coordinator: IntroCoordinator
     
-    init(coordinator: IntroCoordinator){
-        self.coordinator = coordinator
-    }
-
-    struct Input {
-        let signInButtonTap: Observable<Void>
-        let signUpButtonTap: Observable<Void>
-    }
-
-    struct Output {
-        
-    }
 }

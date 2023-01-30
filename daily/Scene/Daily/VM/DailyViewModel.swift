@@ -10,17 +10,4 @@ import RxCocoa
 import RxSwift
 
 class DailyViewModel: BaseViewModel {
-    var coordinator: IntroCoordinator
-    
-    init(coordinator: IntroCoordinator){
-        self.coordinator = coordinator
-    }
-
-    struct Input {
-        
-    }
-
-    struct Output {
-        
-    }
 }

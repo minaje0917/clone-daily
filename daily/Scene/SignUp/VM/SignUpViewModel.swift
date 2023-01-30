@@ -10,25 +10,5 @@ import RxCocoa
 import RxSwift
 
 class SignUpViewModel:BaseViewModel{
-    var coordinator: IntroCoordinator
     
-    init(coordinator: IntroCoordinator){
-        self.coordinator = coordinator
-    }
-
-    struct Input {
-        let signUpButtonTap: Observable<Void>
-    }
-
-    struct Output {
-        
-    }
-    func transVC(input:Input) {
-        input.signUpButtonTap.subscribe(
-        onNext: pushMainVC
-        ) .disposed(by: disposeBag)
-    }
-    private func pushMainVC() {
-        coordinator.pushMainVC()
-    }
 }

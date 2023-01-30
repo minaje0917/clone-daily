@@ -11,8 +11,7 @@ import Then
 import RxCocoa
 import RxFlow
 
-class SignUpViewController: BaseViewController<SignUpViewModel> {
-    
+class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     var steps = PublishRelay<Step>()
 
     override func viewDidLoad() {

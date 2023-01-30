@@ -9,9 +9,12 @@ import UIKit
 import Then
 import SnapKit
 import FSCalendar
+import RxFlow
+import RxCocoa
 
-class MainViewController: BaseViewController<MainViewModel> {
+class MainViewController: BaseViewController<MainViewModel>, Stepper{
     let dateFormatter = DateFormatter()
+    var steps = PublishRelay<Step>()
     
     override func viewDidLoad() {
         super.viewDidLoad()

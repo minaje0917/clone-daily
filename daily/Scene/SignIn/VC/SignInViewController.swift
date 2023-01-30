@@ -11,7 +11,7 @@ import Then
 import RxCocoa
 import RxFlow
 
-class SignInViewController: BaseViewController<SignInViewModel> {
+class SignInViewController: BaseViewController<SignInViewModel>, Stepper{
     
     var steps = PublishRelay<Step>()
 

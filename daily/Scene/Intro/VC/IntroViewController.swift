@@ -11,7 +11,7 @@ import SnapKit
 import RxFlow
 import RxCocoa
 
-class IntroViewController: BaseViewController<IntroViewModel> {
+class IntroViewController: BaseViewController<IntroViewModel>, Stepper{
     
     var steps = PublishRelay<Step>()
     
@@ -63,11 +63,11 @@ class IntroViewController: BaseViewController<IntroViewModel> {
     }
     
     @objc func signInBtnDidTap() {
-        self.steps.accept(MainStep.loginIsRequired)
+        self.steps.accept(DailyStep.loginIsRequired)
     }
     
     @objc func signUpBtnDidTap() {
-        self.steps.accept(MainStep.signUpIsRequired)
+        self.steps.accept(DailyStep.signUpIsRequired)
     }
     
     override func addView() {
