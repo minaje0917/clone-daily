@@ -13,41 +13,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     private let coordinator = FlowCoordinator()
-    let nav: UINavigationController
     
-    lazy var appFlow = AppFlow(navigationController: nav)
+    let appFlow = AppFlow()
     let appStepper = AppStepper()
+    private let ivm = IntroViewModel()
     
-    init() {
-        
-    }
-    
-    func scene(
-           _ scene: UIScene,
-           willConnectTo session: UISceneSession,
-           options connectionOptions: UIScene.ConnectionOptions
-       ) {
-           guard let scene = (scene as? UIWindowScene) else { return }
-           
-           window = UIWindow(windowScene: scene)
-           
-           coordinateToAppFlow(with: scene)
-       }
-       
-    private func coordinateToAppFlow(with scene: UIWindowScene){
-        let window = UIWindow(windowScene: scene)
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
         self.window = window
-           
-        coordinator.coordinate(flow: appFlow, with: appStepper)
-        Flows.use(
-            appFlow,
-            when: .created
-        ) { [weak self] root in
-            self?.window?.rootViewController = root
-            self?.window?.makeKeyAndVisible()
-        }
-    }
+        
+        window.rootViewController = UINavigationController(rootViewController: IntroViewController(ivm))
 
+//        self.coordinator.coordinate(flow: appFlow, with: appStepper)
+        window.makeKeyAndVisible()
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

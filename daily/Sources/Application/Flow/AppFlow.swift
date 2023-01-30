@@ -13,9 +13,9 @@ import RxCocoa
 struct AppStepper: Stepper {
     let steps = PublishRelay<Step>()
     private let disposeBag = DisposeBag()
-
+    
     init() {}
-
+    
     var initialStep: Step {
         return DailyStep.introIsRequired
     }
@@ -23,11 +23,7 @@ struct AppStepper: Stepper {
 
 final class AppFlow: Flow {
     private let rootViewController = UINavigationController()
-    let navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
+    private let navigationController = UINavigationController()
     
     var root: Presentable {
         return self.rootViewController
