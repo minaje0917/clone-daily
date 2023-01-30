@@ -87,11 +87,11 @@ class SignInViewController: BaseViewController<SignInViewModel> {
     }
     
     @objc func signInBtnDidTap() {
-        self.steps.accept(MainStep.homeIsRequired)
+        self.steps.accept(DailyStep.homeIsRequired)
     }
     
     @objc func backSignUpBtnDidTap() {
-        self.steps.accept(MainStep.signUpIsRequired)
+        self.steps.accept(DailyStep.signUpIsRequired)
     }
     
     override func addView() {
