@@ -3,7 +3,7 @@
 //  daily
 //
 //  Created by 선민재 on 2022/10/27.
-//
+//SceneDelegate.swift
 
 import UIKit
 import RxCocoa
@@ -16,15 +16,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     let appFlow = AppFlow()
     let appStepper = AppStepper()
-    private let ivm = IntroViewModel()
     
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        self.window = window
-        self.coordinator.coordinate(flow: appFlow, with: appStepper)
-        window.makeKeyAndVisible()
-    }
+    func scene(
+           _ scene: UIScene,
+           willConnectTo session: UISceneSession,
+           options connectionOptions: UIScene.ConnectionOptions
+       ) {
+           guard let s = (scene as? UIWindowScene) else { return }
+           
+           window = UIWindow(windowScene: s)
+           
+           coordinateToAppFlow(with: s)
+       }
+       
+       private func coordinateToAppFlow(with scene: UIWindowScene){
+           let window = UIWindow(windowScene: scene)
+           self.window = window
+           
+           coordinator.coordinate(flow: appFlow, with: appStepper)
+           Flows.use(
+               appFlow,
+               when: .created
+           ) { [weak self] root in
+               self?.window?.rootViewController = root
+               self?.window?.makeKeyAndVisible()
+           }
+       }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
