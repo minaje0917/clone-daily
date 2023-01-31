@@ -17,9 +17,6 @@ enum DailyStep: Step {
     // Mark: Home
     case homeIsRequired
     
-    // Mark: Intro
-    case introIsRequired
-    
     // Mark: SignIn
     case signInIsRequired
 }

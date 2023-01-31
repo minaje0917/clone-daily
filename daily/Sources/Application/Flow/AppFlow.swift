@@ -17,7 +17,7 @@ struct AppStepper: Stepper {
     init() {}
     
     var initialStep: Step {
-        return DailyStep.introIsRequired
+        return DailyStep.loginIsRequired
     }
 }
 
@@ -44,11 +44,15 @@ final class AppFlow: Flow {
     }
     
     private func coordinateToLogin() -> FlowContributors {
-        let loginFlow = LoginFlow()
-        Flows.use(loginFlow, when: .created) { (root) in
+        let flow = LoginFlow()
+        Flows.use(flow, when: .created) { (root) in
             self.rootViewController = root as! UINavigationController
         }
-        return .one(flowContributor: .contribute(withNextPresentable: loginFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.loginIsRequired)))
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: flow,
+                withNextStepper: OneStepper(withSingleStep: DailyStep.loginIsRequired)
+        ))
     }
     
 }
