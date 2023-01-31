@@ -63,7 +63,7 @@ class IntroViewController: BaseViewController<IntroViewModel>, Stepper{
     }
     
     @objc func signInBtnDidTap() {
-        self.steps.accept(DailyStep.loginIsRequired)
+        self.steps.accept(DailyStep.signInIsRequired)
     }
     
     @objc func signUpBtnDidTap() {

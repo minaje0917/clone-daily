@@ -47,19 +47,19 @@ class LoginFlow: Flow {
     private func navigateToSignIn() -> FlowContributors {
         let vm = SignInViewModel()
         let vc = SignInViewController(vm)
-        self.rootViewController.pushViewController(vc, animated: false)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNext: vc))
     }
     private func navigateToSignUp() -> FlowContributors {
         let vm = SignUpViewModel()
         let vc = SignUpViewController(vm)
-        self.rootViewController.pushViewController(vc, animated: false)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNext: vc))
     }
     private func navigateToHome() -> FlowContributors {
         let vm = MainViewModel()
         let vc = MainViewController(vm)
-        self.rootViewController.pushViewController(vc, animated: false)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNext: vc))
     }
 }
