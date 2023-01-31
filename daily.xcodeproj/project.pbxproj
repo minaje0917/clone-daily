@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
-		77C22EC3298916C2004CC9EC /* IntroFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC2298916C2004CC9EC /* IntroFlow.swift */; };
-		77C22EC5298916C9004CC9EC /* SignUpFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC4298916C9004CC9EC /* SignUpFlow.swift */; };
-		77C22EC7298927B8004CC9EC /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC6298927B8004CC9EC /* HomeFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
 		77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725A291DDBE2007FE1DD /* MainViewModel.swift */; };
 		77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725E29209BDF007FE1DD /* DailyShadow.swift */; };
@@ -47,9 +44,6 @@
 
 /* Begin PBXFileReference section */
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
-		77C22EC2298916C2004CC9EC /* IntroFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroFlow.swift; sourceTree = "<group>"; };
-		77C22EC4298916C9004CC9EC /* SignUpFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFlow.swift; sourceTree = "<group>"; };
-		77C22EC6298927B8004CC9EC /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		77F0725A291DDBE2007FE1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		77F0725E29209BDF007FE1DD /* DailyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyShadow.swift; sourceTree = "<group>"; };
@@ -351,9 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				77C22EC0298916AF004CC9EC /* LoginFlow.swift */,
-				77C22EC2298916C2004CC9EC /* IntroFlow.swift */,
-				77C22EC4298916C9004CC9EC /* SignUpFlow.swift */,
-				77C22EC6298927B8004CC9EC /* HomeFlow.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -466,19 +457,16 @@
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */,
-				77C22EC7298927B8004CC9EC /* HomeFlow.swift in Sources */,
 				77F13A85290B658800F7354A /* SignUpViewController.swift in Sources */,
 				77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */,
 				77F0726529223303007FE1DD /* DailyToolBar.swift in Sources */,
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
-				77C22EC5298916C9004CC9EC /* SignUpFlow.swift in Sources */,
 				77F0727629271028007FE1DD /* DailyViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
 				77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */,
 				77F1F1902986E3C000ED498E /* AppFlow.swift in Sources */,
 				77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */,
 				77F13A83290B657C00F7354A /* SignUpViewModel.swift in Sources */,
-				77C22EC3298916C2004CC9EC /* IntroFlow.swift in Sources */,
 				77F13A74290B523D00F7354A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
