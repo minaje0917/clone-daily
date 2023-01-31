@@ -36,47 +36,19 @@ final class AppFlow: Flow {
         guard let step = step as? DailyStep else {return .none}
         
         switch step {
-        case .signUpIsRequired:
-            return self.navigationToSignUp()
-        case .homeIsRequired:
-            return self.navigationToHome()
         case .loginIsRequired:
-            return self.navigationToLogin()
-        case .introIsRequired:
-            return self.navigationToIntro()
+            return coordinateToLogin()
+        default:
+            return .none
         } 
     }
     
-    private func navigationToIntro() -> FlowContributors {
-        let introFlow = IntroFlow()
-        Flows.use(introFlow, when: .created) { (root) in
-            self.rootViewController = root as! UINavigationController
-        }
-        return .one(flowContributor: .contribute(withNextPresentable: introFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.introIsRequired)))
-    }
-    
-    private func navigationToLogin() -> FlowContributors {
+    private func coordinateToLogin() -> FlowContributors {
         let loginFlow = LoginFlow()
         Flows.use(loginFlow, when: .created) { (root) in
             self.rootViewController = root as! UINavigationController
         }
         return .one(flowContributor: .contribute(withNextPresentable: loginFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.loginIsRequired)))
-    }
-    
-    private func navigationToHome() -> FlowContributors {
-        let homeFlow = HomeFlow()
-        Flows.use(homeFlow, when: .created) { (root) in
-            self.rootViewController = root as! UINavigationController
-        }
-        return .one(flowContributor: .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.homeIsRequired)))
-    }
-
-    private func navigationToSignUp() -> FlowContributors {
-        let signUpFlow = SignUpFlow()
-        Flows.use(signUpFlow, when: .created) { (root) in
-            self.rootViewController = root as! UINavigationController
-        }
-        return .one(flowContributor: .contribute(withNextPresentable: signUpFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.signUpIsRequired)))
     }
     
 }

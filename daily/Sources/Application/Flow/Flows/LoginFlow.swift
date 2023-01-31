@@ -24,20 +24,32 @@ class LoginFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }
         switch step {
-        case .loginIsRequired:
+        case .signInIsRequired:
             return self.navigateToLogin()
         case .homeIsRequired:
-            return .end(forwardToParentFlowWithStep: DailyStep.homeIsRequired)
+            return self.navigateToHome()
         case .signUpIsRequired:
-            return .end(forwardToParentFlowWithStep: DailyStep.signUpIsRequired)
-        case .introIsRequired:
-            return .end(forwardToParentFlowWithStep: DailyStep.introIsRequired)
+            return self.navigateToSignUp()
+        default:
+            return .none
         }
     }
     
     private func navigateToLogin() -> FlowContributors {
         let vm = SignInViewModel()
         let vc = SignInViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: false)
+        return .one(flowContributor: .contribute(withNext: vc))
+    }
+    private func navigateToSignUp() -> FlowContributors {
+        let vm = SignUpViewModel()
+        let vc = SignUpViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: false)
+        return .one(flowContributor: .contribute(withNext: vc))
+    }
+    private func navigateToHome() -> FlowContributors {
+        let vm = MainViewModel()
+        let vc = MainViewController(vm)
         self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNext: vc))
     }
