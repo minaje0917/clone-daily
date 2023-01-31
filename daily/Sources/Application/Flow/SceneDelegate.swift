@@ -22,10 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        
-        window.rootViewController = UINavigationController(rootViewController: IntroViewController(ivm))
-
-//        self.coordinator.coordinate(flow: appFlow, with: appStepper)
+        self.coordinator.coordinate(flow: appFlow, with: appStepper)
         window.makeKeyAndVisible()
     }
     

@@ -22,8 +22,7 @@ struct AppStepper: Stepper {
 }
 
 final class AppFlow: Flow {
-    private let rootViewController = UINavigationController()
-    private let navigationController = UINavigationController()
+    private var rootViewController = UINavigationController()
     
     var root: Presentable {
         return self.rootViewController
@@ -49,31 +48,35 @@ final class AppFlow: Flow {
     }
     
     private func navigationToIntro() -> FlowContributors {
-        let ivm = IntroViewModel()
-        let ivc = IntroViewController(ivm)
-        navigationController.pushViewController(ivc, animated: false)
-        return .one(flowContributor: .contribute(withNext: ivc))
+        let introFlow = IntroFlow()
+        Flows.use(introFlow, when: .created) { (root) in
+            self.rootViewController = root as! UINavigationController
+        }
+        return .one(flowContributor: .contribute(withNextPresentable: introFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.introIsRequired)))
     }
     
     private func navigationToLogin() -> FlowContributors {
-        let sivm = SignInViewModel()
-        let sivc = SignInViewController(sivm)
-        navigationController.pushViewController(sivc, animated: false)
-        return .one(flowContributor: .contribute(withNext: sivc))
+        let loginFlow = LoginFlow()
+        Flows.use(loginFlow, when: .created) { (root) in
+            self.rootViewController = root as! UINavigationController
+        }
+        return .one(flowContributor: .contribute(withNextPresentable: loginFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.loginIsRequired)))
     }
     
     private func navigationToHome() -> FlowContributors {
-        let mvm = MainViewModel()
-        let mvc = MainViewController(mvm)
-        navigationController.pushViewController(mvc, animated: false)
-        return .one(flowContributor: .contribute(withNext: mvc))
+        let homeFlow = HomeFlow()
+        Flows.use(homeFlow, when: .created) { (root) in
+            self.rootViewController = root as! UINavigationController
+        }
+        return .one(flowContributor: .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.homeIsRequired)))
     }
-    
+
     private func navigationToSignUp() -> FlowContributors {
-        let suvm = SignUpViewModel()
-        let suvc = SignUpViewController(suvm)
-        navigationController.pushViewController(suvc, animated: false)
-        return .one(flowContributor: .contribute(withNext: suvc))
+        let signUpFlow = SignUpFlow()
+        Flows.use(signUpFlow, when: .created) { (root) in
+            self.rootViewController = root as! UINavigationController
+        }
+        return .one(flowContributor: .contribute(withNextPresentable: signUpFlow, withNextStepper: OneStepper(withSingleStep: DailyStep.signUpIsRequired)))
     }
     
 }
