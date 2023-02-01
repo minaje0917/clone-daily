@@ -94,7 +94,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     }
     
     @objc func backSignInBtnDidTap() {
-        self.steps.accept(DailyStep.loginIsRequired)
+        self.steps.accept(DailyStep.signInIsRequired)
     }
     
     override func addView() {
