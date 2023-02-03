@@ -5,6 +5,7 @@
 //  Created by 선민재 on 2022/10/28.
 //
 
+import UIKit
 import RxSwift
 import RxCocoa
 import RxFlow
@@ -24,7 +25,7 @@ final class SignInViewModel: BaseViewModel, Stepper {
     
     func transVC(input: Input) {
         input.signInButtonTap.subscribe(
-            onNext: pushSignInVC
+            onNext: pushMainVC
         ) .disposed(by: disposeBag)
         
         input.backSignUpButtonTap.subscribe(
@@ -32,8 +33,8 @@ final class SignInViewModel: BaseViewModel, Stepper {
         ) .disposed(by: disposeBag)
     }
     
-    private func pushSignInVC() {
-        self.steps.accept(DailyStep.signInIsRequired)
+    private func pushMainVC() {
+        self.steps.accept(DailyStep.homeIsRequired)
     }
     private func pushSignUpVC() {
         self.steps.accept(DailyStep.signUpIsRequired)

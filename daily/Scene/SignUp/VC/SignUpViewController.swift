@@ -14,8 +14,17 @@ import RxFlow
 class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     var steps = PublishRelay<Step>()
 
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = SignUpViewModel.Input(
+            backSignInButtonTap: backSignInButton.rx.tap.asObservable(),
+            SignUpButtonTap: signUpButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     let backImage = UIImageView().then {
