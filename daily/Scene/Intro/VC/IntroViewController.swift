@@ -8,15 +8,20 @@
 import UIKit
 import Then
 import SnapKit
-import RxFlow
 import RxCocoa
 
-class IntroViewController: BaseViewController<IntroViewModel>, Stepper{
-    
-    var steps = PublishRelay<Step>()
+class IntroViewController: BaseViewController<IntroViewModel>{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+    }
+    private func bindViewModel() {
+        let input = IntroViewModel.Input(
+            signInButtonTap: signInButton.rx.tap.asObservable(),
+            signUpButtonTap: signUpButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
 
     let background = UIImageView().then{
@@ -49,7 +54,6 @@ class IntroViewController: BaseViewController<IntroViewModel>, Stepper{
         $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
         $0.layer.cornerRadius = 30
         $0.layer.applySketchShadow(color: .Shadow!, alpha: 0.3, x: 0, y: 4, blur: 4, spread: 0)
-        $0.addTarget(self, action: #selector(signInBtnDidTap), for: .touchUpInside)
     }
     
     lazy var signUpButton = UIButton().then {
@@ -59,15 +63,6 @@ class IntroViewController: BaseViewController<IntroViewModel>, Stepper{
         $0.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
         $0.layer.cornerRadius = 30
-        $0.addTarget(self, action: #selector(signUpBtnDidTap), for: .touchUpInside)
-    }
-    
-    @objc func signInBtnDidTap() {
-        self.steps.accept(DailyStep.signInIsRequired)
-    }
-    
-    @objc func signUpBtnDidTap() {
-        self.steps.accept(DailyStep.signUpIsRequired)
     }
     
     override func addView() {

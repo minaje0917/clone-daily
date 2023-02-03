@@ -41,7 +41,7 @@ class LoginFlow: Flow {
         let vm = IntroViewModel()
         let vc = IntroViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: false)
-        return .one(flowContributor: .contribute(withNext: vc))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
     private func navigateToSignIn() -> FlowContributors {
