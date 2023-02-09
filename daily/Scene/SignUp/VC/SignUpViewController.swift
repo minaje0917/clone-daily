@@ -99,7 +99,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     }
     
     @objc func signUpBtnDidTap() {
-        self.steps.accept(DailyStep.homeIsRequired)
+        self.steps.accept(DailyStep.mainIsRequired)
     }
     
     @objc func backSignInBtnDidTap() {

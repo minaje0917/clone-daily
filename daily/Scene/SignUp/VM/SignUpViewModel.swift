@@ -34,7 +34,7 @@ final class SignUpViewModel: BaseViewModel, Stepper {
     }
     
     private func pushMainVC() { 
-        self.steps.accept(DailyStep.homeIsRequired)
+        self.steps.accept(DailyStep.mainIsRequired)
     }
     private func backSignInButtonTap() {
         self.steps.accept(DailyStep.signInIsRequired)

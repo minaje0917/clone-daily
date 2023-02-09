@@ -8,6 +8,9 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxFlow
 
-class DailyViewModel: BaseViewModel {
+class DailyViewModel: BaseViewModel, Stepper{
+    var steps = PublishRelay<Step>()
+
 }

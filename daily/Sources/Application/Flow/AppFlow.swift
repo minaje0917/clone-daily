@@ -38,6 +38,8 @@ final class AppFlow: Flow {
         switch step {
         case .loginIsRequired:
             return coordinateToLogin()
+        case .mainIsRequired:
+            return coordinateToHome()
         default:
             return .none
         } 
@@ -52,6 +54,18 @@ final class AppFlow: Flow {
             flowContributor: .contribute(
                 withNextPresentable: flow,
                 withNextStepper: OneStepper(withSingleStep: DailyStep.loginIsRequired)
+        ))
+    }
+    
+    private func coordinateToHome() -> FlowContributors {
+        let flow = MainFlow()
+        Flows.use(flow, when: .created) { (root) in
+            self.rootViewController = root as! UINavigationController
+        }
+        return .one(
+            flowContributor: .contribute(
+                withNextPresentable: flow,
+                withNextStepper: OneStepper(withSingleStep: DailyStep.mainIsRequired)
         ))
     }
     

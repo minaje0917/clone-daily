@@ -23,11 +23,14 @@ class MainFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }
         switch step {
-        case .homeIsRequired:
+        case .mainIsRequired:
             return self.coordinateToHome()
             
-        case .DailyIsRequired:
+        case .dailyIsRequired:
             return self.navigateToDaily()
+            
+        case .loginIsRequired:
+            return .end(forwardToParentFlowWithStep: DailyStep.loginIsRequired)
             
         default:
             return .none
@@ -37,7 +40,7 @@ class MainFlow: Flow {
     private func coordinateToHome() -> FlowContributors {
         let vm = MainViewModel()
         let vc = MainViewController(vm)
-        self.rootViewController.setViewControllers([vc], animated: false)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     

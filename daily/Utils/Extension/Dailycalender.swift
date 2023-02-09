@@ -7,12 +7,13 @@
 
 import UIKit
 import FSCalendar
+import RxFlow
 
 extension MainViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         print(dateFormatter.string(from: date))
-        
+        self.steps.accept(DailyStep.dailyIsRequired)
     }
 }

@@ -14,12 +14,12 @@ enum DailyStep: Step {
     // Mark: SignUp
     case signUpIsRequired
     
-    // Mark: Home
-    case homeIsRequired
+    // Mark: Main
+    case mainIsRequired
     
     // Mark: SignIn
     case signInIsRequired
     
     // Mark: Daily
-    case DailyIsRequired
+    case dailyIsRequired
 }

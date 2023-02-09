@@ -28,6 +28,6 @@ class MainViewModel: BaseViewModel, Stepper {
     }
     
     private func dailyButtonTap() {
-        self.steps.accept(DailyStep.DailyIsRequired)
+        self.steps.accept(DailyStep.dailyIsRequired)
     }
 }

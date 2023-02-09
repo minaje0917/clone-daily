@@ -28,8 +28,8 @@ class LoginFlow: Flow {
             return self.coordinateToLogin()
         case .signInIsRequired:
             return self.navigateToSignIn()
-        case .homeIsRequired:
-            return self.navigateToHome()
+        case .mainIsRequired:
+            return .end(forwardToParentFlowWithStep: DailyStep.mainIsRequired)
         case .signUpIsRequired:
             return self.navigateToSignUp()
         default:
@@ -55,11 +55,5 @@ class LoginFlow: Flow {
         let vc = SignUpViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
-    }
-    private func navigateToHome() -> FlowContributors {
-        let vm = MainViewModel()
-        let vc = MainViewController(vm)
-        self.rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: .contribute(withNext: vc))
     }
 }
