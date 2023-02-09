@@ -33,7 +33,7 @@ final class SignUpViewModel: BaseViewModel, Stepper {
         ) .disposed(by: disposeBag)
     }
     
-    private func pushMainVC() {
+    private func pushMainVC() { 
         self.steps.accept(DailyStep.homeIsRequired)
     }
     private func backSignInButtonTap() {

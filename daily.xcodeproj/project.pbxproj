@@ -30,8 +30,6 @@
 		77F13A60290AA5DB00F7354A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77F13A5F290AA5DB00F7354A /* RxSwift */; };
 		77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A6A290AA76D00F7354A /* IntroViewModel.swift */; };
 		77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A6D290AA79700F7354A /* BaseViewController.swift */; };
-		77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A71290B520000F7354A /* IntroCoordinator.swift */; };
-		77F13A74290B523D00F7354A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A73290B523D00F7354A /* Coordinator.swift */; };
 		77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A77290B566800F7354A /* BaseViewModel.swift */; };
 		77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A79290B64CB00F7354A /* SignInViewController.swift */; };
 		77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A7D290B64F000F7354A /* SignInViewModel.swift */; };
@@ -62,8 +60,6 @@
 		77F13A4D290AA4E100F7354A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F13A6A290AA76D00F7354A /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		77F13A6D290AA79700F7354A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		77F13A71290B520000F7354A /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
-		77F13A73290B523D00F7354A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		77F13A77290B566800F7354A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		77F13A79290B64CB00F7354A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		77F13A7D290B64F000F7354A /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -207,7 +203,6 @@
 		77F13A66290AA75200F7354A /* App */ = {
 			isa = PBXGroup;
 			children = (
-				77F13A70290B51ED00F7354A /* Coordinator */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -246,15 +241,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		77F13A70290B51ED00F7354A /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				77F13A76290B544F00F7354A /* Protocol */,
-				77F13A71290B520000F7354A /* IntroCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		77F13A75290B543F00F7354A /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,14 +248,6 @@
 				77F13A7B290B64DF00F7354A /* VC */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		77F13A76290B544F00F7354A /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				77F13A73290B523D00F7354A /* Coordinator.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		77F13A7B290B64DF00F7354A /* VC */ = {
@@ -463,11 +441,9 @@
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				77F0727629271028007FE1DD /* DailyViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
-				77F13A72290B520000F7354A /* IntroCoordinator.swift in Sources */,
 				77F1F1902986E3C000ED498E /* AppFlow.swift in Sources */,
 				77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */,
 				77F13A83290B657C00F7354A /* SignUpViewModel.swift in Sources */,
-				77F13A74290B523D00F7354A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
