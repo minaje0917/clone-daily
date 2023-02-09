@@ -22,6 +22,14 @@ class MainViewController: BaseViewController<MainViewModel>, Stepper{
         self.navigationItem.hidesBackButton = true
         calender.delegate = self
         calender.dataSource = self
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = MainViewModel.Input(
+            dailyButtonTap: dailyButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     let calender = FSCalendar(frame: .zero).then {
