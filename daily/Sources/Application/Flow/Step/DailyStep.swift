@@ -19,4 +19,7 @@ enum DailyStep: Step {
     
     // Mark: SignIn
     case signInIsRequired
+    
+    // Mark: Daily
+    case DailyIsRequired
 }
