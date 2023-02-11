@@ -22,12 +22,17 @@ struct AppStepper: Stepper {
 }
 
 final class AppFlow: Flow {
-    private var rootViewController = UINavigationController()
     
     var root: Presentable {
-        return self.rootViewController
+        return window
     }
     
+    private let window: UIWindow
+    
+    init(window: UIWindow) {
+        self.window = window
+    }
+        
     deinit{
         print("\(type(of: self)): \(#function)")
     }
@@ -48,7 +53,7 @@ final class AppFlow: Flow {
     private func coordinateToLogin() -> FlowContributors {
         let flow = LoginFlow()
         Flows.use(flow, when: .created) { (root) in
-            self.rootViewController = root as! UINavigationController
+            self.window.rootViewController = root
         }
         return .one(
             flowContributor: .contribute(
@@ -60,7 +65,7 @@ final class AppFlow: Flow {
     private func coordinateToHome() -> FlowContributors {
         let flow = MainFlow()
         Flows.use(flow, when: .created) { (root) in
-            self.rootViewController = root as! UINavigationController
+            self.window.rootViewController = root
         }
         return .one(
             flowContributor: .contribute(

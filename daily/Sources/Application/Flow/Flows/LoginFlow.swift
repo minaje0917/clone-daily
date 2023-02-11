@@ -13,13 +13,13 @@ class LoginFlow: Flow {
     var root: Presentable {
         return self.rootViewController
     }
-
+    
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
         return viewController
     }()
 
-    init() {}
+    init(){}
 
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }

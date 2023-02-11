@@ -12,37 +12,21 @@ import RxFlow
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private let coordinator = FlowCoordinator()
-    
-    let appFlow = AppFlow()
-    let appStepper = AppStepper()
-    
-    
-    func scene(
-        _ scene: UIScene,
-        willConnectTo session: UISceneSession,
-        options connectionOptions: UIScene.ConnectionOptions
-    ) {
-        guard let s = (scene as? UIWindowScene) else { return }
-    
-        window = UIWindow(windowScene: s)
-        
-        coordinateToAppFlow(with: s)
-    }
-        
-    private func coordinateToAppFlow(with scene: UIWindowScene){
-        let window = UIWindow(windowScene: scene)
-        self.window = window
-        
-        coordinator.coordinate(flow: appFlow, with: appStepper)
-        Flows.use(
-            appFlow,
-            when: .created
-        ) { [weak self] root in
-            self?.window?.rootViewController = root
-            self?.window?.makeKeyAndVisible()
+        var coordinator = FlowCoordinator()
+
+        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            let window = UIWindow(windowScene: windowScene)
+            self.window = window
+            let appFlow = AppFlow(window: window)
+            self.coordinator.coordinate(flow: appFlow, with: AppStepper())
+            window.makeKeyAndVisible()
+            
+    //        Flows.use(appFlow, when: .created) { root in
+    //            window.rootViewController = root
+    //            window.makeKeyAndVisible()
+    //        }
         }
-    }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
