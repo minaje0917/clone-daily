@@ -9,12 +9,10 @@ import UIKit
 import Then
 import SnapKit
 import FSCalendar
-import RxFlow
 import RxCocoa
 
-class MainViewController: BaseViewController<MainViewModel>, Stepper{
+class MainViewController: BaseViewController<MainViewModel>{
     let dateFormatter = DateFormatter()
-    var steps = PublishRelay<Step>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +20,6 @@ class MainViewController: BaseViewController<MainViewModel>, Stepper{
         self.navigationItem.hidesBackButton = true
         calender.delegate = self
         calender.dataSource = self
-        bindViewModel()
-    }
-    
-    private func bindViewModel() {
-        let input = MainViewModel.Input(
-            dailyButtonTap: dailyButton.rx.tap.asObservable()
-        )
-        viewModel.transVC(input: input)
     }
     
     let calender = FSCalendar(frame: .zero).then {

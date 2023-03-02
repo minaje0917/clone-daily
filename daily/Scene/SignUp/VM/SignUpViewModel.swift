@@ -11,7 +11,6 @@ import RxCocoa
 import RxFlow
 
 final class SignUpViewModel: BaseViewModel, Stepper {
-    
     var steps = PublishRelay<Step>()
     
     struct Input {

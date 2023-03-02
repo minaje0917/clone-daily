@@ -12,8 +12,10 @@ import RxFlow
 extension MainViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        var didSelectDate = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
         print(dateFormatter.string(from: date))
-        self.steps.accept(DailyStep.dailyIsRequired)
+        self.navigationItem.backButton(title: dateFormatter.string(from: date))
+        viewModel.pushDailyVC()
     }
 }
