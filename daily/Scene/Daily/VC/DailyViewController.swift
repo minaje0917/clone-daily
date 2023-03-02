@@ -65,7 +65,7 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
         }
         dailyTextView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().offset(24)
+            $0.leading.trailing.equalToSuperview().inset(24)
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 7.58)
             $0.bottom.equalTo(view.snp.bottom).inset(24)
         }
