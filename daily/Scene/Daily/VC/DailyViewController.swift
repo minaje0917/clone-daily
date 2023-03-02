@@ -11,26 +11,48 @@ import Then
 import RxCocoa
 import RxSwift
 
-class DailyViewController: BaseViewController<DailyViewModel> {
+class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: .none, action: nil)
+        placeholderSetting()
+        textViewDidBeginEditing(dailyTextView)
+        textViewDidEndEditing(dailyTextView)
     }
     
     let dailyBackground = UIImageView().then {
         $0.image = UIImage(named: "DailyBackground.svg")
     }
     
-    let dailyTextfield = UITextField().then {
+    let dailyTextView = UITextView().then {
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.00)
-        $0.attributedPlaceholder = NSAttributedString(string: "일기를 적어봐!", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 143/255, green: 143/255, blue: 143/255, alpha: 1.00)])
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
     }
     
+    func placeholderSetting() {
+        dailyTextView.delegate = self
+        dailyTextView.text = "설명"
+        dailyTextView.textColor = UIColor.lightGray
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if dailyTextView.textColor == UIColor.lightGray {
+            dailyTextView.text = nil
+            dailyTextView.textColor = UIColor.black
+        }
+        
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if dailyTextView.text.isEmpty {
+            dailyTextView.text = "일기를 작성해 주세요"
+            dailyTextView.textColor = UIColor.lightGray
+        }
+    }
+    
     override func addView() {
-        [dailyBackground,dailyTextfield].forEach {
+        [dailyBackground,dailyTextView].forEach {
             view.addSubview($0)
         }
     }
@@ -41,7 +63,7 @@ class DailyViewController: BaseViewController<DailyViewModel> {
             $0.trailing.leading.equalToSuperview().inset(0)
             $0.top.bottom.equalToSuperview().inset(0)
         }
-        dailyTextfield.snp.makeConstraints {
+        dailyTextView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.leading.trailing.equalToSuperview().offset(24)
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 7.58)
