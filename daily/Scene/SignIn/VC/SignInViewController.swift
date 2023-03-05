@@ -16,6 +16,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        self.navigationItem.backButton(title: "")
     }
     
     private func bindViewModel() {
@@ -28,13 +29,19 @@ class SignInViewController: BaseViewController<SignInViewModel>{
     
     private let signInText = UILabel().then {
         $0.text = "로그인"
-        $0.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
+        $0.font = UIFont.systemFont(
+            ofSize: 32,
+            weight: .semibold
+        )
         $0.textColor = UIColor.black
     }
     
     private let subText = UILabel().then {
         $0.text = "돌아오신 것을 환영합니다."
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        $0.font = UIFont.systemFont(
+            ofSize: 16,
+            weight: .regular
+        )
         $0.textColor = UIColor(red: 108 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1.00)
     }
     
@@ -44,7 +51,10 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             string: "이메일을 입력해 주세요.",
             attributes: [
                 .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
-                .font: UIFont.systemFont(ofSize: 16, weight: .regular)
+                .font: UIFont.systemFont(
+                    ofSize: 16,
+                    weight: .regular
+                )
         ])
         $0.layer.cornerRadius = 20
         $0.textColor = .black
@@ -56,7 +66,10 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             string: "비밀번호를 입력해 주세요.",
             attributes: [
                 .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
-                .font: UIFont.systemFont(ofSize: 16, weight: .regular)
+                .font: UIFont.systemFont(
+                    ofSize: 16,
+                    weight: .regular
+                )
         ])
         $0.layer.cornerRadius = 20
         $0.textColor = .black
@@ -65,32 +78,62 @@ class SignInViewController: BaseViewController<SignInViewModel>{
     
     private lazy var forgotPwButton = UIButton().then {
         let text = NSAttributedString(string: "비밀번호를 잊으셨나요?")
-        $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        $0.setTitleColor(UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00), for: .normal)
+        $0.setAttributedTitle(
+            text,
+            for: .normal
+        )
+        $0.titleLabel?.font = UIFont.systemFont(
+            ofSize: 12,
+            weight: .regular
+        )
+        $0.setTitleColor(
+            UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
+            for: .normal
+        )
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
     }
     
     private lazy var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
-        $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00), for: .normal)
+        $0.setAttributedTitle(
+            text,
+            for: .normal
+        )
+        $0.titleLabel?.font = UIFont.systemFont(
+            ofSize: 18,
+            weight: .semibold
+        )
+        $0.setTitleColor(
+            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00),
+            for: .normal
+        )
         $0.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 216/255, alpha: 1.00)
         $0.layer.cornerRadius = 20
     }
     
     private let firstTimeDailyText = UILabel().then {
         $0.text = "Daily가 처음이라면,"
-        $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        $0.font = UIFont.systemFont(
+            ofSize: 12,
+            weight: .regular
+        )
         $0.textColor = UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00)
     }
 
     private lazy var backSignUpButton = UIButton().then {
         let text = NSAttributedString(string: "회원가입")
-        $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        $0.setTitleColor(UIColor(red: 255/255, green: 95/255, blue: 143/255, alpha: 1.00), for: .normal)
+        $0.setAttributedTitle(
+            text,
+            for: .normal
+        )
+        $0.titleLabel?.font = UIFont.systemFont(
+            ofSize: 12,
+            weight: .bold
+        )
+        $0.setTitleColor(
+            UIColor(red: 255/255, green: 95/255, blue: 143/255, alpha: 1.00),
+            for: .normal
+        )
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
     }
     

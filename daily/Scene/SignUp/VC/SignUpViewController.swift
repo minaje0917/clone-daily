@@ -17,6 +17,7 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     override func viewDidLoad(){
         super.viewDidLoad()
         bindViewModel()
+        self.navigationItem.backButton(title: "")
     }
     
     private func bindViewModel() {
@@ -29,13 +30,19 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     
     private let signUpText = UILabel().then {
         $0.text = "회원가입"
-        $0.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
+        $0.font = UIFont.systemFont(
+            ofSize: 32,
+            weight: .semibold
+        )
         $0.textColor = UIColor.black
     }
     
     private let subText = UILabel().then {
         $0.text = "비밀번호를 입력해주세요."
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        $0.font = UIFont.systemFont(
+            ofSize: 16,
+            weight: .regular
+        )
         $0.textColor = UIColor(red: 108 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1.00)
     }
     
@@ -45,10 +52,14 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
             string: "비밀번호를 입력해 주세요.",
             attributes: [
                 .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
-                .font: UIFont.systemFont(ofSize: 16, weight: .regular)
+                .font: UIFont.systemFont(
+                    ofSize: 16,
+                    weight: .regular
+                )
         ])
         $0.layer.cornerRadius = 20
         $0.textColor = .black
+        $0.isSecureTextEntry = true
     }
     
     private lazy var pwCheckTextField = UITextField().then {
@@ -57,7 +68,10 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
             string: "비밀번호를 다시 입력해 주세요.",
             attributes: [
                 .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
-                .font: UIFont.systemFont(ofSize: 16, weight: .regular)
+                .font: UIFont.systemFont(
+                    ofSize: 16,
+                    weight: .regular
+                )
         ])
         $0.layer.cornerRadius = 20
         $0.textColor = .black
@@ -67,23 +81,37 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     private lazy var nextButton = UIButton().then {
         let text = NSAttributedString(string: "다음")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00), for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(
+            ofSize: 18,
+            weight: .semibold
+        )
+        $0.setTitleColor(
+            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00),
+            for: .normal
+        )
         $0.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 216/255, alpha: 1.00)
         $0.layer.cornerRadius = 20
     }
     
     private let haveIdText = UILabel().then {
         $0.text = "계정이 있으신가요?"
-        $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        $0.font = UIFont.systemFont(
+            ofSize: 12,
+            weight: .regular
+        )
         $0.textColor = UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00)
     }
 
     private lazy var backSignInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        $0.setTitleColor(UIColor(red: 255/255, green: 95/255, blue: 143/255, alpha: 1.00), for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(
+            ofSize: 12,
+            weight: .bold)
+        $0.setTitleColor(
+            UIColor(red: 255/255, green: 95/255, blue: 143/255, alpha: 1.00),
+            for: .normal
+        )
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
     }
     
