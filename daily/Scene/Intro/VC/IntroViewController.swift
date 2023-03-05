@@ -15,6 +15,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        self.navigationItem.backButton(title: "")
     }
     private func bindViewModel() {
         let input = IntroViewModel.Input(

@@ -17,6 +17,7 @@ final class SignInViewModel: BaseViewModel, Stepper {
     struct Input {
         let signInButtonTap: Observable<Void>
         let backSignUpButtonTap: Observable<Void>
+//        let emailTextFieldTap: Observable<Void>
     }
     
     struct Output {
@@ -33,10 +34,19 @@ final class SignInViewModel: BaseViewModel, Stepper {
         ) .disposed(by: disposeBag)
     }
     
+//    func changeTextField(input: Input) {
+//        input.emailTextFieldTap.subscribe(
+//            onNext: emailTextFieldDidTap
+//        ).disposed(by: disposeBag)
+//    }
+    
     private func pushMainVC() {
         self.steps.accept(DailyStep.mainIsRequired)
     }
     private func pushSignUpVC() {
         self.steps.accept(DailyStep.signUpIsRequired)
     }
+//    private func emailTextFieldDidTap() {
+//        print("emailTextFieldDidTap")
+//    }
 }

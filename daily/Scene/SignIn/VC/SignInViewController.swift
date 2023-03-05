@@ -26,126 +26,114 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         viewModel.transVC(input: input)
     }
     
-    let backImage = UIImageView().then {
-        $0.image = UIImage(named: "SignInBackground.png")
+    private let signInText = UILabel().then {
+        $0.text = "로그인"
+        $0.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
+        $0.textColor = UIColor.black
     }
     
-    let signInText = UILabel().then {
-        $0.text = "Login"
-        $0.font = UIFont.systemFont(ofSize: 36, weight: .heavy)
-        $0.textColor = UIColor(red: 166 / 255, green: 73 / 255, blue: 141 / 255, alpha: 1.00)
+    private let subText = UILabel().then {
+        $0.text = "돌아오신 것을 환영합니다."
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        $0.textColor = UIColor(red: 108 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1.00)
     }
     
-    let subText = UILabel().then {
-        $0.text = "Welcome Back!"
-        $0.font = UIFont.systemFont(ofSize: 24, weight: .medium)
-        $0.textColor = UIColor(red: 166 / 255, green: 73 / 255, blue: 141 / 255, alpha: 1.00)
-    }
-    
-    lazy var emailTextField = UITextField().then {
-        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.00)
-        $0.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.00)])
+    private lazy var emailTextField = UITextField().then {
+        $0.backgroundColor = UIColor(red: 255 / 255, green: 245 / 255, blue: 247 / 255, alpha: 1.00)
+        $0.attributedPlaceholder = NSAttributedString(string: "이메일을 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00)])
+        $0.layer.cornerRadius = 20
         $0.textColor = .black
-        $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.4)
     }
     
-    let emailUnderLine = UIView().then {
-        $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
-    }
-    
-    lazy var pwTextField = UITextField().then {
-        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.00)
-        $0.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.00)])
+    private lazy var pwTextField = UITextField().then {
+        $0.backgroundColor = UIColor(red: 255 / 255, green: 245 / 255, blue: 247 / 255, alpha: 1.00)
+        $0.attributedPlaceholder = NSAttributedString(string: "비밀번호를 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00)])
+        $0.layer.cornerRadius = 20
         $0.textColor = .black
-        $0.textColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.4)
         $0.isSecureTextEntry = true
     }
     
-    let pwUnderLine = UIView().then {
-        $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
-    }
-    
-    lazy var forgotPwButton = UIButton().then {
-        let text = NSAttributedString(string: "Forgot Password?")
+    private lazy var forgotPwButton = UIButton().then {
+        let text = NSAttributedString(string: "비밀번호를 잊으셨나요?")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        $0.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1.00), for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        $0.setTitleColor(UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
     }
     
-    lazy var signInButton = UIButton().then {
-        let text = NSAttributedString(string: "Login")
+    private lazy var signInButton = UIButton().then {
+        let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.setTitleColor(UIColor(red: 191/255, green: 74/255, blue: 160/255, alpha: 1.00), for: .normal)
-        $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
-        $0.layer.cornerRadius = 30
-        $0.layer.applySketchShadow(color: .Shadow!, alpha: 0.3, x: 0, y: 4, blur: 4, spread: 0)
+        $0.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00), for: .normal)
+        $0.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 216/255, alpha: 1.00)
+        $0.layer.cornerRadius = 20
+    }
+    
+    private let firstTimeDailyText = UILabel().then {
+        $0.text = "Daily가 처음이라면,"
+        $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        $0.textColor = UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00)
     }
 
-    lazy var backSignUpButton = UIButton().then {
-        let text = NSAttributedString(string: "Don’t have an account?")
+    private lazy var backSignUpButton = UIButton().then {
+        let text = NSAttributedString(string: "회원가입")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        $0.setTitleColor(UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.00), for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        $0.setTitleColor(UIColor(red: 255/255, green: 95/255, blue: 143/255, alpha: 1.00), for: .normal)
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
     }
+    
     override func addView() {
-        [backImage,signInText,subText,emailTextField,emailUnderLine,pwTextField,pwUnderLine
-        ,forgotPwButton,signInButton,backSignUpButton].forEach {
+        [signInText,subText,emailTextField,pwTextField,forgotPwButton,signInButton,firstTimeDailyText,backSignUpButton].forEach {
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
-        backImage.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset(0)
-            $0.leading.trailing.equalToSuperview().offset(0)
-        }
         signInText.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 5.75)
-            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset((bounds.height) / 7.8)
+            $0.leading.equalToSuperview().offset(21)
         }
+        
         subText.snp.makeConstraints {
             $0.top.equalTo(signInText.snp.bottom).offset(8)
-            $0.centerX.equalToSuperview()
+            $0.leading.equalToSuperview().offset(21)
         }
+        
         emailTextField.snp.makeConstraints {
-            $0.top.equalTo(backImage.snp.bottom).offset(0)
-            $0.centerX.equalToSuperview()
-            $0.trailing.leading.equalToSuperview().inset(16)
+            $0.top.equalTo(subText.snp.bottom).offset(24)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.height.equalTo(60)
         }
-        emailUnderLine.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(1.5)
-            $0.top.equalTo(emailTextField.snp.bottom).offset(10)
-            $0.trailing.leading.equalToSuperview().inset(16)
-        }
+        
         pwTextField.snp.makeConstraints {
-            $0.top.equalTo(emailUnderLine.snp.bottom).offset(32)
-            $0.centerX.equalToSuperview()
-            $0.trailing.leading.equalToSuperview().inset(16)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(42)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.height.equalTo(60)
         }
-        pwUnderLine.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(1.5)
-            $0.top.equalTo(pwTextField.snp.bottom).offset(10)
-            $0.trailing.leading.equalToSuperview().inset(16)
-        }
+        
         forgotPwButton.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(pwUnderLine.snp.bottom).offset(6)
+            $0.top.equalTo(pwTextField.snp.bottom).offset(12)
+            $0.trailing.equalToSuperview().inset(28)
         }
+        
         signInButton.snp.makeConstraints {
+            $0.top.equalTo(forgotPwButton.snp.bottom).offset(26)
             $0.centerX.equalToSuperview()
-            $0.leading.equalTo(view.snp.leading).offset(16)
-            $0.height.equalTo(56)
-            $0.top.equalTo(forgotPwButton.snp.bottom).offset((bounds.height) / 9.90)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.height.equalTo(60)
         }
+        
+        firstTimeDailyText.snp.makeConstraints {
+            $0.top.equalTo(signInButton.snp.bottom).offset(16)
+            $0.trailing.equalTo(view.snp.centerX).offset(27)
+        }
+        
         backSignUpButton.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset((bounds.width) / 3.40)
-            $0.top.equalTo(signInButton.snp.bottom).offset(8)
+            $0.top.equalTo(signInButton.snp.bottom).offset(16)
+            $0.leading.equalTo(firstTimeDailyText.snp.trailing).offset(4)
+            $0.height.equalTo(14)
         }
     }
 
