@@ -43,15 +43,30 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
             ofSize: 16,
             weight: .regular
         )
-        $0.textColor = UIColor(red: 108 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1.00)
+        $0.textColor = UIColor(
+            red: 108 / 255,
+            green: 80 / 255,
+            blue: 80 / 255,
+            alpha: 1.00
+        )
     }
     
     private lazy var pwTextField = UITextField().then {
-        $0.backgroundColor = UIColor(red: 255 / 255, green: 245 / 255, blue: 247 / 255, alpha: 1.00)
+        $0.backgroundColor = UIColor(
+            red: 255 / 255,
+            green: 245 / 255,
+            blue: 247 / 255,
+            alpha: 1.00
+        )
         $0.attributedPlaceholder = NSAttributedString(
             string: "비밀번호를 입력해 주세요.",
             attributes: [
-                .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
+                .foregroundColor: UIColor(
+                    red: 183/255,
+                    green: 158/255,
+                    blue: 158/255,
+                    alpha: 1.00
+                ),
                 .font: UIFont.systemFont(
                     ofSize: 16,
                     weight: .regular
@@ -63,11 +78,21 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     }
     
     private lazy var pwCheckTextField = UITextField().then {
-        $0.backgroundColor = UIColor(red: 255 / 255, green: 245 / 255, blue: 247 / 255, alpha: 1.00)
+        $0.backgroundColor = UIColor(
+            red: 255 / 255,
+            green: 245 / 255,
+            blue: 247 / 255,
+            alpha: 1.00
+        )
         $0.attributedPlaceholder = NSAttributedString(
             string: "비밀번호를 다시 입력해 주세요.",
             attributes: [
-                .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
+                .foregroundColor: UIColor(
+                    red: 183/255,
+                    green: 158/255,
+                    blue: 158/255,
+                    alpha: 1.00
+                ),
                 .font: UIFont.systemFont(
                     ofSize: 16,
                     weight: .regular
@@ -80,16 +105,29 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     
     private lazy var nextButton = UIButton().then {
         let text = NSAttributedString(string: "다음")
-        $0.setAttributedTitle(text, for: .normal)
+        $0.setAttributedTitle(
+            text,
+            for: .normal
+        )
         $0.titleLabel?.font = UIFont.systemFont(
             ofSize: 18,
             weight: .semibold
         )
         $0.setTitleColor(
-            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00),
+            UIColor(
+                red: 255/255,
+                green: 255/255,
+                blue: 255/255,
+                alpha: 1.00
+            ),
             for: .normal
         )
-        $0.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 216/255, alpha: 1.00)
+        $0.backgroundColor = UIColor(
+            red: 255/255,
+            green: 199/255,
+            blue: 216/255,
+            alpha: 1.00
+        )
         $0.layer.cornerRadius = 20
     }
     
@@ -99,7 +137,12 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
             ofSize: 12,
             weight: .regular
         )
-        $0.textColor = UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00)
+        $0.textColor = UIColor(
+            red: 183/255,
+            green: 158/255,
+            blue: 158/255,
+            alpha: 1.00
+        )
     }
 
     private lazy var backSignInButton = UIButton().then {
@@ -109,10 +152,20 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
             ofSize: 12,
             weight: .bold)
         $0.setTitleColor(
-            UIColor(red: 255/255, green: 95/255, blue: 143/255, alpha: 1.00),
+            UIColor(
+                red: 255/255,
+                green: 95/255,
+                blue: 143/255,
+                alpha: 1.00
+            ),
             for: .normal
         )
-        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
     }
     
     override func addView() {

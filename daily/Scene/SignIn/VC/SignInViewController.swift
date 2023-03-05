@@ -42,15 +42,30 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             ofSize: 16,
             weight: .regular
         )
-        $0.textColor = UIColor(red: 108 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1.00)
+        $0.textColor = UIColor(
+            red: 108 / 255,
+            green: 80 / 255,
+            blue: 80 / 255,
+            alpha: 1.00
+        )
     }
     
     private lazy var emailTextField = UITextField().then {
-        $0.backgroundColor = UIColor(red: 255 / 255, green: 245 / 255, blue: 247 / 255, alpha: 1.00)
+        $0.backgroundColor = UIColor(
+            red: 255 / 255,
+            green: 245 / 255,
+            blue: 247 / 255,
+            alpha: 1.00
+        )
         $0.attributedPlaceholder = NSAttributedString(
             string: "이메일을 입력해 주세요.",
             attributes: [
-                .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
+                .foregroundColor: UIColor(
+                    red: 183/255,
+                    green: 158/255,
+                    blue: 158/255,
+                    alpha: 1.00
+                ),
                 .font: UIFont.systemFont(
                     ofSize: 16,
                     weight: .regular
@@ -61,11 +76,21 @@ class SignInViewController: BaseViewController<SignInViewModel>{
     }
     
     private lazy var pwTextField = UITextField().then {
-        $0.backgroundColor = UIColor(red: 255 / 255, green: 245 / 255, blue: 247 / 255, alpha: 1.00)
+        $0.backgroundColor = UIColor(
+            red: 255 / 255,
+            green: 245 / 255,
+            blue: 247 / 255,
+            alpha: 1.00
+        )
         $0.attributedPlaceholder = NSAttributedString(
             string: "비밀번호를 입력해 주세요.",
             attributes: [
-                .foregroundColor: UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
+                .foregroundColor: UIColor(
+                    red: 183/255,
+                    green: 158/255,
+                    blue: 158/255,
+                    alpha: 1.00
+                ),
                 .font: UIFont.systemFont(
                     ofSize: 16,
                     weight: .regular
@@ -87,10 +112,20 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             weight: .regular
         )
         $0.setTitleColor(
-            UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00),
+            UIColor(
+                red: 183/255,
+                green: 158/255,
+                blue: 158/255,
+                alpha: 1.00
+            ),
             for: .normal
         )
-        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
     }
     
     private lazy var signInButton = UIButton().then {
@@ -104,10 +139,20 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             weight: .semibold
         )
         $0.setTitleColor(
-            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.00),
+            UIColor(
+                red: 255/255,
+                green: 255/255,
+                blue: 255/255,
+                alpha: 1.00
+            ),
             for: .normal
         )
-        $0.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 216/255, alpha: 1.00)
+        $0.backgroundColor = UIColor(
+            red: 255/255,
+            green: 199/255,
+            blue: 216/255,
+            alpha: 1.00
+        )
         $0.layer.cornerRadius = 20
     }
     
@@ -117,7 +162,12 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             ofSize: 12,
             weight: .regular
         )
-        $0.textColor = UIColor(red: 183/255, green: 158/255, blue: 158/255, alpha: 1.00)
+        $0.textColor = UIColor(
+            red: 183/255,
+            green: 158/255,
+            blue: 158/255,
+            alpha: 1.00
+        )
     }
 
     private lazy var backSignUpButton = UIButton().then {
@@ -131,10 +181,20 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             weight: .bold
         )
         $0.setTitleColor(
-            UIColor(red: 255/255, green: 95/255, blue: 143/255, alpha: 1.00),
+            UIColor(
+                red: 255/255,
+                green: 95/255,
+                blue: 143/255,
+                alpha: 1.00
+            ),
             for: .normal
         )
-        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
     }
     
     override func addView() {
