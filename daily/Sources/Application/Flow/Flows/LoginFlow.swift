@@ -31,7 +31,9 @@ class LoginFlow: Flow {
         case .mainIsRequired:
             return .end(forwardToParentFlowWithStep: DailyStep.mainIsRequired)
         case .createPwIsRequired:
-            return self.navigateToSignUp()
+            return self.navigateToCreatePw()
+        case .createEmailIsRequired:
+            return self.navigateToCreateEmail()
         default:
             return .none
         }
@@ -50,9 +52,17 @@ class LoginFlow: Flow {
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
-    private func navigateToSignUp() -> FlowContributors {
+    
+    private func navigateToCreatePw() -> FlowContributors {
         let vm = CreatePwViewModel()
         let vc = CreatePwViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigateToCreateEmail() -> FlowContributors {
+        let vm = CreateEmailViewModel()
+        let vc = CreateEmailViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

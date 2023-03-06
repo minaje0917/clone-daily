@@ -24,18 +24,18 @@ final class CreatePwViewModel: BaseViewModel, Stepper {
     
     func transVC(input: Input) {
         input.backSignInButtonTap.subscribe(
-            onNext: backSignInButtonTap
+            onNext: pushSignInVC
         ) .disposed(by: disposeBag)
         
         input.nextButtonTap.subscribe(
-            onNext: pushMainVC
+            onNext: pushCreateEmailVC
         ) .disposed(by: disposeBag)
     }
     
-    private func pushMainVC() { 
-        self.steps.accept(DailyStep.mainIsRequired)
+    private func pushCreateEmailVC() {
+        self.steps.accept(DailyStep.createEmailIsRequired)
     }
-    private func backSignInButtonTap() {
+    private func pushSignInVC() {
         self.steps.accept(DailyStep.signInIsRequired)
     }
 }
