@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "dpotpview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Datt1994/DPOTPView",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5e7fc8c57eee86d8e7be9913621e829776e0a819"
+      }
+    },
+    {
       "identity" : "fscalendar",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/WenchaoD/FSCalendar",

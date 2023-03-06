@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		770D6BF629B566120085A250 /* CreateEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6BF529B566120085A250 /* CreateEmailViewModel.swift */; };
 		770D6BF829B566470085A250 /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6BF729B566470085A250 /* CreateEmailViewController.swift */; };
+		770D6BFB29B56A970085A250 /* DPOTPView in Frameworks */ = {isa = PBXBuildFile; productRef = 770D6BFA29B56A970085A250 /* DPOTPView */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
@@ -83,6 +84,7 @@
 				77F13A55290AA5AF00F7354A /* Moya in Frameworks */,
 				77F1F18A2986ACA000ED498E /* RxFlow in Frameworks */,
 				77F072682922547F007FE1DD /* FSCalendar in Frameworks */,
+				770D6BFB29B56A970085A250 /* DPOTPView in Frameworks */,
 				77F13A5B290AA5C900F7354A /* Then in Frameworks */,
 				77F13A60290AA5DB00F7354A /* RxSwift in Frameworks */,
 				77F13A5E290AA5DB00F7354A /* RxCocoa in Frameworks */,
@@ -400,6 +402,7 @@
 				77F13A5F290AA5DB00F7354A /* RxSwift */,
 				77F072672922547F007FE1DD /* FSCalendar */,
 				77F1F1892986ACA000ED498E /* RxFlow */,
+				770D6BFA29B56A970085A250 /* DPOTPView */,
 			);
 			productName = daily;
 			productReference = 77F13A3C290AA4E000F7354A /* daily.app */;
@@ -436,6 +439,7 @@
 				77F13A5C290AA5DB00F7354A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				77F1F1882986ACA000ED498E /* XCRemoteSwiftPackageReference "RxFlow" */,
+				770D6BF929B56A970085A250 /* XCRemoteSwiftPackageReference "DPOTPView" */,
 			);
 			productRefGroup = 77F13A3D290AA4E000F7354A /* Products */;
 			projectDirPath = "";
@@ -695,6 +699,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		770D6BF929B56A970085A250 /* XCRemoteSwiftPackageReference "DPOTPView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Datt1994/DPOTPView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
@@ -746,6 +758,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		770D6BFA29B56A970085A250 /* DPOTPView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 770D6BF929B56A970085A250 /* XCRemoteSwiftPackageReference "DPOTPView" */;
+			productName = DPOTPView;
+		};
 		77F072672922547F007FE1DD /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */;
