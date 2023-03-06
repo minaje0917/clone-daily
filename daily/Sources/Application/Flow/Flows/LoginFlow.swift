@@ -36,6 +36,8 @@ class LoginFlow: Flow {
             return self.navigateToCreateEmail()
         case .certificationNumberIsRequired:
             return self.navigationToCertificationNumber()
+        case .createNicknameIsRequired:
+            return self.navigationToCreateNickname()
         default:
             return .none
         }
@@ -72,6 +74,13 @@ class LoginFlow: Flow {
     private func navigationToCertificationNumber() -> FlowContributors {
         let vm = CertificationNumberViewModel()
         let vc = CertificationNumberViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigationToCreateNickname() -> FlowContributors {
+        let vm = CreateNicknameViewModel()
+        let vc = CreateNicknameViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
