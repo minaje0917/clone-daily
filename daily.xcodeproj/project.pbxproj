@@ -10,6 +10,8 @@
 		770D6BF629B566120085A250 /* CreateEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6BF529B566120085A250 /* CreateEmailViewModel.swift */; };
 		770D6BF829B566470085A250 /* CreateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6BF729B566470085A250 /* CreateEmailViewController.swift */; };
 		770D6BFB29B56A970085A250 /* DPOTPView in Frameworks */ = {isa = PBXBuildFile; productRef = 770D6BFA29B56A970085A250 /* DPOTPView */; };
+		770D6BFD29B5B3A50085A250 /* CertificationNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6BFC29B5B3A50085A250 /* CertificationNumberViewModel.swift */; };
+		770D6C0329B5B3DC0085A250 /* CertificationNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C0229B5B3DC0085A250 /* CertificationNumberViewController.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		770D6BF529B566120085A250 /* CreateEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewModel.swift; sourceTree = "<group>"; };
 		770D6BF729B566470085A250 /* CreateEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmailViewController.swift; sourceTree = "<group>"; };
+		770D6BFC29B5B3A50085A250 /* CertificationNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumberViewModel.swift; sourceTree = "<group>"; };
+		770D6C0229B5B3DC0085A250 /* CertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumberViewController.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,31 @@
 				770D6BF529B566120085A250 /* CreateEmailViewModel.swift */,
 			);
 			path = VM;
+			sourceTree = "<group>";
+		};
+		770D6BFE29B5B3AC0085A250 /* CertificationNumber */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C0029B5B3C10085A250 /* VC */,
+				770D6BFF29B5B3BD0085A250 /* VM */,
+			);
+			path = CertificationNumber;
+			sourceTree = "<group>";
+		};
+		770D6BFF29B5B3BD0085A250 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				770D6BFC29B5B3A50085A250 /* CertificationNumberViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		770D6C0029B5B3C10085A250 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C0229B5B3DC0085A250 /* CertificationNumberViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		77F07255291DDB6F007FE1DD /* Main */ = {
@@ -311,6 +340,7 @@
 		77F13A7F290B656500F7354A /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				770D6BFE29B5B3AC0085A250 /* CertificationNumber */,
 				770D6BF229B565DF0085A250 /* CreateEmail */,
 				770D6BF029B563B20085A250 /* CreatePw */,
 			);
@@ -481,9 +511,11 @@
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
 				770D6BF829B566470085A250 /* CreateEmailViewController.swift in Sources */,
+				770D6BFD29B5B3A50085A250 /* CertificationNumberViewModel.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */,
 				77F13A85290B658800F7354A /* CreatePwViewController.swift in Sources */,
 				77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */,
+				770D6C0329B5B3DC0085A250 /* CertificationNumberViewController.swift in Sources */,
 				77F0726529223303007FE1DD /* DailyToolBar.swift in Sources */,
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				77F0727629271028007FE1DD /* DailyViewController.swift in Sources */,

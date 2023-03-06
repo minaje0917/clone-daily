@@ -31,7 +31,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         $0.text = "로그인"
         $0.font = UIFont.systemFont(
             ofSize: 32,
-            weight: .semibold
+            weight: .bold
         )
         $0.textColor = UIColor.black
     }

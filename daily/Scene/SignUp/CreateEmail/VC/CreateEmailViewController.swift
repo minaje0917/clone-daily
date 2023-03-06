@@ -32,7 +32,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
         $0.text = "회원가입"
         $0.font = UIFont.systemFont(
             ofSize: 32,
-            weight: .semibold
+            weight: .bold
         )
         $0.textColor = UIColor.black
     }

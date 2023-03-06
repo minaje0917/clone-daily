@@ -8,6 +8,6 @@
 import UIKit
 
 extension UIColor {
-    static var Maintext = UIColor(named: "Maintext")
+    static var mainColor = UIColor(named: "MainColor")
     static var Shadow = UIColor(named: "Shadow")
 }
