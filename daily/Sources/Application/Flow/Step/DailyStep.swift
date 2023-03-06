@@ -14,6 +14,7 @@ enum DailyStep: Step {
     // Mark: SignUp
     case createPwIsRequired
     case createEmailIsRequired
+    case certificationNumberIsRequired
     
     // Mark: Main
     case mainIsRequired

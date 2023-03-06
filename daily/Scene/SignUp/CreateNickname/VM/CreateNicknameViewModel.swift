@@ -1,5 +1,5 @@
 //
-//  CreateEmailViewModel.swift
+//  CreateNicknameViewModel.swift
 //  daily
 //
 //  Created by 선민재 on 2023/03/06.
@@ -10,12 +10,12 @@ import RxSwift
 import RxCocoa
 import RxFlow
 
-final class CreateEmailViewModel: BaseViewModel, Stepper {
+final class CreateNicknameViewModel: BaseViewModel, Stepper {
     var steps = PublishRelay<Step>()
     
     struct Input {
         let backSignInButtonTap: Observable<Void>
-        let getNumButtonTap: Observable<Void>
+        let checkButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -27,13 +27,13 @@ final class CreateEmailViewModel: BaseViewModel, Stepper {
             onNext: backSignInButtonTap
         ) .disposed(by: disposeBag)
         
-        input.getNumButtonTap.subscribe(
-            onNext: pushCertificationNumberVC
+        input.checkButtonTap.subscribe(
+            onNext: pushMainVC
         ) .disposed(by: disposeBag)
     }
     
-    private func pushCertificationNumberVC() {
-        self.steps.accept(DailyStep.certificationNumberIsRequired)
+    private func pushMainVC() {
+        self.steps.accept(DailyStep.mainIsRequired)
     }
     private func backSignInButtonTap() {
         self.steps.accept(DailyStep.signInIsRequired)

@@ -34,6 +34,8 @@ class LoginFlow: Flow {
             return self.navigateToCreatePw()
         case .createEmailIsRequired:
             return self.navigateToCreateEmail()
+        case .certificationNumberIsRequired:
+            return self.navigationToCertificationNumber()
         default:
             return .none
         }
@@ -63,6 +65,13 @@ class LoginFlow: Flow {
     private func navigateToCreateEmail() -> FlowContributors {
         let vm = CreateEmailViewModel()
         let vc = CreateEmailViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigationToCertificationNumber() -> FlowContributors {
+        let vm = CertificationNumberViewModel()
+        let vc = CertificationNumberViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

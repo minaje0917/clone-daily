@@ -98,6 +98,8 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
         certificationNumberTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(explainText.snp.bottom).offset(32)
+            $0.height.equalTo(60)
+            $0.width.equalTo(60)
         }
         
         reSendButton.snp.makeConstraints {
