@@ -143,7 +143,7 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
     }
     
     override func addView() {
-        [signUpText,subText,nicknameTextField,getNumButton,haveIdText,backSignInButton].forEach {
+        [signUpText,subText,nicknameTextField,checkButton,haveIdText,backSignInButton].forEach {
             view.addSubview($0)
         }
     }
@@ -164,7 +164,7 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
             $0.leading.trailing.equalToSuperview().inset(21)
             $0.height.equalTo(60)
         }
-        getNumButton.snp.makeConstraints {
+        checkButton.snp.makeConstraints {
             $0.top.equalTo(nicknameTextField.snp.bottom).offset(154)
             $0.centerX.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(21)
@@ -172,12 +172,12 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
         }
         
         haveIdText.snp.makeConstraints {
-            $0.top.equalTo(getNumButton.snp.bottom).offset(16)
+            $0.top.equalTo(checkButton.snp.bottom).offset(16)
             $0.trailing.equalTo(view.snp.centerX).offset(27)
         }
         
         backSignInButton.snp.makeConstraints {
-            $0.top.equalTo(getNumButton.snp.bottom).offset(16)
+            $0.top.equalTo(checkButton.snp.bottom).offset(16)
             $0.leading.equalTo(haveIdText.snp.trailing).offset(4)
             $0.height.equalTo(14)
         }
