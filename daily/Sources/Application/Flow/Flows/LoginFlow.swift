@@ -30,7 +30,7 @@ class LoginFlow: Flow {
             return self.navigateToSignIn()
         case .mainIsRequired:
             return .end(forwardToParentFlowWithStep: DailyStep.mainIsRequired)
-        case .signUpIsRequired:
+        case .createPwIsRequired:
             return self.navigateToSignUp()
         default:
             return .none
@@ -51,8 +51,8 @@ class LoginFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     private func navigateToSignUp() -> FlowContributors {
-        let vm = SignUpViewModel()
-        let vc = SignUpViewController(vm)
+        let vm = CreatePwViewModel()
+        let vc = CreatePwViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

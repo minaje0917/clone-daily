@@ -12,7 +12,7 @@ enum DailyStep: Step {
     case loginIsRequired
     
     // Mark: SignUp
-    case signUpIsRequired
+    case createPwIsRequired
     
     // Mark: Main
     case mainIsRequired

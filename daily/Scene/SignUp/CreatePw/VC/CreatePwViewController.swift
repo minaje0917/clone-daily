@@ -11,7 +11,7 @@ import Then
 import RxCocoa
 import RxFlow
 
-class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
+class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
     var steps = PublishRelay<Step>()
 
     override func viewDidLoad(){
@@ -21,9 +21,9 @@ class SignUpViewController: BaseViewController<SignUpViewModel>, Stepper{
     }
     
     private func bindViewModel() {
-        let input = SignUpViewModel.Input(
+        let input = CreatePwViewModel.Input(
             backSignInButtonTap: backSignInButton.rx.tap.asObservable(),
-            SignUpButtonTap: nextButton.rx.tap.asObservable()
+            nextButtonTap: nextButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }

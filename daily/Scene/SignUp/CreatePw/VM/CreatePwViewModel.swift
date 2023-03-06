@@ -10,12 +10,12 @@ import RxSwift
 import RxCocoa
 import RxFlow
 
-final class SignUpViewModel: BaseViewModel, Stepper {
+final class CreatePwViewModel: BaseViewModel, Stepper {
     var steps = PublishRelay<Step>()
     
     struct Input {
         let backSignInButtonTap: Observable<Void>
-        let SignUpButtonTap: Observable<Void>
+        let nextButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -27,7 +27,7 @@ final class SignUpViewModel: BaseViewModel, Stepper {
             onNext: backSignInButtonTap
         ) .disposed(by: disposeBag)
         
-        input.SignUpButtonTap.subscribe(
+        input.nextButtonTap.subscribe(
             onNext: pushMainVC
         ) .disposed(by: disposeBag)
     }

@@ -30,7 +30,7 @@ final class SignInViewModel: BaseViewModel, Stepper {
         ) .disposed(by: disposeBag)
         
         input.backSignUpButtonTap.subscribe(
-            onNext: pushSignUpVC
+            onNext: pushCreatePwVC
         ) .disposed(by: disposeBag)
     }
     
@@ -43,8 +43,8 @@ final class SignInViewModel: BaseViewModel, Stepper {
     private func pushMainVC() {
         self.steps.accept(DailyStep.mainIsRequired)
     }
-    private func pushSignUpVC() {
-        self.steps.accept(DailyStep.signUpIsRequired)
+    private func pushCreatePwVC() {
+        self.steps.accept(DailyStep.createPwIsRequired)
     }
 //    private func emailTextFieldDidTap() {
 //        print("emailTextFieldDidTap")
