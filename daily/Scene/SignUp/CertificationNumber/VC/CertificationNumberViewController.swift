@@ -45,22 +45,22 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
         $0.numberOfLines = 2
     }
     
-    private lazy var certificationNumberTextField = DPOTPView().then {
-        $0.count = 4
-        $0.spacing = 16
-        $0.fontTextField = UIFont.systemFont(
-            ofSize: 24,
-            weight: .semibold
-        )
-        $0.backGroundColorTextField = UIColor(
-            red: 1.00,
-            green: 245/255,
-            blue: 247/255,
-            alpha: 1.00
-        )
-        $0.cornerRadiusTextField = 20
-        $0.selectedBorderColorTextField = UIColor.mainColor
-    }
+//    private lazy var certificationNumberTextField = DPOTPView().then {
+//        $0.count = 4
+//        $0.spacing = 16
+//        $0.fontTextField = UIFont.systemFont(
+//            ofSize: 24,
+//            weight: .semibold
+//        )
+//        $0.backGroundColorTextField = UIColor(
+//            red: 1.00,
+//            green: 245/255,
+//            blue: 247/255,
+//            alpha: 1.00
+//        )
+//        $0.cornerRadiusTextField = 20
+//        $0.selectedBorderColorTextField = UIColor.mainColor
+//    }
     
     private lazy var reSendButton = UIButton().then {
         let text = NSAttributedString(string: "재전송")
@@ -79,7 +79,7 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
     }
     
     override func addView() {
-        [timerLabel,explainText,certificationNumberTextField,reSendButton].forEach {
+        [timerLabel,explainText,reSendButton].forEach {
             view.addSubview($0)
         }
     }
@@ -95,16 +95,16 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
             $0.top.equalTo(timerLabel.snp.bottom).offset(8)
         }
         
-        certificationNumberTextField.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(explainText.snp.bottom).offset(32)
-            $0.height.equalTo(60)
-            $0.width.equalTo(60)
-        }
+//        certificationNumberTextField.snp.makeConstraints {
+//            $0.centerX.equalToSuperview()
+//            $0.top.equalTo(explainText.snp.bottom).offset(32)
+//            $0.height.equalTo(60)
+//            $0.width.equalTo(60)
+//        }
         
-        reSendButton.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(certificationNumberTextField.snp.bottom).offset(16)
-        }
+//        reSendButton.snp.makeConstraints {
+//            $0.centerX.equalToSuperview()
+//            $0.top.equalTo(certificationNumberTextField.snp.bottom).offset(16)
+//        }
     }
 }
