@@ -26,7 +26,7 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
             ofSize: 40,
             weight: .bold
         )
-        $0.tintColor = UIColor.black
+        $0.textColor = UIColor.black
     }
     
     private let explainText = UILabel().then {
@@ -36,10 +36,10 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
             weight: .regular
         )
         $0.textAlignment = .center
-        $0.tintColor = UIColor(
-            red: 183/255,
-            green: 158/255,
-            blue: 158/255,
+        $0.textColor = UIColor(
+            red: 108 / 255,
+            green: 80 / 255,
+            blue: 80 / 255,
             alpha: 1.00
         )
         $0.numberOfLines = 2
@@ -62,6 +62,7 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
         $0.cornerRadiusTextField = 20
         $0.selectedBorderWidthTextField = 1
         $0.selectedBorderColorTextField = UIColor.mainColor
+        $0.keyboardType = .numberPad
     }
     
     private lazy var reSendButton = UIButton().then {
