@@ -14,6 +14,7 @@
 		770D6C0829B5D2310085A250 /* CreateNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C0729B5D2310085A250 /* CreateNicknameViewModel.swift */; };
 		770D6C0A29B5D23D0085A250 /* CreateNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C0929B5D23D0085A250 /* CreateNicknameViewController.swift */; };
 		770D6C1929B733F50085A250 /* DPOTPView in Frameworks */ = {isa = PBXBuildFile; productRef = 770D6C1829B733F50085A250 /* DPOTPView */; };
+		770D6C1F29B850FE0085A250 /* DailyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C1E29B850FE0085A250 /* DailyAPI.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
@@ -55,6 +56,7 @@
 		770D6C0229B5B3DC0085A250 /* CertificationNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumberViewController.swift; sourceTree = "<group>"; };
 		770D6C0729B5D2310085A250 /* CreateNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewModel.swift; sourceTree = "<group>"; };
 		770D6C0929B5D23D0085A250 /* CreateNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewController.swift; sourceTree = "<group>"; };
+		770D6C1E29B850FE0085A250 /* DailyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAPI.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,38 @@
 				770D6C0929B5D23D0085A250 /* CreateNicknameViewController.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		770D6C1A29B850910085A250 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C1B29B850BE0085A250 /* DataSource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		770D6C1B29B850BE0085A250 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C1C29B850D80085A250 /* Remote */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		770D6C1C29B850D80085A250 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C1D29B850E20085A250 /* API */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		770D6C1D29B850E20085A250 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C1E29B850FE0085A250 /* DailyAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		77F07255291DDB6F007FE1DD /* Main */ = {
@@ -396,6 +430,7 @@
 		77F1F1952987CB8C00ED498E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				770D6C1A29B850910085A250 /* Data */,
 				77F1F1962987CB9B00ED498E /* Application */,
 			);
 			path = Sources;
@@ -533,6 +568,7 @@
 				77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */,
 				77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */,
 				770D6BF629B566120085A250 /* CreateEmailViewModel.swift in Sources */,
+				770D6C1F29B850FE0085A250 /* DailyAPI.swift in Sources */,
 				77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */,
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
