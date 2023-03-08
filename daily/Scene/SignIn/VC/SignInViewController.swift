@@ -73,6 +73,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         ])
         $0.layer.cornerRadius = 20
         $0.textColor = .black
+        $0.addLeftImage(UIImage(named: "emailIcon.svg")!, x: 20, y: 6.5)
     }
     
     private lazy var pwTextField = UITextField().then {
@@ -99,6 +100,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         $0.layer.cornerRadius = 20
         $0.textColor = .black
         $0.isSecureTextEntry = true
+        $0.addLeftImage(UIImage(named: "pwIcon.svg")!, x: 20, y: 5.5)
     }
     
     private lazy var forgotPwButton = UIButton().then {
