@@ -15,6 +15,7 @@
 		770D6C0A29B5D23D0085A250 /* CreateNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C0929B5D23D0085A250 /* CreateNicknameViewController.swift */; };
 		770D6C1929B733F50085A250 /* DPOTPView in Frameworks */ = {isa = PBXBuildFile; productRef = 770D6C1829B733F50085A250 /* DPOTPView */; };
 		770D6C1F29B850FE0085A250 /* DailyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C1E29B850FE0085A250 /* DailyAPI.swift */; };
+		770D6C2129B87D730085A250 /* DailyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C2029B87D730085A250 /* DailyTextField.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
@@ -57,6 +58,7 @@
 		770D6C0729B5D2310085A250 /* CreateNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewModel.swift; sourceTree = "<group>"; };
 		770D6C0929B5D23D0085A250 /* CreateNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknameViewController.swift; sourceTree = "<group>"; };
 		770D6C1E29B850FE0085A250 /* DailyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAPI.swift; sourceTree = "<group>"; };
+		770D6C2029B87D730085A250 /* DailyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTextField.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				77F0726429223303007FE1DD /* DailyToolBar.swift */,
 				77F0727929271195007FE1DD /* DailyNavigation.swift */,
 				77F0727B29288798007FE1DD /* DailyCalender.swift */,
+				770D6C2029B87D730085A250 /* DailyTextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */,
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
+				770D6C2129B87D730085A250 /* DailyTextField.swift in Sources */,
 				77F0727829271064007FE1DD /* DailyViewModel.swift in Sources */,
 				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
