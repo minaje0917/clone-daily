@@ -29,5 +29,25 @@ extension UIButton {
             bottom:-image.size.height, right: 0)
         imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + spacing), left:0,bottom:0, right: -titleSize.width)
         
-        }
+    }
+}
+
+extension UITabBarController {
+    func setTabBar() {
+        let mainVM = MainViewModel()
+//        let profile
+        let mainTab = MainViewController(mainVM)
+        
+        mainTab.tabBarItem = UITabBarItem(
+            title: "메인",
+            image: UIImage(named: "unmain.svg"),
+            selectedImage: UIImage(named: "selectMain.svg")
+        )
+        
+        // MARK:
+        tabBar.tintColor = UIColor.mainColor
+        tabBar.unselectedItemTintColor = UIColor.dailyLight
+        tabBar.backgroundColor = .white
+        self.hidesBottomBarWhenPushed = false
+    }
 }
