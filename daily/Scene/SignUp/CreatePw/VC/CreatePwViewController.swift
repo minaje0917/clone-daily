@@ -75,6 +75,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         $0.layer.cornerRadius = 20
         $0.textColor = .black
         $0.isSecureTextEntry = true
+        $0.leftPadding(width: 20)
     }
     
     private lazy var pwCheckTextField = UITextField().then {
@@ -100,7 +101,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         ])
         $0.layer.cornerRadius = 20
         $0.textColor = .black
-        $0.isSecureTextEntry = true
+        $0.leftPadding(width: 20)
     }
     
     private lazy var nextButton = UIButton().then {

@@ -75,6 +75,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
         $0.layer.cornerRadius = 20
         $0.textColor = .black
         $0.isSecureTextEntry = true
+        $0.leftPadding(width: 20)
     }
     
     private lazy var getNumButton = UIButton().then {
