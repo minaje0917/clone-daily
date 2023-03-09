@@ -38,10 +38,9 @@ class MainFlow: Flow {
     }
     
     private func coordinateToHome() -> FlowContributors {
-        let vm = MainViewModel()
-        let vc = MainViewController(vm)
+        let vc = TabBarViewController()
         self.rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+        return .one(flowContributor: .contribute(withNext: vc))
     }
     
     private func navigateToDaily() -> FlowContributors {

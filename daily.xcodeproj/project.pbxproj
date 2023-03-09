@@ -26,7 +26,7 @@
 		77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725A291DDBE2007FE1DD /* MainViewModel.swift */; };
 		77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725E29209BDF007FE1DD /* DailyShadow.swift */; };
 		77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726029209BF1007FE1DD /* DailyColor.swift */; };
-		77F0726529223303007FE1DD /* DailyToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726429223303007FE1DD /* DailyToolBar.swift */; };
+		77F0726529223303007FE1DD /* DailyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0726429223303007FE1DD /* DailyTabBar.swift */; };
 		77F072682922547F007FE1DD /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 77F072672922547F007FE1DD /* FSCalendar */; };
 		77F0727629271028007FE1DD /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0727529271028007FE1DD /* DailyViewController.swift */; };
 		77F0727829271064007FE1DD /* DailyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0727729271064007FE1DD /* DailyViewModel.swift */; };
@@ -73,7 +73,7 @@
 		77F0725A291DDBE2007FE1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		77F0725E29209BDF007FE1DD /* DailyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyShadow.swift; sourceTree = "<group>"; };
 		77F0726029209BF1007FE1DD /* DailyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyColor.swift; sourceTree = "<group>"; };
-		77F0726429223303007FE1DD /* DailyToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyToolBar.swift; sourceTree = "<group>"; };
+		77F0726429223303007FE1DD /* DailyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTabBar.swift; sourceTree = "<group>"; };
 		77F0727529271028007FE1DD /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		77F0727729271064007FE1DD /* DailyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewModel.swift; sourceTree = "<group>"; };
 		77F0727929271195007FE1DD /* DailyNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNavigation.swift; sourceTree = "<group>"; };
@@ -291,6 +291,14 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		770D6C3229B9CCE00085A250 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				77F0726429223303007FE1DD /* DailyTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		77F07255291DDB6F007FE1DD /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,7 +337,6 @@
 			children = (
 				77F0725E29209BDF007FE1DD /* DailyShadow.swift */,
 				77F0726029209BF1007FE1DD /* DailyColor.swift */,
-				77F0726429223303007FE1DD /* DailyToolBar.swift */,
 				77F0727929271195007FE1DD /* DailyNavigation.swift */,
 				77F0727B29288798007FE1DD /* DailyCalender.swift */,
 				770D6C2029B87D730085A250 /* DailyTextField.swift */,
@@ -395,6 +402,7 @@
 		77F13A65290AA74A00F7354A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				770D6C3229B9CCE00085A250 /* TabBar */,
 				770D6C2229B9A8030085A250 /* Auth */,
 				770D6C2529B9A8430085A250 /* Theme */,
 				770D6C2429B9A8380085A250 /* Profile */,
@@ -658,7 +666,7 @@
 				770D6C0829B5D2310085A250 /* CreateNicknameViewModel.swift in Sources */,
 				770D6C0329B5B3DC0085A250 /* CertificationNumberViewController.swift in Sources */,
 				770D6C0A29B5D23D0085A250 /* CreateNicknameViewController.swift in Sources */,
-				77F0726529223303007FE1DD /* DailyToolBar.swift in Sources */,
+				77F0726529223303007FE1DD /* DailyTabBar.swift in Sources */,
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				77F0727629271028007FE1DD /* DailyViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
