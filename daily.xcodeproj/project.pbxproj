@@ -20,6 +20,7 @@
 		770D6C2D29B9A9B70085A250 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C2C29B9A9B70085A250 /* ThemeViewModel.swift */; };
 		770D6C2F29B9A9DC0085A250 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C2E29B9A9DC0085A250 /* ProfileViewModel.swift */; };
 		770D6C3129B9A9E60085A250 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3029B9A9E60085A250 /* ProfileViewController.swift */; };
+		770D6C3429B9D8300085A250 /* DailyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3329B9D8300085A250 /* DailyLabel.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
@@ -67,6 +68,7 @@
 		770D6C2C29B9A9B70085A250 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		770D6C2E29B9A9DC0085A250 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		770D6C3029B9A9E60085A250 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		770D6C3329B9D8300085A250 /* DailyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLabel.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				77F0727929271195007FE1DD /* DailyNavigation.swift */,
 				77F0727B29288798007FE1DD /* DailyCalender.swift */,
 				770D6C2029B87D730085A250 /* DailyTextField.swift */,
+				770D6C3329B9D8300085A250 /* DailyLabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */,
 				77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */,
 				770D6BF629B566120085A250 /* CreateEmailViewModel.swift in Sources */,
+				770D6C3429B9D8300085A250 /* DailyLabel.swift in Sources */,
 				770D6C2B29B9A9AC0085A250 /* ThemeViewController.swift in Sources */,
 				770D6C1F29B850FE0085A250 /* DailyAPI.swift in Sources */,
 				77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */,

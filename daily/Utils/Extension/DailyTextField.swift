@@ -45,4 +45,13 @@ extension UITextField {
         leftView = iconContainerView
         leftViewMode = .always
     }
+    
+    func setBackGroundColor() {
+        backgroundColor = UIColor(
+            red: 255 / 255,
+            green: 245 / 255,
+            blue: 247 / 255,
+            alpha: 1.00
+        )
+    }
 }

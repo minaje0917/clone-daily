@@ -43,30 +43,15 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
             ofSize: 16,
             weight: .regular
         )
-        $0.textColor = UIColor(
-            red: 108 / 255,
-            green: 80 / 255,
-            blue: 80 / 255,
-            alpha: 1.00
-        )
+        $0.setSubTextColor()
     }
     
     private lazy var emailTextField = UITextField().then {
-        $0.backgroundColor = UIColor(
-            red: 255 / 255,
-            green: 245 / 255,
-            blue: 247 / 255,
-            alpha: 1.00
-        )
+        $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "이메일을 입력해 주세요.",
             attributes: [
-                .foregroundColor: UIColor(
-                    red: 183/255,
-                    green: 158/255,
-                    blue: 158/255,
-                    alpha: 1.00
-                ),
+                .foregroundColor: UIColor.dailyLight!,
                 .font: UIFont.systemFont(
                     ofSize: 16,
                     weight: .regular
@@ -89,12 +74,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
             weight: .semibold
         )
         $0.setTitleColor(
-            UIColor(
-                red: 255/255,
-                green: 255/255,
-                blue: 255/255,
-                alpha: 1.00
-            ),
+            UIColor.black,
             for: .normal
         )
         $0.backgroundColor = UIColor(
@@ -112,12 +92,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
             ofSize: 12,
             weight: .regular
         )
-        $0.textColor = UIColor(
-            red: 183/255,
-            green: 158/255,
-            blue: 158/255,
-            alpha: 1.00
-        )
+        $0.textColor = UIColor.dailyLight!
     }
 
     private lazy var backSignInButton = UIButton().then {

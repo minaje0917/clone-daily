@@ -52,6 +52,12 @@ class TabBarViewController: UITabBarController, Stepper{
         self.hidesBottomBarWhenPushed = false
         
         setViewControllers([navigationMain,navigationProfile,navigationTheme], animated: false)
+        setTabBarRound()
         
+    }
+    
+    private func setTabBarRound() {
+        tabBar.layer.cornerRadius = 16
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }

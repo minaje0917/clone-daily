@@ -36,12 +36,7 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
             weight: .regular
         )
         $0.textAlignment = .center
-        $0.textColor = UIColor(
-            red: 108 / 255,
-            green: 80 / 255,
-            blue: 80 / 255,
-            alpha: 1.00
-        )
+        $0.setSubTextColor()
         $0.numberOfLines = 2
     }
     
