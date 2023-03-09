@@ -74,7 +74,7 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
             weight: .semibold
         )
         $0.setTitleColor(
-            UIColor.black,
+            UIColor.white,
             for: .normal
         )
         $0.backgroundColor = UIColor(

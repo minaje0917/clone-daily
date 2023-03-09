@@ -74,7 +74,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
             weight: .semibold
         )
         $0.setTitleColor(
-            UIColor.black,
+            UIColor.white,
             for: .normal
         )
         $0.backgroundColor = UIColor(

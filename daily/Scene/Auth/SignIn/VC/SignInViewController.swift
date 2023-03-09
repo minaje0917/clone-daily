@@ -111,7 +111,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             weight: .semibold
         )
         $0.setTitleColor(
-            UIColor.black,
+            UIColor.white,
             for: .normal
         )
         $0.backgroundColor = UIColor(
