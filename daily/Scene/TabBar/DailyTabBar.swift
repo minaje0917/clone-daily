@@ -48,7 +48,7 @@ class TabBarViewController: UITabBarController, Stepper{
         // MARK:
         tabBar.tintColor = UIColor.mainColor
         tabBar.unselectedItemTintColor = UIColor.dailyLight
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.9)
         self.hidesBottomBarWhenPushed = false
         
         setViewControllers([navigationMain,navigationProfile,navigationTheme], animated: false)
@@ -57,7 +57,7 @@ class TabBarViewController: UITabBarController, Stepper{
     }
     
     private func setTabBarRound() {
-        tabBar.layer.cornerRadius = 16
+        tabBar.layer.cornerRadius = 24
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }

@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import SnapKit
+import Then
+import RxCocoa
+import RxSwift
 
 class ThemeViewController: BaseViewController<ThemeViewModel> {
 
@@ -13,5 +17,23 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
         super.viewDidLoad()
         view.backgroundColor = .yellow
     }
+    
+    private let theme = UIImageView().then {
+        $0.image = UIImage(named: "oceanFirstTheme.svg")
+        $0.contentMode = .scaleAspectFill
+    }
+    
+    override func addView() {
+        [theme].forEach {
+            view.addSubview($0)
+        }
+    }
 
+    override func setLayout() {
+        theme.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
+        }
+    }
 }
