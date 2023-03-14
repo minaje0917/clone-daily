@@ -25,19 +25,19 @@ class LoginFlow: Flow {
         guard let step = step as? DailyStep else { return .none }
         switch step {
         case .loginIsRequired:
-            return self.coordinateToLogin()
+            return coordinateToLogin()
         case .signInIsRequired:
-            return self.navigateToSignIn()
+            return navigateToSignIn()
         case .mainIsRequired:
             return .end(forwardToParentFlowWithStep: DailyStep.mainIsRequired)
         case .createPwIsRequired:
-            return self.navigateToCreatePw()
+            return navigateToCreatePw()
         case .createEmailIsRequired:
-            return self.navigateToCreateEmail()
+            return navigateToCreateEmail()
         case .certificationNumberIsRequired:
-            return self.navigationToCertificationNumber()
+            return navigationToCertificationNumber()
         case .createNicknameIsRequired:
-            return self.navigationToCreateNickname()
+            return navigationToCreateNickname()
         default:
             return .none
         }

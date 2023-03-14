@@ -20,6 +20,12 @@ enum DailyStep: Step {
     // Mark: Main
     case mainIsRequired
     
+    // Mark: Profile
+    case profileIsRequired
+    
+    // Mark: Theme
+    case themeIsRequired
+    
     // Mark: SignIn
     case signInIsRequired
     

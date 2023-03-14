@@ -10,7 +10,7 @@ import Foundation
 import RxFlow
 import RxCocoa
 
-class TabBarViewController: UITabBarController, Stepper{
+class TabBarViewController: UITabBarController, Stepper {
     var steps = PublishRelay<Step>()
     
     override func viewDidLoad() {

@@ -24,10 +24,16 @@ class MainFlow: Flow {
         guard let step = step as? DailyStep else { return .none }
         switch step {
         case .mainIsRequired:
-            return self.coordinateToHome()
+            return coordinateToHome()
             
         case .dailyIsRequired:
-            return self.navigateToDaily()
+            return navigateToDaily()
+            
+        case .profileIsRequired:
+            return navigateToProfile()
+            
+        case .themeIsRequired:
+            return navigateToTheme()
             
         case .loginIsRequired:
             return .end(forwardToParentFlowWithStep: DailyStep.loginIsRequired)
@@ -39,13 +45,27 @@ class MainFlow: Flow {
     
     private func coordinateToHome() -> FlowContributors {
         let vc = TabBarViewController()
-        self.rootViewController.pushViewController(vc, animated: true)
+        self.rootViewController.setViewControllers([vc], animated: true)
         return .one(flowContributor: .contribute(withNext: vc))
     }
     
     private func navigateToDaily() -> FlowContributors {
         let vm = DailyViewModel()
         let vc = DailyViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigateToProfile() -> FlowContributors {
+        let vm = ProfileViewModel()
+        let vc = ProfileViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigateToTheme() -> FlowContributors {
+        let vm = ThemeViewModel()
+        let vc = ThemeViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
