@@ -6,12 +6,24 @@
 //
 import RxFlow
 import UIKit
+import RxCocoa
+import RxSwift
+
+struct MainStepper: Stepper{
+    var steps = PublishRelay<Step>()
+
+    var initialStep: Step{
+        return DailyStep.mainIsRequired
+    }
+}
 
 class MainFlow: Flow {
 
     var root: Presentable {
         return self.rootViewController
     }
+    
+    var stepper: MainStepper?
     
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
@@ -32,6 +44,9 @@ class MainFlow: Flow {
         case .dailyIsRequired:
             return coordinateToDaily()
             
+        case .mainIsRequired:
+            return coordinateToMain()
+            
         default:
             return .none
         }
@@ -40,6 +55,13 @@ class MainFlow: Flow {
     private func coordinateToDaily() -> FlowContributors {
         let vm = DailyViewModel()
         let vc = DailyViewController(vm)
+        self.rootViewController.setViewControllers([vc], animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToMain() -> FlowContributors {
+        let vm = MainViewModel()
+        let vc = MainViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

@@ -25,9 +25,9 @@ final class TabBarFlow: Flow {
         return viewController
     }()
     
-    private let mainFlow: MainFlow
-    private let profileFlow: ProfileFlow
-    private let themeFlow: ThemeFlow
+    private var mainFlow = MainFlow()
+    private var profileFlow = ProfileFlow()
+    private var themeFlow = ThemeFlow()
     
     init() {}
     
@@ -77,9 +77,9 @@ private extension TabBarFlow {
 
         }
         return .multiple(flowContributors: [
-            .contribute(withNextPresentable: mainFlow, withNextStepper: mainFlow.stepper),
-            .contribute(withNextPresentable: profileFlow, withNextStepper: profileFlow.stepper),
-            .contribute(withNextPresentable: themeFlow, withNextStepper: themeFlow.stepper)
+            .contribute(withNextPresentable: mainFlow, withNextStepper: mainFlow.stepper!),
+            .contribute(withNextPresentable: profileFlow, withNextStepper: profileFlow.stepper!),
+            .contribute(withNextPresentable: themeFlow, withNextStepper: themeFlow.stepper!)
         ])
     }
 }

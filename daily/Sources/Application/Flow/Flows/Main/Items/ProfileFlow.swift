@@ -6,12 +6,24 @@
 //
 import RxFlow
 import UIKit
+import RxSwift
+import RxCocoa
+
+struct ProfileStepper: Stepper{
+    var steps = PublishRelay<Step>()
+
+    var initialStep: Step{
+        return DailyStep.profileIsRequired
+    }
+}
 
 class ProfileFlow: Flow {
 
     var root: Presentable {
         return self.rootViewController
     }
+    
+    var stepper: ProfileStepper?
     
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
@@ -23,20 +35,17 @@ class ProfileFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }
         switch step {
-//        case .mainTabBarIsRequired:
-//            return .end(forwardToParentFlowWithStep: DailyStep.mainTabBarIsRequired)
-//
-//        case .loginIsRequired:
-//            return .end(forwardToParentFlowWithStep: DailyStep.loginIsRequired)
-//
+        case .profileIsRequired:
+            return coordinateToProfile()
         default:
             return .none
         }
     }
     
-//    private func coordinateToDaily() -> FlowContributors {
-//        let vc = DailyTabBarViewController()
-//        self.rootViewController.setViewControllers([vc], animated: true)
-//        return .one(flowContributor: .contribute(withNext: vc))
-//    }
+    private func coordinateToProfile() -> FlowContributors {
+        let vm = ProfileViewModel()
+        let vc = ProfileViewController(vm)
+        self.rootViewController.setViewControllers([vc], animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
 }

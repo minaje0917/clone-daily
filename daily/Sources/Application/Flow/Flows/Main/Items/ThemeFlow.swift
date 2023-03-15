@@ -6,12 +6,24 @@
 //
 import RxFlow
 import UIKit
+import RxCocoa
+import RxSwift
+
+struct ThemeStepper: Stepper{
+    var steps = PublishRelay<Step>()
+
+    var initialStep: Step{
+        return DailyStep.themeIsRequired
+    }
+}
 
 class ThemeFlow: Flow {
 
     var root: Presentable {
         return self.rootViewController
     }
+    
+    var stepper: ThemeStepper?
     
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
@@ -23,20 +35,17 @@ class ThemeFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }
         switch step {
-//        case .mainTabBarIsRequired:
-//            return .end(forwardToParentFlowWithStep: DailyStep.mainTabBarIsRequired)
-//
-//        case .loginIsRequired:
-//            return .end(forwardToParentFlowWithStep: DailyStep.loginIsRequired)
-//
+        case .themeIsRequired:
+            return coordinateToTheme()
         default:
             return .none
         }
     }
     
-//    private func coordinateToDaily() -> FlowContributors {
-//        let vc = DailyTabBarViewController()
-//        self.rootViewController.setViewControllers([vc], animated: true)
-//        return .one(flowContributor: .contribute(withNext: vc))
-//    }
+    private func coordinateToTheme() -> FlowContributors {
+        let vm = ThemeViewModel()
+        let vc = ThemeViewController(vm)
+        self.rootViewController.setViewControllers([vc], animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
 }

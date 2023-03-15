@@ -11,24 +11,27 @@ enum DailyStep: Step {
     // Mark: Login
     case loginIsRequired
     
-    // Mark: SignUp
+    // MARK: SignUp
     case createPwIsRequired
     case createEmailIsRequired
     case certificationNumberIsRequired
     case createNicknameIsRequired
     
-    // Mark: Main
+    // MARK: Main
     case mainTabBarIsRequired
     
-    // Mark: Profile
+    // MARK: Profile
     case profileIsRequired
     
-    // Mark: Theme
+    // MARK: Theme
     case themeIsRequired
     
-    // Mark: SignIn
+    // MARK: SignIn
     case signInIsRequired
     
-    // Mark: Daily
+    // MARK: Daily
     case dailyIsRequired
+    
+    // MARK: Main
+    case mainIsRequired
 }
