@@ -25,80 +25,132 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         viewModel.transVC(input: input)
     }
 
-    let background = UIImageView().then{
-        $0.image = UIImage(named: "IntroBackground.png")
+    private let backgroundImage = UIImageView().then{
+        $0.image = UIImage(named: "DailyIntro.svg")
+        $0.contentMode = .scaleAspectFill
     }
     
-    let mainText = UILabel().then {
-        $0.text = "DAILY"
-        $0.font = UIFont.systemFont(ofSize: 36, weight: .heavy)
-        $0.textColor = UIColor.mainColor
+    private let dailyLogo = UIImageView().then {
+        $0.image = UIImage(named: "DailyLogo.svg")
     }
     
-    let signupText = UILabel().then {
-        $0.text = "Sign Up"
-        $0.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-        $0.textColor = .black
+    private let mainExplainText = UILabel().then {
+        $0.text = "매일매일 성장하는 일기장"
+        $0.font = UIFont.systemFont(
+            ofSize: 18,
+            weight: .bold
+        )
+        $0.textColor = .white
     }
     
-    let nowText = UILabel().then {
-        $0.text = "it's Daily Sign Up now"
-        $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        $0.textColor = UIColor(red: 165 / 255, green: 165 / 255, blue: 165 / 255, alpha: 1.00)
+    private let subExplainText = UILabel().then {
+        $0.text = "매일 일기를 작성하고\n점점 꾸며지는 테마를 감상해 보세요!"
+        $0.textAlignment = .center
+        $0.numberOfLines = 2
+        $0.font = UIFont.systemFont(
+            ofSize: 16,
+            weight: .regular
+        )
+        $0.textColor = UIColor(
+            red: 249 / 255,
+            green: 246 / 255,
+            blue: 246 / 255,
+            alpha: 1.00
+        )
     }
     
-    lazy var signInButton = UIButton().then {
-        let text = NSAttributedString(string: "Login")
-        $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.setTitleColor(UIColor(red: 191/255, green: 74/255, blue: 160/255, alpha: 1.00), for: .normal)
-        $0.backgroundColor = UIColor(red: 250/255, green: 194/255, blue: 215/255, alpha: 1.00)
-        $0.layer.cornerRadius = 30
+    private lazy var signUpButton = UIButton().then {
+        let text = NSAttributedString(string: "회원가입")
+        $0.setAttributedTitle(
+            text,
+            for: .normal
+        )
+        $0.titleLabel?.font = UIFont.systemFont(
+            ofSize: 16,
+            weight: .semibold
+        )
+        $0.setTitleColor(
+            UIColor.white,
+            for: .normal
+        )
+        $0.backgroundColor = UIColor.mainColor
+        $0.layer.cornerRadius = 20
     }
     
-    lazy var signUpButton = UIButton().then {
-        let text = NSAttributedString(string: "Sign Up")
-        $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1.00), for: .normal)
-        $0.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
-        $0.layer.cornerRadius = 30
+    private let haveAccountText = UILabel().then {
+        $0.text = "계정이 있으신가요?"
+        $0.font = UIFont.systemFont(
+            ofSize: 16,
+            weight: .regular
+        )
+        $0.textColor = UIColor(
+            red: 238/255,
+            green: 232/255,
+            blue: 232/255,
+            alpha: 1.00
+        )
+    }
+    
+    private lazy var signInButton = UIButton().then {
+        let text = NSAttributedString(string: "로그인")
+        $0.setAttributedTitle(
+            text,
+            for: .normal
+        )
+        $0.titleLabel?.font = UIFont.systemFont(
+            ofSize: 16,
+            weight: .bold
+        )
+        $0.setTitleColor(
+            UIColor.mainColor,
+            for: .normal
+        )
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
     }
     
     override func addView() {
-        [background,mainText,signupText,nowText,signInButton,signUpButton].forEach {
+        [backgroundImage,dailyLogo,mainExplainText,subExplainText,signUpButton,haveAccountText,signInButton].forEach {
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
-        background.snp.makeConstraints {
+        backgroundImage.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().offset(0)
-            $0.bottom.equalTo(view.snp.bottom).offset(0)
+            $0.top.bottom.equalToSuperview().offset(0)
         }
-        mainText.snp.makeConstraints {
+        dailyLogo.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo((bounds.height) / 10.68)
+            $0.top.equalTo((bounds.height) / 6.19)
         }
-        signupText.snp.makeConstraints {
+        mainExplainText.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo((bounds.height) / 1.60)
+            $0.top.equalTo(dailyLogo.snp.bottom).offset(24)
         }
-        nowText.snp.makeConstraints {
+        subExplainText.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(signupText.snp.bottom).offset(4)
-        }
-        signInButton.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.leading.equalTo(view.snp.leading).offset(16)
-            $0.top.equalTo(nowText.snp.bottom).offset((bounds.height) / 16.57)
-            $0.height.equalTo((bounds.height) / 14.5)
+            $0.top.equalTo(mainExplainText.snp.bottom).offset(16)
         }
         signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.leading.equalTo(view.snp.leading).offset(16)
-            $0.top.equalTo(signInButton.snp.bottom).offset(12)
-            $0.height.equalTo((bounds.height) / 14.5)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(subExplainText.snp.bottom).offset((bounds.height) / 2.84)
+            $0.height.equalTo(60)
+        }
+        haveAccountText.snp.makeConstraints {
+            $0.leading.equalTo(view.snp.leading).inset((bounds.width) / 3.98)
+            $0.top.equalTo(signUpButton.snp.bottom).offset(16)
+            $0.height.equalTo(19)
+        }
+        signInButton.snp.makeConstraints {
+            $0.leading.equalTo(haveAccountText.snp.trailing).offset(8)
+            $0.top.equalTo(signUpButton.snp.bottom).offset(16)
+            $0.height.equalTo(19)
         }
     }
 
