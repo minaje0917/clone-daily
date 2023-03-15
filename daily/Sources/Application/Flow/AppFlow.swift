@@ -43,7 +43,7 @@ final class AppFlow: Flow {
         switch step {
         case .loginIsRequired:
             return coordinateToLogin()
-        case .mainIsRequired:
+        case .mainTabBarIsRequired:
             return coordinateToHome()
         default:
             return .none
@@ -63,14 +63,19 @@ final class AppFlow: Flow {
     }
     
     private func coordinateToHome() -> FlowContributors {
-        let flow = MainFlow()
-        Flows.use(flow, when: .created) { (root) in
+        let flow = TabBarFlow()
+        Flows.use(
+            flow,
+            when: .created
+        ) { [unowned self] root in
             self.window.rootViewController = root
         }
         return .one(
             flowContributor: .contribute(
                 withNextPresentable: flow,
-                withNextStepper: OneStepper(withSingleStep: DailyStep.mainIsRequired)
+                withNextStepper: OneStepper(
+                    withSingleStep: DailyStep.mainTabBarIsRequired
+                )
         ))
     }
     

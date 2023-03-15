@@ -21,6 +21,9 @@
 		770D6C2F29B9A9DC0085A250 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C2E29B9A9DC0085A250 /* ProfileViewModel.swift */; };
 		770D6C3129B9A9E60085A250 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3029B9A9E60085A250 /* ProfileViewController.swift */; };
 		770D6C3429B9D8300085A250 /* DailyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3329B9D8300085A250 /* DailyLabel.swift */; };
+		770D6C3C29C15D230085A250 /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3B29C15D230085A250 /* TabBarFlow.swift */; };
+		770D6C3E29C15D380085A250 /* ProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3D29C15D380085A250 /* ProfileFlow.swift */; };
+		770D6C4029C15D460085A250 /* ThemeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3F29C15D460085A250 /* ThemeFlow.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* MainViewController.swift */; };
@@ -69,6 +72,9 @@
 		770D6C2E29B9A9DC0085A250 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		770D6C3029B9A9E60085A250 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		770D6C3329B9D8300085A250 /* DailyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLabel.swift; sourceTree = "<group>"; };
+		770D6C3B29C15D230085A250 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
+		770D6C3D29C15D380085A250 /* ProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlow.swift; sourceTree = "<group>"; };
+		770D6C3F29C15D460085A250 /* ThemeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFlow.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +305,33 @@
 				77F0726429223303007FE1DD /* DailyTabBar.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		770D6C3929C15CCC0085A250 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C3B29C15D230085A250 /* TabBarFlow.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		770D6C3A29C15CE00085A250 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				77CB722B2994E46900FB2336 /* MainFlow.swift */,
+				770D6C3D29C15D380085A250 /* ProfileFlow.swift */,
+				770D6C3F29C15D460085A250 /* ThemeFlow.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		770D6C4129C15D590085A250 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				770D6C3929C15CCC0085A250 /* TabBar */,
+				770D6C3A29C15CE00085A250 /* Items */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		77F07255291DDB6F007FE1DD /* Main */ = {
@@ -541,8 +574,8 @@
 		77F1F1982987CBC200ED498E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				770D6C4129C15D590085A250 /* Main */,
 				77C22EC0298916AF004CC9EC /* LoginFlow.swift */,
-				77CB722B2994E46900FB2336 /* MainFlow.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -647,6 +680,7 @@
 				77F0727C29288798007FE1DD /* DailyCalender.swift in Sources */,
 				77F1F1942987CABF00ED498E /* DailyStep.swift in Sources */,
 				77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */,
+				770D6C4029C15D460085A250 /* ThemeFlow.swift in Sources */,
 				77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */,
 				77F07259291DDBD8007FE1DD /* MainViewController.swift in Sources */,
 				770D6BF629B566120085A250 /* CreateEmailViewModel.swift in Sources */,
@@ -661,6 +695,7 @@
 				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
+				770D6C3E29C15D380085A250 /* ProfileFlow.swift in Sources */,
 				770D6BF829B566470085A250 /* CreateEmailViewController.swift in Sources */,
 				770D6BFD29B5B3A50085A250 /* CertificationNumberViewModel.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* MainViewModel.swift in Sources */,
@@ -672,6 +707,7 @@
 				770D6C0A29B5D23D0085A250 /* CreateNicknameViewController.swift in Sources */,
 				77F0726529223303007FE1DD /* DailyTabBar.swift in Sources */,
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
+				770D6C3C29C15D230085A250 /* TabBarFlow.swift in Sources */,
 				77F0727629271028007FE1DD /* DailyViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
 				77F1F1902986E3C000ED498E /* AppFlow.swift in Sources */,

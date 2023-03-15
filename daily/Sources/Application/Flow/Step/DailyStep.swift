@@ -18,7 +18,7 @@ enum DailyStep: Step {
     case createNicknameIsRequired
     
     // Mark: Main
-    case mainIsRequired
+    case mainTabBarIsRequired
     
     // Mark: Profile
     case profileIsRequired

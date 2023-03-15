@@ -48,11 +48,6 @@ class MainViewController: BaseViewController<MainViewModel>{
     let toolBarLine = UIView().then {
         $0.backgroundColor = UIColor(red: 160/255, green: 160/255, blue: 160/255, alpha: 1.0)
     }
-    
-    @objc func handleCalender() {
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        print(calender.date)
-    }
 
     override func addView() {
         [springBackground,toolBarLine,underView,calender].forEach {

@@ -28,8 +28,8 @@ class LoginFlow: Flow {
             return coordinateToLogin()
         case .signInIsRequired:
             return navigateToSignIn()
-        case .mainIsRequired:
-            return .end(forwardToParentFlowWithStep: DailyStep.mainIsRequired)
+        case .mainTabBarIsRequired:
+            return .end(forwardToParentFlowWithStep: DailyStep.mainTabBarIsRequired)
         case .createPwIsRequired:
             return navigateToCreatePw()
         case .createEmailIsRequired:

@@ -41,7 +41,7 @@ final class SignInViewModel: BaseViewModel, Stepper {
 //    }
     
     private func pushMainVC() {
-        self.steps.accept(DailyStep.mainIsRequired)
+        self.steps.accept(DailyStep.mainTabBarIsRequired)
     }
     private func pushCreatePwVC() {
         self.steps.accept(DailyStep.createPwIsRequired)

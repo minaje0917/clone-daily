@@ -33,7 +33,7 @@ final class CreateNicknameViewModel: BaseViewModel, Stepper {
     }
     
     private func pushMainVC() {
-        self.steps.accept(DailyStep.mainIsRequired)
+        self.steps.accept(DailyStep.mainTabBarIsRequired)
     }
     private func backSignInButtonTap() {
         self.steps.accept(DailyStep.signInIsRequired)
