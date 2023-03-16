@@ -23,7 +23,7 @@ class ThemeFlow: Flow {
         return self.rootViewController
     }
     
-    var stepper: ThemeStepper?
+    var stepper = ThemeStepper()
     
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()

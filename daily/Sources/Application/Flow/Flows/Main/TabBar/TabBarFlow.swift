@@ -17,13 +17,16 @@ final class TabBarFlow: Flow {
     }
     
     var root: Presentable {
-        return self.rootViewController
+        return self.rootVC
     }
     
-    private lazy var rootViewController: UINavigationController = {
-        let viewController = UINavigationController()
-        return viewController
-    }()
+    
+    private let rootVC = DailyTabBarViewController()
+    
+//    private lazy var rootViewController: UINavigationController = {
+//        let viewController = UINavigationController()
+//        return viewController
+//    }()
     
     private var mainFlow = MainFlow()
     private var profileFlow = ProfileFlow()
@@ -48,10 +51,11 @@ private extension TabBarFlow {
     func coordinateToMainTabbar() -> FlowContributors {
         Flows.use(
             mainFlow, profileFlow, themeFlow,
-            when: .created
+            when: .ready
         ) { [unowned self] (root1: UINavigationController,
                             root2: UINavigationController,
                             root3: UINavigationController) in
+            
             let mainItem = UITabBarItem(
                 title: "메인",
                 image: UIImage(named: "unmain.svg"),
@@ -73,13 +77,13 @@ private extension TabBarFlow {
             root2.tabBarItem = profileItem
             root3.tabBarItem = themeItem
             
-            self.rootViewController.setViewControllers([root1, root2, root3], animated: true)
+            self.rootVC.setViewControllers([root1,root2,root3], animated: true)
 
         }
         return .multiple(flowContributors: [
-            .contribute(withNextPresentable: mainFlow, withNextStepper: mainFlow.stepper!),
-            .contribute(withNextPresentable: profileFlow, withNextStepper: profileFlow.stepper!),
-            .contribute(withNextPresentable: themeFlow, withNextStepper: themeFlow.stepper!)
+            .contribute(withNextPresentable: mainFlow, withNextStepper: mainFlow.stepper),
+            .contribute(withNextPresentable: profileFlow, withNextStepper: profileFlow.stepper),
+            .contribute(withNextPresentable: themeFlow, withNextStepper: themeFlow.stepper)
         ])
     }
 }

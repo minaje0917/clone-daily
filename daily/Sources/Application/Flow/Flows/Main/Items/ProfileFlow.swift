@@ -23,7 +23,7 @@ class ProfileFlow: Flow {
         return self.rootViewController
     }
     
-    var stepper: ProfileStepper?
+    var stepper = ProfileStepper()
     
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()

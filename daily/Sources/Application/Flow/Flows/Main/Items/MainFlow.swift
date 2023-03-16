@@ -23,7 +23,7 @@ class MainFlow: Flow {
         return self.rootViewController
     }
     
-    var stepper: MainStepper?
+    var stepper = MainStepper()
     
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
