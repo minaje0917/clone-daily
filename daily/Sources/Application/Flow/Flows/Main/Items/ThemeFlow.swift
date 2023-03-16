@@ -45,7 +45,7 @@ class ThemeFlow: Flow {
     private func coordinateToTheme() -> FlowContributors {
         let vm = ThemeViewModel()
         let vc = ThemeViewController(vm)
-        self.rootViewController.setViewControllers([vc], animated: true)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }

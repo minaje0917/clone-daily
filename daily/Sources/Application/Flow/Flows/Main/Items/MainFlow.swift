@@ -55,14 +55,14 @@ class MainFlow: Flow {
     private func coordinateToDaily() -> FlowContributors {
         let vm = DailyViewModel()
         let vc = DailyViewController(vm)
-        self.rootViewController.setViewControllers([vc], animated: true)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
     private func coordinateToMain() -> FlowContributors {
         let vm = MainViewModel()
         let vc = MainViewController(vm)
-        self.rootViewController.setViewControllers([vc], animated: true)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }
