@@ -22,7 +22,8 @@ class SignInViewController: BaseViewController<SignInViewModel>{
     private func bindViewModel() {
         let input = SignInViewModel.Input(
             signInButtonTap: signInButton.rx.tap.asObservable(),
-            backSignUpButtonTap: backSignUpButton.rx.tap.asObservable()
+            backSignUpButtonTap: backSignUpButton.rx.tap.asObservable(),
+            emailTextFieldTap: emailTextField.rx.controlEvent(.touchDown).asObservable()
         )
         viewModel.transVC(input: input)
     }
@@ -45,7 +46,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         $0.setSubTextColor()
     }
     
-    private lazy var emailTextField = UITextField().then {
+    lazy var emailTextField = UITextField().then {
         $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "이메일을 입력해 주세요.",

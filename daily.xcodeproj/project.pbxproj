@@ -359,12 +359,14 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		77F0725C29209BB7007FE1DD /* Utils */ = {
+		77F0725C29209BB7007FE1DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A48290AA4E100F7354A /* Assets.xcassets */,
+				77F13A4A290AA4E100F7354A /* LaunchScreen.storyboard */,
 				77F0725D29209BBF007FE1DD /* Extension */,
 			);
-			path = Utils;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		77F0725D29209BBF007FE1DD /* Extension */ = {
@@ -425,17 +427,13 @@
 			isa = PBXGroup;
 			children = (
 				77F1F1952987CB8C00ED498E /* Sources */,
-				77F0725C29209BB7007FE1DD /* Utils */,
-				77F13A66290AA75200F7354A /* App */,
-				77F13A65290AA74A00F7354A /* Scene */,
-				77F13A48290AA4E100F7354A /* Assets.xcassets */,
-				77F13A4A290AA4E100F7354A /* LaunchScreen.storyboard */,
-				77F13A4D290AA4E100F7354A /* Info.plist */,
+				77F0725C29209BB7007FE1DD /* Resources */,
+				77F13A66290AA75200F7354A /* Support */,
 			);
 			path = daily;
 			sourceTree = "<group>";
 		};
-		77F13A65290AA74A00F7354A /* Scene */ = {
+		77F13A65290AA74A00F7354A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				770D6C3229B9CCE00085A250 /* TabBar */,
@@ -446,14 +444,15 @@
 				77F07255291DDB6F007FE1DD /* Main */,
 				77F13A6C290AA78500F7354A /* Base */,
 			);
-			path = Scene;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
-		77F13A66290AA75200F7354A /* App */ = {
+		77F13A66290AA75200F7354A /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A4D290AA4E100F7354A /* Info.plist */,
 			);
-			path = App;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		77F13A67290AA75700F7354A /* Intro */ = {
@@ -545,6 +544,7 @@
 		77F1F1952987CB8C00ED498E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				77F13A65290AA74A00F7354A /* Presentation */,
 				770D6C1A29B850910085A250 /* Data */,
 				77F1F1962987CB9B00ED498E /* Application */,
 			);
