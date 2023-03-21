@@ -61,6 +61,18 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         )
     }
     
+    private let topStackView = UIStackView().then {
+        $0.spacing = 16
+        $0.axis = .vertical
+        $0.alignment = .center
+    }
+    
+    private let bottomStackView = UIStackView().then {
+        $0.spacing = 8
+        $0.axis = .horizontal
+        $0.alignment = .center
+    }
+    
     private lazy var signUpButton = UIButton().then {
         let text = NSAttributedString(string: "회원가입")
         $0.setAttributedTitle(
@@ -116,14 +128,20 @@ class IntroViewController: BaseViewController<IntroViewModel>{
     }
     
     override func addView() {
-        [backgroundImage,dailyLogo,mainExplainText,subExplainText,signUpButton,haveAccountText,signInButton].forEach {
+        [backgroundImage,dailyLogo,topStackView,bottomStackView,signUpButton].forEach {
             view.addSubview($0)
+        }
+        [mainExplainText,subExplainText].forEach {
+            topStackView.addArrangedSubview($0)
+        }
+        [haveAccountText,signInButton].forEach {
+            bottomStackView.addArrangedSubview($0)
         }
     }
     
     private func setAnimation() {
         UIView.animate(views: [
-            dailyLogo, mainExplainText, subExplainText,signUpButton, haveAccountText, signInButton
+            dailyLogo, mainExplainText, subExplainText, signUpButton,haveAccountText, signInButton
         ], animations: [
             AnimationType.from(direction: .bottom, offset: 100)
         ], initialAlpha: 0, finalAlpha: 1, delay: 0.3, duration: 1.25, options: .curveEaseInOut)
@@ -138,29 +156,19 @@ class IntroViewController: BaseViewController<IntroViewModel>{
             $0.centerX.equalToSuperview()
             $0.top.equalTo((bounds.height) / 6.19)
         }
-        mainExplainText.snp.makeConstraints {
+        topStackView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(dailyLogo.snp.bottom).offset(24)
         }
-        subExplainText.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(mainExplainText.snp.bottom).offset(16)
+        bottomStackView.snp.makeConstraints {
+            $0.trailing.equalTo(view.snp.trailing).inset((bounds.width) / 3.86)
+            $0.bottom.equalToSuperview().inset((bounds.height) / 7.12)
         }
         signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.top.equalTo(subExplainText.snp.bottom).offset((bounds.height) / 2.84)
+            $0.top.equalTo(topStackView.snp.bottom).offset((bounds.height) / 2.8)
             $0.height.equalTo(60)
-        }
-        haveAccountText.snp.makeConstraints {
-            $0.leading.equalTo(view.snp.leading).inset((bounds.width) / 3.98)
-            $0.top.equalTo(signUpButton.snp.bottom).offset(16)
-            $0.height.equalTo(19)
-        }
-        signInButton.snp.makeConstraints {
-            $0.leading.equalTo(haveAccountText.snp.trailing).offset(8)
-            $0.top.equalTo(signUpButton.snp.bottom).offset(16)
-            $0.height.equalTo(19)
         }
     }
 
