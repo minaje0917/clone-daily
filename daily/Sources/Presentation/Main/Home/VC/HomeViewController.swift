@@ -11,7 +11,7 @@ import SnapKit
 import FSCalendar
 import RxCocoa
 
-class MainViewController: BaseViewController<MainViewModel>{
+class HomeViewController: BaseViewController<HomeViewModel>{
     let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {

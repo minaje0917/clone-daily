@@ -11,7 +11,7 @@ import UIKit
 final class TabBarFlow: Flow {
     
     enum TabIndex: Int {
-        case main = 0
+        case home = 0
         case profile = 1
         case theme = 2
     }
@@ -28,7 +28,7 @@ final class TabBarFlow: Flow {
 //        return viewController
 //    }()
     
-    private var mainFlow = MainFlow()
+    private var homeFlow = HomeFlow()
     private var profileFlow = ProfileFlow()
     private var themeFlow = ThemeFlow()
     
@@ -50,7 +50,7 @@ final class TabBarFlow: Flow {
 private extension TabBarFlow {
     func coordinateToMainTabbar() -> FlowContributors {
         Flows.use(
-            mainFlow, profileFlow, themeFlow,
+            homeFlow, profileFlow, themeFlow,
             when: .ready
         ) { [unowned self] (root1: UINavigationController,
                             root2: UINavigationController,
@@ -81,7 +81,7 @@ private extension TabBarFlow {
 
         }
         return .multiple(flowContributors: [
-            .contribute(withNextPresentable: mainFlow, withNextStepper: mainFlow.stepper),
+            .contribute(withNextPresentable: homeFlow, withNextStepper: homeFlow.stepper),
             .contribute(withNextPresentable: profileFlow, withNextStepper: profileFlow.stepper),
             .contribute(withNextPresentable: themeFlow, withNextStepper: themeFlow.stepper)
         ])

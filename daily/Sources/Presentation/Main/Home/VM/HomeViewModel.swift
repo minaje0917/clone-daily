@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import RxFlow
 
-class MainViewModel: BaseViewModel, Stepper {
+class HomeViewModel: BaseViewModel, Stepper {
     var steps = PublishRelay<Step>()
     
     func pushDailyVC() {

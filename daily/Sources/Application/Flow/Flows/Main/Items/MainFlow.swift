@@ -17,7 +17,7 @@ struct MainStepper: Stepper{
     }
 }
 
-class MainFlow: Flow {
+class HomeFlow: Flow {
 
     var root: Presentable {
         return self.rootViewController
@@ -45,7 +45,7 @@ class MainFlow: Flow {
             return coordinateToDaily()
             
         case .mainIsRequired:
-            return coordinateToMain()
+            return coordinateToHome()
             
         default:
             return .none
@@ -59,9 +59,9 @@ class MainFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
-    private func coordinateToMain() -> FlowContributors {
-        let vm = MainViewModel()
-        let vc = MainViewController(vm)
+    private func coordinateToHome() -> FlowContributors {
+        let vm = HomeViewModel()
+        let vc = HomeViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

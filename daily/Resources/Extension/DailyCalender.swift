@@ -9,7 +9,7 @@ import UIKit
 import FSCalendar
 import RxFlow
 
-extension MainViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
+extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
 //        var didSelectDate = dateFormatter.string(from: date)
