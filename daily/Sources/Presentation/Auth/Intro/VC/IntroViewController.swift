@@ -9,12 +9,14 @@ import UIKit
 import Then
 import SnapKit
 import RxCocoa
+import ViewAnimator
 
 class IntroViewController: BaseViewController<IntroViewModel>{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        setAnimation()
         self.navigationItem.backButton(title: "")
     }
     private func bindViewModel() {
@@ -117,6 +119,14 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         [backgroundImage,dailyLogo,mainExplainText,subExplainText,signUpButton,haveAccountText,signInButton].forEach {
             view.addSubview($0)
         }
+    }
+    
+    private func setAnimation() {
+        UIView.animate(views: [
+            dailyLogo, mainExplainText, subExplainText,signUpButton, haveAccountText, signInButton
+        ], animations: [
+            AnimationType.from(direction: .bottom, offset: 100)
+        ], initialAlpha: 0, finalAlpha: 1, delay: 0.3, duration: 1.25, options: .curveEaseInOut)
     }
     
     override func setLayout() {
