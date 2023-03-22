@@ -128,7 +128,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
     }
     
     override func addView() {
-        [backgroundImage,dailyLogo,topStackView,bottomStackView,signUpButton].forEach {
+        [backgroundImage,dailyLogo,topStackView,signUpButton,bottomStackView].forEach {
             view.addSubview($0)
         }
         [mainExplainText,subExplainText].forEach {
@@ -160,15 +160,15 @@ class IntroViewController: BaseViewController<IntroViewModel>{
             $0.centerX.equalToSuperview()
             $0.top.equalTo(dailyLogo.snp.bottom).offset(24)
         }
-        bottomStackView.snp.makeConstraints {
-            $0.trailing.equalTo(view.snp.trailing).inset((bounds.width) / 3.86)
-            $0.bottom.equalToSuperview().inset((bounds.height) / 7.12)
-        }
         signUpButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.top.equalTo(topStackView.snp.bottom).offset((bounds.height) / 2.8)
             $0.height.equalTo(60)
+        }
+        bottomStackView.snp.makeConstraints {
+            $0.top.equalTo(signUpButton.snp.bottom).offset(16)
+            $0.trailing.equalTo(view.snp.trailing).inset((bounds.width) / 3.86)
         }
     }
 
