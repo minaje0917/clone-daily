@@ -393,6 +393,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7759603729D27E6300C1C8B4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		77F07255291DDB6F007FE1DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +503,7 @@
 		77F13A65290AA74A00F7354A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7759603729D27E6300C1C8B4 /* Splash */,
 				770D6C4229C7FC280085A250 /* Main */,
 				770D6C2229B9A8030085A250 /* Auth */,
 				77F13A6C290AA78500F7354A /* Base */,

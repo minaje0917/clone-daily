@@ -13,7 +13,7 @@ import Then
 final class SelectThemeCell: UICollectionViewCell {
     static let id = "SelectThemeCell"
     
-    private let themeImage = UIImageView().then {
-        $0.image = UIImage
-    }
+//    private let themeImage = UIImageView().then {
+////        $0.image = UIImage
+//    }
 }
