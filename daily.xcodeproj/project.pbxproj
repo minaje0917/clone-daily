@@ -27,6 +27,9 @@
 		770D6C4529C982050085A250 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = 770D6C4429C982050085A250 /* ViewAnimator */; };
 		770D6C4829CAF7640085A250 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4729CAF7640085A250 /* ProfileTableViewCell.swift */; };
 		770D6C4E29CC3E8E0085A250 /* SelectThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4D29CC3E8E0085A250 /* SelectThemeCell.swift */; };
+		7759603929D2858700C1C8B4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759603829D2858700C1C8B4 /* SplashViewController.swift */; };
+    770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */; };
+		770D6C5229CD33280085A250 /* SelectThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */; };
 		770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */; };
 		770D6C5229CD33280085A250 /* SelectThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
@@ -82,6 +85,9 @@
 		770D6C3F29C15D460085A250 /* ThemeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFlow.swift; sourceTree = "<group>"; };
 		770D6C4729CAF7640085A250 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		770D6C4D29CC3E8E0085A250 /* SelectThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeCell.swift; sourceTree = "<group>"; };
+		7759603829D2858700C1C8B4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+    770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeletThemeViewController.swift; sourceTree = "<group>"; };
+		770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeViewModel.swift; sourceTree = "<group>"; };
 		770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeletThemeViewController.swift; sourceTree = "<group>"; };
 		770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeViewModel.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
@@ -399,6 +405,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7759603729D27E6300C1C8B4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				7759603829D2858700C1C8B4 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		77F07255291DDB6F007FE1DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +516,7 @@
 		77F13A65290AA74A00F7354A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7759603729D27E6300C1C8B4 /* Splash */,
 				770D6C4229C7FC280085A250 /* Main */,
 				770D6C2229B9A8030085A250 /* Auth */,
 				77F13A6C290AA78500F7354A /* Base */,
@@ -775,6 +790,7 @@
 				770D6C3C29C15D230085A250 /* TabBarFlow.swift in Sources */,
 				77F0727629271028007FE1DD /* DailyViewController.swift in Sources */,
 				77F13A78290B566800F7354A /* BaseViewModel.swift in Sources */,
+				7759603929D2858700C1C8B4 /* SplashViewController.swift in Sources */,
 				770D6C4829CAF7640085A250 /* ProfileTableViewCell.swift in Sources */,
 				77F1F1902986E3C000ED498E /* AppFlow.swift in Sources */,
 				770D6C2F29B9A9DC0085A250 /* ProfileViewModel.swift in Sources */,

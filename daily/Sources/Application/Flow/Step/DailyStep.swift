@@ -8,7 +8,10 @@
 import RxFlow
 
 enum DailyStep: Step {
-    // Mark: Login
+    //MARK: Splash
+    case splashIsRequired
+    
+    // MARK: Login
     case loginIsRequired
     
     // MARK: SignUp

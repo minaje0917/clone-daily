@@ -24,8 +24,10 @@ class LoginFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }
         switch step {
+        case .splashIsRequired:
+            return coordinateToSplash()
         case .loginIsRequired:
-            return coordinateToLogin()
+            return navigateToLogin()
         case .signInIsRequired:
             return navigateToSignIn()
         case .mainTabBarIsRequired:
@@ -43,7 +45,13 @@ class LoginFlow: Flow {
         }
     }
     
-    private func coordinateToLogin() -> FlowContributors {
+    private func coordinateToSplash() -> FlowContributors {
+        let vc = SplashViewController()
+        self.rootViewController.setViewControllers([vc], animated: false)
+        return .one(flowContributor: .contribute(withNext: vc))
+    }
+    
+    private func navigateToLogin() -> FlowContributors {
         let vm = IntroViewModel()
         let vc = IntroViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: false)

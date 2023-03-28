@@ -144,7 +144,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
             dailyLogo, mainExplainText, subExplainText, signUpButton,haveAccountText, signInButton
         ], animations: [
             AnimationType.from(direction: .bottom, offset: 100)
-        ], initialAlpha: 0, finalAlpha: 1, delay: 0.3, duration: 1.25, options: .curveEaseInOut)
+        ], initialAlpha: 0, finalAlpha: 1, delay: 0, duration: 1.25, options: .curveEaseInOut)
     }
     
     override func setLayout() {
