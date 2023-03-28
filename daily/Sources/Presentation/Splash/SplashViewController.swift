@@ -10,14 +10,20 @@ import Foundation
 import SnapKit
 import Then
 import ViewAnimator
+import RxFlow
+import RxCocoa
+import RxSwift
 
-final class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController, Stepper {
+    var steps = PublishRelay<Step>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         addView()
         setLayout()
         setAnimation()
+        navigateToLogin()
     }
     
     private let splashLogo = UIImageView().then {
@@ -28,12 +34,18 @@ final class SplashViewController: UIViewController {
         $0.image = UIImage(named: "SplashSunImage.svg")
     }
     
+    private func navigateToLogin() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+            self.steps.accept(DailyStep.loginIsRequired)
+        }
+    }
+    
     private func setAnimation() {
         UIView.animate(views: [
             splashSunImage
         ], animations: [
-            AnimationType.from(direction: .bottom, offset: 100)
-        ], initialAlpha: 0, finalAlpha: 1, delay: 0.3, duration: 1.25, options: .curveEaseInOut)
+            AnimationType.from(direction: .bottom, offset: 30)
+        ], initialAlpha: 0, finalAlpha: 1, delay: 0, duration: 0.7, options: .curveEaseInOut)
     }
         
     private func addView() {
