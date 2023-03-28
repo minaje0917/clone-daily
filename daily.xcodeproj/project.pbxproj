@@ -28,6 +28,10 @@
 		770D6C4829CAF7640085A250 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4729CAF7640085A250 /* ProfileTableViewCell.swift */; };
 		770D6C4E29CC3E8E0085A250 /* SelectThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4D29CC3E8E0085A250 /* SelectThemeCell.swift */; };
 		7759603929D2858700C1C8B4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7759603829D2858700C1C8B4 /* SplashViewController.swift */; };
+    770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */; };
+		770D6C5229CD33280085A250 /* SelectThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */; };
+		770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */; };
+		770D6C5229CD33280085A250 /* SelectThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77F07259291DDBD8007FE1DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* HomeViewController.swift */; };
@@ -82,6 +86,10 @@
 		770D6C4729CAF7640085A250 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		770D6C4D29CC3E8E0085A250 /* SelectThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeCell.swift; sourceTree = "<group>"; };
 		7759603829D2858700C1C8B4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+    770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeletThemeViewController.swift; sourceTree = "<group>"; };
+		770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeViewModel.swift; sourceTree = "<group>"; };
+		770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeletThemeViewController.swift; sourceTree = "<group>"; };
+		770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeViewModel.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -376,6 +384,7 @@
 		770D6C4A29CC3E550085A250 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 		770D6C4B29CC3E5A0085A250 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -766,6 +776,7 @@
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
 				770D6C3E29C15D380085A250 /* ProfileFlow.swift in Sources */,
 				770D6BF829B566470085A250 /* CreateEmailViewController.swift in Sources */,
+				770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */,
 				770D6BFD29B5B3A50085A250 /* CertificationNumberViewModel.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* HomeViewModel.swift in Sources */,
 				770D6C2D29B9A9B70085A250 /* ThemeViewModel.swift in Sources */,
@@ -783,6 +794,7 @@
 				770D6C4829CAF7640085A250 /* ProfileTableViewCell.swift in Sources */,
 				77F1F1902986E3C000ED498E /* AppFlow.swift in Sources */,
 				770D6C2F29B9A9DC0085A250 /* ProfileViewModel.swift in Sources */,
+				770D6C5229CD33280085A250 /* SelectThemeViewModel.swift in Sources */,
 				770D6C4E29CC3E8E0085A250 /* SelectThemeCell.swift in Sources */,
 				77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */,
 				770D6C3129B9A9E60085A250 /* ProfileViewController.swift in Sources */,
