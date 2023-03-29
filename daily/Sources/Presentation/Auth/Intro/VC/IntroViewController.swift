@@ -141,10 +141,15 @@ class IntroViewController: BaseViewController<IntroViewModel>{
     
     private func setAnimation() {
         UIView.animate(views: [
-            dailyLogo, mainExplainText, subExplainText, signUpButton,haveAccountText, signInButton
+            dailyLogo
         ], animations: [
-            AnimationType.from(direction: .bottom, offset: 100)
+            AnimationType.from(direction: .bottom, offset: 211)
         ], initialAlpha: 0, finalAlpha: 1, delay: 0, duration: 1.25, options: .curveEaseInOut)
+        UIView.animate(views: [
+            mainExplainText, subExplainText, signUpButton,haveAccountText, signInButton
+        ], animations: [
+            AnimationType.from(direction: .left, offset: 100)
+        ], initialAlpha: 0, finalAlpha: 1, delay: 0, duration: 1, options: .curveEaseInOut)
     }
     
     override func setLayout() {
