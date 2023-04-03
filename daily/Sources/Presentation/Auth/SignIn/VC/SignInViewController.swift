@@ -46,7 +46,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         $0.setSubTextColor()
     }
     
-    lazy var emailTextField = UITextField().then {
+    var emailTextField = UITextField().then {
         $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "이메일을 입력해 주세요.",
@@ -62,7 +62,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         $0.addLeftImage(UIImage(named: "emailIcon.svg")!, x: 20, y: 6.5)
     }
     
-    private lazy var pwTextField = UITextField().then {
+    private var pwTextField = UITextField().then {
         $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "비밀번호를 입력해 주세요.",
@@ -79,7 +79,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         $0.addLeftImage(UIImage(named: "pwIcon.svg")!, x: 20, y: 5.5)
     }
     
-    private lazy var forgotPwButton = UIButton().then {
+    private var forgotPwButton = UIButton().then {
         let text = NSAttributedString(string: "비밀번호를 잊으셨나요?")
         $0.setAttributedTitle(
             text,
@@ -101,7 +101,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         )
     }
     
-    private lazy var signInButton = UIButton().then {
+    private var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(
             text,
@@ -138,7 +138,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         )
     }
 
-    private lazy var backSignUpButton = UIButton().then {
+    private var backSignUpButton = UIButton().then {
         let text = NSAttributedString(string: "회원가입")
         $0.setAttributedTitle(
             text,

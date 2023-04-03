@@ -46,7 +46,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         $0.setSubTextColor()
     }
     
-    private lazy var pwTextField = UITextField().then {
+    private var pwTextField = UITextField().then {
         $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "비밀번호를 입력해 주세요.",
@@ -63,7 +63,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         $0.leftPadding(width: 20)
     }
     
-    private lazy var pwCheckTextField = UITextField().then {
+    private var pwCheckTextField = UITextField().then {
         $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "비밀번호를 다시 입력해 주세요.",
@@ -79,7 +79,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         $0.leftPadding(width: 20)
     }
     
-    private lazy var nextButton = UIButton().then {
+    private var nextButton = UIButton().then {
         let text = NSAttributedString(string: "다음")
         $0.setAttributedTitle(
             text,
@@ -111,7 +111,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         $0.textColor = UIColor.dailyLight!
     }
 
-    private lazy var backSignInButton = UIButton().then {
+    private var backSignInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(

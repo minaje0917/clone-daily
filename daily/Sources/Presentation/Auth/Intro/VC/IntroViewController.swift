@@ -73,7 +73,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         $0.alignment = .center
     }
     
-    private lazy var signUpButton = UIButton().then {
+    private var signUpButton = UIButton().then {
         let text = NSAttributedString(string: "회원가입")
         $0.setAttributedTitle(
             text,
@@ -105,7 +105,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         )
     }
     
-    private lazy var signInButton = UIButton().then {
+    private var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(
             text,

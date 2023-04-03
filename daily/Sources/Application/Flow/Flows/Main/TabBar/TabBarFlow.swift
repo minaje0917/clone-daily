@@ -23,11 +23,6 @@ final class TabBarFlow: Flow {
     
     private let rootVC = DailyTabBarViewController()
     
-//    private lazy var rootViewController: UINavigationController = {
-//        let viewController = UINavigationController()
-//        return viewController
-//    }()
-    
     private var homeFlow = HomeFlow()
     private var profileFlow = ProfileFlow()
     private var themeFlow = ThemeFlow()

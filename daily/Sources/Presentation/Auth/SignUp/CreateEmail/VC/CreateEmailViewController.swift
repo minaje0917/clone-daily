@@ -46,7 +46,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
         $0.setSubTextColor()
     }
     
-    private lazy var emailTextField = UITextField().then {
+    private var emailTextField = UITextField().then {
         $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "이메일을 입력해 주세요.",
@@ -63,7 +63,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
         $0.leftPadding(width: 20)
     }
     
-    private lazy var getNumButton = UIButton().then {
+    private var getNumButton = UIButton().then {
         let text = NSAttributedString(string: "인증번호 받기")
         $0.setAttributedTitle(
             text,
@@ -95,7 +95,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
         $0.textColor = UIColor.dailyLight!
     }
 
-    private lazy var backSignInButton = UIButton().then {
+    private var backSignInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(

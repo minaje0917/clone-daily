@@ -15,9 +15,8 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
     }
-    
+
     private let theme = UIImageView().then {
         $0.image = UIImage(named: "oceanFirstTheme.svg")
         $0.contentMode = .scaleAspectFill

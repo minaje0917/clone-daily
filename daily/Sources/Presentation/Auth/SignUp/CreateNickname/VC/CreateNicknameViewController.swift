@@ -46,7 +46,7 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
         $0.setSubTextColor()
     }
     
-    private lazy var nicknameTextField = UITextField().then {
+    private var nicknameTextField = UITextField().then {
         $0.setBackGroundColor()
         $0.attributedPlaceholder = NSAttributedString(
             string: "닉네임을 입력해 주세요.",
@@ -63,7 +63,7 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
         $0.leftPadding(width: 20)
     }
     
-    private lazy var checkButton = UIButton().then {
+    private var checkButton = UIButton().then {
         let text = NSAttributedString(string: "확인")
         $0.setAttributedTitle(
             text,
@@ -95,7 +95,7 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
         $0.textColor = UIColor.dailyLight!
     }
 
-    private lazy var backSignInButton = UIButton().then {
+    private var backSignInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(
