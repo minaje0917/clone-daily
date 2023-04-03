@@ -35,7 +35,7 @@ final class SplashViewController: UIViewController, Stepper {
     }
     
     private func navigateToLogin() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
             self.steps.accept(DailyStep.loginIsRequired)
         }
     }

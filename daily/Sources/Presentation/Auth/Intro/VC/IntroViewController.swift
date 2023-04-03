@@ -73,7 +73,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         $0.alignment = .center
     }
     
-    private lazy var signUpButton = UIButton().then {
+    private var signUpButton = UIButton().then {
         let text = NSAttributedString(string: "회원가입")
         $0.setAttributedTitle(
             text,
@@ -105,7 +105,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         )
     }
     
-    private lazy var signInButton = UIButton().then {
+    private var signInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(
             text,
@@ -141,10 +141,15 @@ class IntroViewController: BaseViewController<IntroViewModel>{
     
     private func setAnimation() {
         UIView.animate(views: [
-            dailyLogo, mainExplainText, subExplainText, signUpButton,haveAccountText, signInButton
+            dailyLogo
         ], animations: [
-            AnimationType.from(direction: .bottom, offset: 100)
+            AnimationType.from(direction: .bottom, offset: 211)
         ], initialAlpha: 0, finalAlpha: 1, delay: 0, duration: 1.25, options: .curveEaseInOut)
+        UIView.animate(views: [
+            mainExplainText, subExplainText, signUpButton,haveAccountText, signInButton
+        ], animations: [
+            AnimationType.from(direction: .left, offset: 100)
+        ], initialAlpha: 0, finalAlpha: 1, delay: 0, duration: 1, options: .curveEaseInOut)
     }
     
     override func setLayout() {
