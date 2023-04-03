@@ -11,8 +11,7 @@ import Then
 import RxCocoa
 import RxFlow
 
-class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
+class CreateEmailViewController: BaseViewController<CreateEmailViewModel>{
 
     override func viewDidLoad(){
         super.viewDidLoad()

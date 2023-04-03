@@ -12,8 +12,7 @@ import RxCocoa
 import RxFlow
 import DPOTPView
 
-class CertificationNumberViewController: BaseViewController<CertificationNumberViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
+class CertificationNumberViewController: BaseViewController<CertificationNumberViewModel>{
     
     override func viewDidLoad(){
         super.viewDidLoad()

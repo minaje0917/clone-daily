@@ -11,9 +11,8 @@ import Then
 import RxCocoa
 import RxFlow
 
-class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
-
+class CreatePwViewController: BaseViewController<CreatePwViewModel>{
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         bindViewModel()

@@ -11,6 +11,5 @@ import RxSwift
 import RxFlow
 
 class ProfileViewModel: BaseViewModel, Stepper{
-    var steps = PublishRelay<Step>()
 
 }

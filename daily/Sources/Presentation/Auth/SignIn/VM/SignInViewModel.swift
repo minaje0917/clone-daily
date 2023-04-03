@@ -12,8 +12,6 @@ import RxFlow
 
 final class SignInViewModel: BaseViewModel, Stepper {
     
-    var steps = PublishRelay<Step>()
-    
     struct Input {
         let signInButtonTap: Observable<Void>
         let backSignUpButtonTap: Observable<Void>

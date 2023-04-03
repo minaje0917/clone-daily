@@ -11,8 +11,7 @@ import Then
 import RxCocoa
 import RxFlow
 
-class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
+class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>{
 
     override func viewDidLoad(){
         super.viewDidLoad()

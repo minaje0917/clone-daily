@@ -11,6 +11,5 @@ import RxSwift
 import RxFlow
 
 class SelectThemeViewModel: BaseViewModel, Stepper{
-    var steps = PublishRelay<Step>()
 
 }
