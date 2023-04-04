@@ -23,7 +23,8 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         let input = SignInViewModel.Input(
             signInButtonTap: signInButton.rx.tap.asObservable(),
             backSignUpButtonTap: backSignUpButton.rx.tap.asObservable(),
-            emailTextFieldTap: emailTextField.rx.controlEvent(.touchDown).asObservable()
+            emailTextFieldTap: emailTextField.rx.controlEvent(.touchDown).asObservable(),
+            forgotPwButtonTap: forgotPwButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }
