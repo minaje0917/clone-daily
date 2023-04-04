@@ -20,6 +20,11 @@ enum DailyStep: Step {
     case certificationNumberIsRequired
     case createNicknameIsRequired
     
+    //MARK: ForgotPassword
+    case forgotPasswordIsRequired
+    case authKeyIsRequired
+    case changePasswordIsRequired
+    
     // MARK: Main
     case mainTabBarIsRequired
     
