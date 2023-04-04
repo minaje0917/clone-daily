@@ -33,6 +33,8 @@
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65B329DBF369001423E4 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65B229DBF369001423E4 /* Auth.swift */; };
+		77EE65B529DBF44A001423E4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65B429DBF44A001423E4 /* Account.swift */; };
+		77EE65B829DBF4BF001423E4 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65B729DBF4BF001423E4 /* ThemeType.swift */; };
 		77F07259291DDBD8007FE1DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* HomeViewController.swift */; };
 		77F0725B291DDBE2007FE1DD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725A291DDBE2007FE1DD /* HomeViewModel.swift */; };
 		77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725E29209BDF007FE1DD /* DailyShadow.swift */; };
@@ -90,6 +92,8 @@
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77EE65B229DBF369001423E4 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		77EE65B429DBF44A001423E4 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		77EE65B729DBF4BF001423E4 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77F0725A291DDBE2007FE1DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77F0725E29209BDF007FE1DD /* DailyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyShadow.swift; sourceTree = "<group>"; };
@@ -415,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				77EE65AD29DACB54001423E4 /* Entities */,
+				77EE65B629DBF4A7001423E4 /* Enums */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -423,8 +428,17 @@
 			isa = PBXGroup;
 			children = (
 				77EE65B229DBF369001423E4 /* Auth.swift */,
+				77EE65B429DBF44A001423E4 /* Account.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		77EE65B629DBF4A7001423E4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				77EE65B729DBF4BF001423E4 /* ThemeType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		77F07255291DDB6F007FE1DD /* Home */ = {
@@ -773,6 +787,7 @@
 			files = (
 				77F0727C29288798007FE1DD /* DailyCalender.swift in Sources */,
 				77F1F1942987CABF00ED498E /* DailyStep.swift in Sources */,
+				77EE65B829DBF4BF001423E4 /* ThemeType.swift in Sources */,
 				77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */,
 				770D6C4029C15D460085A250 /* ThemeFlow.swift in Sources */,
 				77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */,
@@ -802,6 +817,7 @@
 				770D6C0329B5B3DC0085A250 /* CertificationNumberViewController.swift in Sources */,
 				770D6C0A29B5D23D0085A250 /* CreateNicknameViewController.swift in Sources */,
 				77F0726529223303007FE1DD /* DailyTabBar.swift in Sources */,
+				77EE65B529DBF44A001423E4 /* Account.swift in Sources */,
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				770D6C3C29C15D230085A250 /* TabBarFlow.swift in Sources */,
 				77F0727629271028007FE1DD /* DailyViewController.swift in Sources */,
