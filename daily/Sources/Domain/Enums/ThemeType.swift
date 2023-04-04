@@ -8,6 +8,6 @@
 import Foundation
 
 public enum ThemeType: String, Codable, CaseIterable{
-    case Ocean
-    case GrassLand
+    case ocean = "OCEAN"
+    case grassLand = "GRASSLAND"
 }
