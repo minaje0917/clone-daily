@@ -7,10 +7,6 @@
 
 import Foundation
 
-public struct ThemeCountResponse: Encodable {
-    public init(count: Int) {
-        self.count = count
-    }
-    
+public struct ThemeCountResponse: Decodable {
     public let count: Int
 }
