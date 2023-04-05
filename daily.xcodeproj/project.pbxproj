@@ -44,6 +44,11 @@
 		77EE65DA29DC05B8001423E4 /* AuthKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D929DC05B8001423E4 /* AuthKeyViewModel.swift */; };
 		77EE65DC29DC05C6001423E4 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65DB29DC05C6001423E4 /* ChangePasswordViewController.swift */; };
 		77EE65DE29DC05D1001423E4 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65DD29DC05D1001423E4 /* ChangePasswordViewModel.swift */; };
+		77EE65F829DCF795001423E4 /* CheckNameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65F729DCF795001423E4 /* CheckNameRequest.swift */; };
+		77EE65FA29DCF7FA001423E4 /* CheckEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65F929DCF7FA001423E4 /* CheckEmailRequest.swift */; };
+		77EE65FC29DCF87A001423E4 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65FB29DCF87A001423E4 /* SignUpRequest.swift */; };
+		77EE65FE29DCFB80001423E4 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65FD29DCFB80001423E4 /* SignInRequest.swift */; };
+		77EE660029DCFB92001423E4 /* TokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65FF29DCFB92001423E4 /* TokenDTO.swift */; };
 		77F07259291DDBD8007FE1DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* HomeViewController.swift */; };
 		77F0725B291DDBE2007FE1DD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725A291DDBE2007FE1DD /* HomeViewModel.swift */; };
 		77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725E29209BDF007FE1DD /* DailyShadow.swift */; };
@@ -112,6 +117,11 @@
 		77EE65D929DC05B8001423E4 /* AuthKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeyViewModel.swift; sourceTree = "<group>"; };
 		77EE65DB29DC05C6001423E4 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		77EE65DD29DC05D1001423E4 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		77EE65F729DCF795001423E4 /* CheckNameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNameRequest.swift; sourceTree = "<group>"; };
+		77EE65F929DCF7FA001423E4 /* CheckEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailRequest.swift; sourceTree = "<group>"; };
+		77EE65FB29DCF87A001423E4 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		77EE65FD29DCFB80001423E4 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		77EE65FF29DCFB92001423E4 /* TokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDTO.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77F0725A291DDBE2007FE1DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77F0725E29209BDF007FE1DD /* DailyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyShadow.swift; sourceTree = "<group>"; };
@@ -556,6 +566,7 @@
 				77EE65E129DCF584001423E4 /* Account */,
 				77EE65E229DCF591001423E4 /* Email */,
 				77EE65E329DCF599001423E4 /* Diary */,
+				77EE65E629DCF5E8001423E4 /* Token */,
 			);
 			path = DataMapping;
 			sourceTree = "<group>";
@@ -565,7 +576,6 @@
 			children = (
 				77EE65E829DCF5FA001423E4 /* CheckName */,
 				77EE65E729DCF5F2001423E4 /* CheckEmail */,
-				77EE65E629DCF5E8001423E4 /* Reissue */,
 				77EE65E529DCF5C9001423E4 /* SignUp */,
 				77EE65E429DCF5A8001423E4 /* SignIn */,
 			);
@@ -609,6 +619,7 @@
 		77EE65E429DCF5A8001423E4 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				77EE65FD29DCFB80001423E4 /* SignInRequest.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -616,20 +627,23 @@
 		77EE65E529DCF5C9001423E4 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				77EE65FB29DCF87A001423E4 /* SignUpRequest.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		77EE65E629DCF5E8001423E4 /* Reissue */ = {
+		77EE65E629DCF5E8001423E4 /* Token */ = {
 			isa = PBXGroup;
 			children = (
+				77EE65FF29DCFB92001423E4 /* TokenDTO.swift */,
 			);
-			path = Reissue;
+			path = Token;
 			sourceTree = "<group>";
 		};
 		77EE65E729DCF5F2001423E4 /* CheckEmail */ = {
 			isa = PBXGroup;
 			children = (
+				77EE65F929DCF7FA001423E4 /* CheckEmailRequest.swift */,
 			);
 			path = CheckEmail;
 			sourceTree = "<group>";
@@ -637,6 +651,7 @@
 		77EE65E829DCF5FA001423E4 /* CheckName */ = {
 			isa = PBXGroup;
 			children = (
+				77EE65F729DCF795001423E4 /* CheckNameRequest.swift */,
 			);
 			path = CheckName;
 			sourceTree = "<group>";
@@ -1079,6 +1094,7 @@
 				77F0727C29288798007FE1DD /* DailyCalender.swift in Sources */,
 				77F1F1942987CABF00ED498E /* DailyStep.swift in Sources */,
 				77EE65B829DBF4BF001423E4 /* ThemeType.swift in Sources */,
+				77EE65FC29DCF87A001423E4 /* SignUpRequest.swift in Sources */,
 				77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */,
 				770D6C4029C15D460085A250 /* ThemeFlow.swift in Sources */,
 				77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */,
@@ -1099,12 +1115,15 @@
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
 				770D6C3E29C15D380085A250 /* ProfileFlow.swift in Sources */,
 				770D6BF829B566470085A250 /* CreateEmailViewController.swift in Sources */,
+				77EE65FA29DCF7FA001423E4 /* CheckEmailRequest.swift in Sources */,
 				770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */,
 				77EE65B329DBF369001423E4 /* Auth.swift in Sources */,
 				77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */,
 				770D6BFD29B5B3A50085A250 /* CertificationNumberViewModel.swift in Sources */,
+				77EE660029DCFB92001423E4 /* TokenDTO.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* HomeViewModel.swift in Sources */,
 				770D6C2D29B9A9B70085A250 /* ThemeViewModel.swift in Sources */,
+				77EE65FE29DCFB80001423E4 /* SignInRequest.swift in Sources */,
 				77F13A85290B658800F7354A /* CreatePwViewController.swift in Sources */,
 				77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */,
 				770D6C0829B5D2310085A250 /* CreateNicknameViewModel.swift in Sources */,
@@ -1127,6 +1146,7 @@
 				770D6C4E29CC3E8E0085A250 /* SelectThemeCell.swift in Sources */,
 				77F0726129209BF1007FE1DD /* DailyColor.swift in Sources */,
 				770D6C3129B9A9E60085A250 /* ProfileViewController.swift in Sources */,
+				77EE65F829DCF795001423E4 /* CheckNameRequest.swift in Sources */,
 				77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */,
 				77EE65BE29DBFDDE001423E4 /* SeasonType.swift in Sources */,
 				77EE65DE29DC05D1001423E4 /* ChangePasswordViewModel.swift in Sources */,
