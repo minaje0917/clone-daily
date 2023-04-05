@@ -263,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				770D6C1D29B850E20085A250 /* API */,
+				77EE65DF29DCF539001423E4 /* DataMapping */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -546,6 +547,189 @@
 				77EE65DD29DC05D1001423E4 /* ChangePasswordViewModel.swift */,
 			);
 			path = VM;
+			sourceTree = "<group>";
+		};
+		77EE65DF29DCF539001423E4 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				77EE65E029DCF57F001423E4 /* Auth */,
+				77EE65E129DCF584001423E4 /* Account */,
+				77EE65E229DCF591001423E4 /* Email */,
+				77EE65E329DCF599001423E4 /* Diary */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		77EE65E029DCF57F001423E4 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77EE65E829DCF5FA001423E4 /* CheckName */,
+				77EE65E729DCF5F2001423E4 /* CheckEmail */,
+				77EE65E629DCF5E8001423E4 /* Reissue */,
+				77EE65E529DCF5C9001423E4 /* SignUp */,
+				77EE65E429DCF5A8001423E4 /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		77EE65E129DCF584001423E4 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				77EE65EC29DCF639001423E4 /* ThemeCount */,
+				77EE65EB29DCF633001423E4 /* CheckTheme */,
+				77EE65EA29DCF61D001423E4 /* ChangePassword */,
+				77EE65E929DCF612001423E4 /* ChoiceTheme */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		77EE65E229DCF591001423E4 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				77EE65EF29DCF67B001423E4 /* PasswordAuthKey */,
+				77EE65EE29DCF673001423E4 /* CheckAuthKey */,
+				77EE65ED29DCF669001423E4 /* SignUpAuthKey */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		77EE65E329DCF599001423E4 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				77EE65F629DCF6D8001423E4 /* Season */,
+				77EE65F429DCF6C5001423E4 /* DiaryList */,
+				77EE65F329DCF6B8001423E4 /* DetailDiary */,
+				77EE65F229DCF6AE001423E4 /* DeleteDiary */,
+				77EE65F129DCF6A2001423E4 /* FetchDiary */,
+				77EE65F029DCF687001423E4 /* WriteDiary */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		77EE65E429DCF5A8001423E4 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		77EE65E529DCF5C9001423E4 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		77EE65E629DCF5E8001423E4 /* Reissue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reissue;
+			sourceTree = "<group>";
+		};
+		77EE65E729DCF5F2001423E4 /* CheckEmail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CheckEmail;
+			sourceTree = "<group>";
+		};
+		77EE65E829DCF5FA001423E4 /* CheckName */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CheckName;
+			sourceTree = "<group>";
+		};
+		77EE65E929DCF612001423E4 /* ChoiceTheme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChoiceTheme;
+			sourceTree = "<group>";
+		};
+		77EE65EA29DCF61D001423E4 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		77EE65EB29DCF633001423E4 /* CheckTheme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CheckTheme;
+			sourceTree = "<group>";
+		};
+		77EE65EC29DCF639001423E4 /* ThemeCount */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThemeCount;
+			sourceTree = "<group>";
+		};
+		77EE65ED29DCF669001423E4 /* SignUpAuthKey */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUpAuthKey;
+			sourceTree = "<group>";
+		};
+		77EE65EE29DCF673001423E4 /* CheckAuthKey */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CheckAuthKey;
+			sourceTree = "<group>";
+		};
+		77EE65EF29DCF67B001423E4 /* PasswordAuthKey */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PasswordAuthKey;
+			sourceTree = "<group>";
+		};
+		77EE65F029DCF687001423E4 /* WriteDiary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WriteDiary;
+			sourceTree = "<group>";
+		};
+		77EE65F129DCF6A2001423E4 /* FetchDiary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FetchDiary;
+			sourceTree = "<group>";
+		};
+		77EE65F229DCF6AE001423E4 /* DeleteDiary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeleteDiary;
+			sourceTree = "<group>";
+		};
+		77EE65F329DCF6B8001423E4 /* DetailDiary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailDiary;
+			sourceTree = "<group>";
+		};
+		77EE65F429DCF6C5001423E4 /* DiaryList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DiaryList;
+			sourceTree = "<group>";
+		};
+		77EE65F629DCF6D8001423E4 /* Season */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Season;
 			sourceTree = "<group>";
 		};
 		77F07255291DDB6F007FE1DD /* Home */ = {
