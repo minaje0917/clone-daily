@@ -23,7 +23,7 @@ final class SignInViewModel: BaseViewModel, Stepper {
         
     }
     
-    func transVC(input: Input) {
+    func transVC(input: Input) -> Output {
         input.signInButtonTap.subscribe(
             onNext: pushMainVC
         ) .disposed(by: disposeBag)
@@ -39,6 +39,7 @@ final class SignInViewModel: BaseViewModel, Stepper {
         input.forgotPwButtonTap.subscribe(
             onNext: pushForgotPwVC
         ).disposed(by: disposeBag)
+        return Output()
     }
     
     private func pushMainVC() {

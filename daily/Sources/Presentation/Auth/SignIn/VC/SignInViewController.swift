@@ -26,7 +26,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
             emailTextFieldTap: emailTextField.rx.controlEvent(.touchDown).asObservable(),
             forgotPwButtonTap: forgotPwButton.rx.tap.asObservable()
         )
-        viewModel.transVC(input: input)
+        let output = viewModel.transVC(input: input)
     }
     
     private let signInText = UILabel().then {
