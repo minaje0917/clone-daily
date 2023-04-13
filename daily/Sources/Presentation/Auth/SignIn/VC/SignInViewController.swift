@@ -82,28 +82,7 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         )
     }
     
-    private var signInButton = UIButton().then {
-        let text = NSAttributedString(string: "로그인")
-        $0.setAttributedTitle(
-            text,
-            for: .normal
-        )
-        $0.titleLabel?.font = UIFont.systemFont(
-            ofSize: 18,
-            weight: .semibold
-        )
-        $0.setTitleColor(
-            UIColor.white,
-            for: .normal
-        )
-        $0.backgroundColor = UIColor(
-            red: 255/255,
-            green: 199/255,
-            blue: 216/255,
-            alpha: 1.00
-        )
-        $0.layer.cornerRadius = 20
-    }
+    private var signInButton = DailyButton(text: "로그인")
     
     private let firstTimeDailyText = UILabel().then {
         $0.text = "Daily가 처음이라면,"

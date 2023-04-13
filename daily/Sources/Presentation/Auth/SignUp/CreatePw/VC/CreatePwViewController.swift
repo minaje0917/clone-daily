@@ -59,28 +59,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>{
         $0.isSecureTextEntry = true
     }
     
-    private var nextButton = UIButton().then {
-        let text = NSAttributedString(string: "다음")
-        $0.setAttributedTitle(
-            text,
-            for: .normal
-        )
-        $0.titleLabel?.font = UIFont.systemFont(
-            ofSize: 18,
-            weight: .semibold
-        )
-        $0.setTitleColor(
-            UIColor.white,
-            for: .normal
-        )
-        $0.backgroundColor = UIColor(
-            red: 255/255,
-            green: 199/255,
-            blue: 216/255,
-            alpha: 1.00
-        )
-        $0.layer.cornerRadius = 20
-    }
+    private var nextButton = DailyButton(text: "다음")
     
     private let haveIdText = UILabel().then {
         $0.text = "계정이 있으신가요?"

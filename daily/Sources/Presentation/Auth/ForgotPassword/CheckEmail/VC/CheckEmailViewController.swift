@@ -50,28 +50,7 @@ class CheckEmailViewController: BaseViewController<CheckEmailViewModel>{
         placeholder: "이메일을 입력해 주세요."
     )
     
-    private var getNumButton = UIButton().then {
-        let text = NSAttributedString(string: "인증번호 받기")
-        $0.setAttributedTitle(
-            text,
-            for: .normal
-        )
-        $0.titleLabel?.font = UIFont.systemFont(
-            ofSize: 18,
-            weight: .semibold
-        )
-        $0.setTitleColor(
-            UIColor.white,
-            for: .normal
-        )
-        $0.backgroundColor = UIColor(
-            red: 255/255,
-            green: 199/255,
-            blue: 216/255,
-            alpha: 1.00
-        )
-        $0.layer.cornerRadius = 20
-    }
+    private var getNumButton = DailyButton(text: "인증번호 받기")
     
     private let dontNeedChangePasswordText = UILabel().then {
         $0.text = "비밀번호를 변경할 필요가 없다면?"
