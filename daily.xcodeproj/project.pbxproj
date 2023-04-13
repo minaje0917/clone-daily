@@ -75,6 +75,7 @@
 		77F0727829271064007FE1DD /* DailyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0727729271064007FE1DD /* DailyViewModel.swift */; };
 		77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0727929271195007FE1DD /* DailyNavigation.swift */; };
 		77F0727C29288798007FE1DD /* DailyCalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0727B29288798007FE1DD /* DailyCalender.swift */; };
+		77F0737E29E7C20E00EE1FC9 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0737D29E7C20E00EE1FC9 /* CarouselView.swift */; };
 		77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A3F290AA4E000F7354A /* AppDelegate.swift */; };
 		77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A41290AA4E000F7354A /* SceneDelegate.swift */; };
 		77F13A44290AA4E000F7354A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13A43290AA4E000F7354A /* IntroViewController.swift */; };
@@ -163,6 +164,7 @@
 		77F0727729271064007FE1DD /* DailyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewModel.swift; sourceTree = "<group>"; };
 		77F0727929271195007FE1DD /* DailyNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNavigation.swift; sourceTree = "<group>"; };
 		77F0727B29288798007FE1DD /* DailyCalender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCalender.swift; sourceTree = "<group>"; };
+		77F0737D29E7C20E00EE1FC9 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		77F13A3C290AA4E000F7354A /* daily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F13A3F290AA4E000F7354A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F13A41290AA4E000F7354A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */,
+				77F0737D29E7C20E00EE1FC9 /* CarouselView.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1201,6 +1204,7 @@
 				77EE661829DD3753001423E4 /* DetailDiaryRequest.swift in Sources */,
 				77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */,
 				770D6C0829B5D2310085A250 /* CreateNicknameViewModel.swift in Sources */,
+				77F0737E29E7C20E00EE1FC9 /* CarouselView.swift in Sources */,
 				770D6C0329B5B3DC0085A250 /* CertificationNumberViewController.swift in Sources */,
 				77EE65DC29DC05C6001423E4 /* ChangePasswordViewController.swift in Sources */,
 				770D6C0A29B5D23D0085A250 /* CreateNicknameViewController.swift in Sources */,
