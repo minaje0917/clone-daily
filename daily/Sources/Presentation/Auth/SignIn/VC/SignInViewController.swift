@@ -48,15 +48,15 @@ class SignInViewController: BaseViewController<SignInViewModel>{
     
     private var emailTextField = DailyTextField(
         type: .icon,
-        placeholder: "이메일을 입력해 주세요."
-    ).then {
-        $0.addLeftImage(UIImage(named: "emailIcon.svg")!, x: 20, y: 6.5)
-    }
+        placeholder: "이메일을 입력해 주세요.",
+        iconName: "emailIcon.svg"
+    )
+    
     private var pwTextField = DailyTextField(
         type: .icon,
-        placeholder: "비밀번호를 입력해 주세요."
+        placeholder: "비밀번호를 입력해 주세요.",
+        iconName: "pwIcon.svg"
     ).then {
-        $0.addLeftImage(UIImage(named: "pwIcon.svg")!, x: 20, y: 6.5)
         $0.isSecureTextEntry = true
     }
     
