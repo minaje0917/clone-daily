@@ -23,7 +23,6 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         let input = SignInViewModel.Input(
             signInButtonTap: signInButton.rx.tap.asObservable(),
             backSignUpButtonTap: backSignUpButton.rx.tap.asObservable(),
-            emailTextFieldTap: emailTextField.rx.controlEvent(.touchDown).asObservable(),
             forgotPwButtonTap: forgotPwButton.rx.tap.asObservable()
         )
         let output = viewModel.transVC(input: input)
@@ -47,37 +46,18 @@ class SignInViewController: BaseViewController<SignInViewModel>{
         $0.setSubTextColor()
     }
     
-    var emailTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "이메일을 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
+    private var emailTextField = DailyTextField(
+        type: .icon,
+        placeholder: "이메일을 입력해 주세요."
+    ).then {
         $0.addLeftImage(UIImage(named: "emailIcon.svg")!, x: 20, y: 6.5)
     }
-    
-    private var pwTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "비밀번호를 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
+    private var pwTextField = DailyTextField(
+        type: .icon,
+        placeholder: "비밀번호를 입력해 주세요."
+    ).then {
+        $0.addLeftImage(UIImage(named: "pwIcon.svg")!, x: 20, y: 6.5)
         $0.isSecureTextEntry = true
-        $0.addLeftImage(UIImage(named: "pwIcon.svg")!, x: 20, y: 5.5)
     }
     
     private var forgotPwButton = UIButton().then {
