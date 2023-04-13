@@ -35,6 +35,6 @@ final class IntroViewModel: BaseViewModel, Stepper {
         self.steps.accept(DailyStep.signInIsRequired)
     }
     private func pushSignUpVC() {
-        self.steps.accept(DailyStep.createPwIsRequired)
+        self.steps.accept(DailyStep.createEmailIsRequired)
     }
 }
