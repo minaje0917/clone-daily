@@ -59,28 +59,7 @@ class ChangePasswordViewController: BaseViewController<ChangePasswordViewModel>{
         $0.isSecureTextEntry = true
     }
     
-    private var finishButton = UIButton().then {
-        let text = NSAttributedString(string: "완료")
-        $0.setAttributedTitle(
-            text,
-            for: .normal
-        )
-        $0.titleLabel?.font = UIFont.systemFont(
-            ofSize: 18,
-            weight: .semibold
-        )
-        $0.setTitleColor(
-            UIColor.white,
-            for: .normal
-        )
-        $0.backgroundColor = UIColor(
-            red: 255/255,
-            green: 199/255,
-            blue: 216/255,
-            alpha: 1.00
-        )
-        $0.layer.cornerRadius = 20
-    }
+    private var finishButton = DailyButton(text: "완료")
     
     private let dontNeedChangePasswordText = UILabel().then {
         $0.text = "비밀번호를 변경할 필요가 없다면?"

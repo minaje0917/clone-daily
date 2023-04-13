@@ -73,23 +73,7 @@ class IntroViewController: BaseViewController<IntroViewModel>{
         $0.alignment = .center
     }
     
-    private var signUpButton = UIButton().then {
-        let text = NSAttributedString(string: "회원가입")
-        $0.setAttributedTitle(
-            text,
-            for: .normal
-        )
-        $0.titleLabel?.font = UIFont.systemFont(
-            ofSize: 16,
-            weight: .semibold
-        )
-        $0.setTitleColor(
-            UIColor.white,
-            for: .normal
-        )
-        $0.backgroundColor = UIColor.mainColor
-        $0.layer.cornerRadius = 20
-    }
+    private var signUpButton = DailyButton(text: "회원가입")
     
     private let haveAccountText = UILabel().then {
         $0.text = "계정이 있으신가요?"
