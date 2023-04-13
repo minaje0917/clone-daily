@@ -15,7 +15,6 @@ final class SignInViewModel: BaseViewModel, Stepper {
     struct Input {
         let signInButtonTap: Observable<Void>
         let backSignUpButtonTap: Observable<Void>
-        let emailTextFieldTap: Observable<Void>
         let forgotPwButtonTap: Observable<Void>
     }
     
@@ -31,10 +30,6 @@ final class SignInViewModel: BaseViewModel, Stepper {
         input.backSignUpButtonTap.subscribe(
             onNext: pushCreatePwVC
         ) .disposed(by: disposeBag)
-        
-        input.emailTextFieldTap.subscribe(
-            onNext: emailTextFieldDidTap
-        ).disposed(by: disposeBag)
         
         input.forgotPwButtonTap.subscribe(
             onNext: pushForgotPwVC
@@ -52,12 +47,5 @@ final class SignInViewModel: BaseViewModel, Stepper {
     
     private func pushForgotPwVC() {
         self.steps.accept(DailyStep.forgotPasswordIsRequired)
-    }
-    
-    private func emailTextFieldDidTap() {
-        let vc = SignInViewController(self)
-        print("emailTextFieldDidTap")
-        vc.emailTextField.layer.borderWidth = 1
-        vc.emailTextField.layer.borderColor = UIColor.mainColor?.cgColor
     }
 }

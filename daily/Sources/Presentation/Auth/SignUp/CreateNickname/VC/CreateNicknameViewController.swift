@@ -45,22 +45,10 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>{
         $0.setSubTextColor()
     }
     
-    private var nicknameTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "닉네임을 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
-        $0.isSecureTextEntry = true
-        $0.leftPadding(width: 20)
-    }
+    private var nicknameTextField = DailyTextField(
+        type: .simple,
+        placeholder: "예시)고양이귀여워"
+    )
     
     private var checkButton = UIButton().then {
         let text = NSAttributedString(string: "확인")

@@ -45,37 +45,18 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>{
         $0.setSubTextColor()
     }
     
-    private var pwTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "비밀번호를 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
+    private var pwTextField = DailyTextField(
+        type: .simple,
+        placeholder: "비밀번호를 입력해주세요."
+    ).then {
         $0.isSecureTextEntry = true
-        $0.leftPadding(width: 20)
     }
     
-    private var pwCheckTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "비밀번호를 다시 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
-        $0.leftPadding(width: 20)
+    private var pwCheckTextField = DailyTextField(
+        type: .simple,
+        placeholder: "비밀번호를 다시 입력해주세요."
+    ).then {
+        $0.isSecureTextEntry = true
     }
     
     private var nextButton = UIButton().then {
