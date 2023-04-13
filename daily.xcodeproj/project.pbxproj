@@ -65,7 +65,6 @@
 		77EE661C29DD37B6001423E4 /* DiaryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE661B29DD37B6001423E4 /* DiaryListResponse.swift */; };
 		77EE661E29DD38B4001423E4 /* SeasonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE661D29DD38B4001423E4 /* SeasonResponse.swift */; };
 		77EE662529DE4477001423E4 /* DailyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE662429DE4477001423E4 /* DailyTextField.swift */; };
-		77EE662729DE45A6001423E4 /* DailyTextFieldProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE662629DE45A6001423E4 /* DailyTextFieldProperty.swift */; };
 		77F07259291DDBD8007FE1DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F07258291DDBD8007FE1DD /* HomeViewController.swift */; };
 		77F0725B291DDBE2007FE1DD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725A291DDBE2007FE1DD /* HomeViewModel.swift */; };
 		77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0725E29209BDF007FE1DD /* DailyShadow.swift */; };
@@ -155,7 +154,6 @@
 		77EE661B29DD37B6001423E4 /* DiaryListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListResponse.swift; sourceTree = "<group>"; };
 		77EE661D29DD38B4001423E4 /* SeasonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonResponse.swift; sourceTree = "<group>"; };
 		77EE662429DE4477001423E4 /* DailyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTextField.swift; sourceTree = "<group>"; };
-		77EE662629DE45A6001423E4 /* DailyTextFieldProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTextFieldProperty.swift; sourceTree = "<group>"; };
 		77F07258291DDBD8007FE1DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77F0725A291DDBE2007FE1DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77F0725E29209BDF007FE1DD /* DailyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyShadow.swift; sourceTree = "<group>"; };
@@ -808,7 +806,6 @@
 			isa = PBXGroup;
 			children = (
 				77EE662429DE4477001423E4 /* DailyTextField.swift */,
-				77EE662629DE45A6001423E4 /* DailyTextFieldProperty.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -1182,7 +1179,6 @@
 				77F0727829271064007FE1DD /* DailyViewModel.swift in Sources */,
 				77EE660629DD000D001423E4 /* CheckThemeResponse.swift in Sources */,
 				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
-				77EE662729DE45A6001423E4 /* DailyTextFieldProperty.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
 				77EE661A29DD3775001423E4 /* DetailDiaryResponse.swift in Sources */,
