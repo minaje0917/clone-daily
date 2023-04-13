@@ -11,7 +11,6 @@ import RxSwift
 import RxFlow
 
 class HomeViewModel: BaseViewModel, Stepper {
-    var steps = PublishRelay<Step>()
     
     func pushDailyVC() {
         self.steps.accept(DailyStep.dailyIsRequired)

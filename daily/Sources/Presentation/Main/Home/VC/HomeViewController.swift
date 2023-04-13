@@ -22,7 +22,7 @@ class HomeViewController: BaseViewController<HomeViewModel>{
         calender.dataSource = self
     }
     
-    let calender = FSCalendar(frame: .zero).then {
+    private let calender = FSCalendar(frame: .zero).then {
         $0.locale = Locale(identifier: "ko_KR")
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         $0.appearance.todayColor = UIColor(red: 28/255, green: 28/255, blue: 30/255, alpha: 1.0)
@@ -38,14 +38,14 @@ class HomeViewController: BaseViewController<HomeViewModel>{
         $0.calendarWeekdayView.weekdayLabels[6].text = "S"
     }
     
-    let springBackground = UIImageView().then{
+    private let springBackground = UIImageView().then{
         $0.image = UIImage(named: "Spring.svg")
     }
     
-    let underView = UIView().then {
+    private let underView = UIView().then {
         $0.backgroundColor = .white
     }
-    let toolBarLine = UIView().then {
+    private let toolBarLine = UIView().then {
         $0.backgroundColor = UIColor(red: 160/255, green: 160/255, blue: 160/255, alpha: 1.0)
     }
 

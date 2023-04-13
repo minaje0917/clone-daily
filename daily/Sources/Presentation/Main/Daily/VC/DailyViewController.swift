@@ -21,17 +21,17 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
         textViewDidEndEditing(dailyTextView)
     }
     
-    let dailyBackground = UIImageView().then {
+    private let dailyBackground = UIImageView().then {
         $0.image = UIImage(named: "DailyBackground.svg")
     }
     
-    let dailyTextView = UITextView().then {
+    private let dailyTextView = UITextView().then {
         $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.00)
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
     }
     
-    func placeholderSetting() {
+    private func placeholderSetting() {
         dailyTextView.delegate = self
         dailyTextView.text = "설명"
         dailyTextView.textColor = UIColor.lightGray

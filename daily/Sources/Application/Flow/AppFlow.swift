@@ -17,7 +17,7 @@ struct AppStepper: Stepper {
     init() {}
     
     var initialStep: Step {
-        return DailyStep.loginIsRequired
+        return DailyStep.splashIsRequired
     }
 }
 
@@ -41,8 +41,8 @@ final class AppFlow: Flow {
         guard let step = step as? DailyStep else {return .none}
         
         switch step {
-        case .loginIsRequired:
-            return coordinateToLogin()
+        case .splashIsRequired:
+            return coordinateToSplash()
         case .mainTabBarIsRequired:
             return coordinateToHome()
         default:
@@ -50,7 +50,7 @@ final class AppFlow: Flow {
         } 
     }
     
-    private func coordinateToLogin() -> FlowContributors {
+    private func coordinateToSplash() -> FlowContributors {
         let flow = LoginFlow()
         Flows.use(flow, when: .created) { (root) in
             self.window.rootViewController = root
@@ -58,7 +58,7 @@ final class AppFlow: Flow {
         return .one(
             flowContributor: .contribute(
                 withNextPresentable: flow,
-                withNextStepper: OneStepper(withSingleStep: DailyStep.loginIsRequired)
+                withNextStepper: OneStepper(withSingleStep: DailyStep.splashIsRequired)
         ))
     }
     

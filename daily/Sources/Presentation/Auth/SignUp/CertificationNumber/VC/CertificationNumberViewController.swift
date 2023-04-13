@@ -12,15 +12,14 @@ import RxCocoa
 import RxFlow
 import DPOTPView
 
-class CertificationNumberViewController: BaseViewController<CertificationNumberViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
+class CertificationNumberViewController: BaseViewController<CertificationNumberViewModel>{
     
     override func viewDidLoad(){
         super.viewDidLoad()
         self.navigationItem.backButton(title: "")
     }
     
-    private lazy var timerLabel = UILabel().then {
+    private var timerLabel = UILabel().then {
         $0.text = "4 : 59"
         $0.font = UIFont.systemFont(
             ofSize: 40,
@@ -40,7 +39,7 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
         $0.numberOfLines = 2
     }
     
-    private lazy var certificationNumberTextField = DPOTPView().then {
+    private var certificationNumberTextField = DPOTPView().then {
         $0.count = 4
         $0.spacing = 16
         $0.isCursorHidden = true
@@ -60,7 +59,7 @@ class CertificationNumberViewController: BaseViewController<CertificationNumberV
         $0.keyboardType = .numberPad
     }
     
-    private lazy var reSendButton = UIButton().then {
+    private var reSendButton = UIButton().then {
         let text = NSAttributedString(string: "재전송")
         $0.setAttributedTitle(
             text,

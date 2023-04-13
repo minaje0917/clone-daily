@@ -11,8 +11,7 @@ import Then
 import RxCocoa
 import RxFlow
 
-class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
+class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>{
 
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -46,24 +45,12 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
         $0.setSubTextColor()
     }
     
-    private lazy var nicknameTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "닉네임을 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
-        $0.isSecureTextEntry = true
-        $0.leftPadding(width: 20)
-    }
+    private var nicknameTextField = DailyTextField(
+        type: .simple,
+        placeholder: "예시)고양이귀여워"
+    )
     
-    private lazy var checkButton = UIButton().then {
+    private var checkButton = UIButton().then {
         let text = NSAttributedString(string: "확인")
         $0.setAttributedTitle(
             text,
@@ -95,7 +82,7 @@ class CreateNicknameViewController: BaseViewController<CreateNicknameViewModel>,
         $0.textColor = UIColor.dailyLight!
     }
 
-    private lazy var backSignInButton = UIButton().then {
+    private var backSignInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(

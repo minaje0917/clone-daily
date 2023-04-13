@@ -13,6 +13,7 @@ import Then
 final class SelectThemeCell: UICollectionViewCell {
     static let id = "SelectThemeCell"
     
+<<<<<<< HEAD
     private let themeView = UIView().then {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -34,4 +35,9 @@ final class SelectThemeCell: UICollectionViewCell {
         ])
     }
     
+=======
+//    private let themeImage = UIImageView().then {
+////        $0.image = UIImage
+//    }
+>>>>>>> 9f6e64afdc483e40cab2e968a099e3fcc8991021
 }

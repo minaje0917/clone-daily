@@ -24,8 +24,10 @@ class LoginFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }
         switch step {
+        case .splashIsRequired:
+            return coordinateToSplash()
         case .loginIsRequired:
-            return coordinateToLogin()
+            return navigateToLogin()
         case .signInIsRequired:
             return navigateToSignIn()
         case .mainTabBarIsRequired:
@@ -38,12 +40,24 @@ class LoginFlow: Flow {
             return navigationToCertificationNumber()
         case .createNicknameIsRequired:
             return navigationToCreateNickname()
+        case .forgotPasswordIsRequired:
+            return navigationToForgotPassword()
+        case .authKeyIsRequired:
+            return navigationToAuthKey()
+        case .changePasswordIsRequired:
+            return navigationToChangePassword()
         default:
             return .none
         }
     }
     
-    private func coordinateToLogin() -> FlowContributors {
+    private func coordinateToSplash() -> FlowContributors {
+        let vc = SplashViewController()
+        self.rootViewController.setViewControllers([vc], animated: false)
+        return .one(flowContributor: .contribute(withNext: vc))
+    }
+    
+    private func navigateToLogin() -> FlowContributors {
         let vm = IntroViewModel()
         let vc = IntroViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: false)
@@ -81,6 +95,27 @@ class LoginFlow: Flow {
     private func navigationToCreateNickname() -> FlowContributors {
         let vm = CreateNicknameViewModel()
         let vc = CreateNicknameViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigationToForgotPassword() -> FlowContributors {
+        let vm = CheckEmailViewModel()
+        let vc = CheckEmailViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigationToAuthKey() -> FlowContributors {
+        let vm = AuthKeyViewModel()
+        let vc = AuthKeyViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func navigationToChangePassword() -> FlowContributors {
+        let vm = ChangePasswordViewModel()
+        let vc = ChangePasswordViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

@@ -10,9 +10,7 @@ import RxSwift
 import RxCocoa
 import RxFlow
 
-final class CreatePwViewModel: BaseViewModel, Stepper {
-    var steps = PublishRelay<Step>()
-    
+final class CreatePwViewModel: BaseViewModel, Stepper {    
     struct Input {
         let backSignInButtonTap: Observable<Void>
         let nextButtonTap: Observable<Void>

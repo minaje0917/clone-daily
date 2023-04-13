@@ -11,7 +11,6 @@ import RxCocoa
 import RxFlow
 
 final class CreateEmailViewModel: BaseViewModel, Stepper {
-    var steps = PublishRelay<Step>()
     
     struct Input {
         let backSignInButtonTap: Observable<Void>

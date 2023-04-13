@@ -11,9 +11,8 @@ import Then
 import RxCocoa
 import RxFlow
 
-class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
-
+class CreatePwViewController: BaseViewController<CreatePwViewModel>{
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         bindViewModel()
@@ -46,40 +45,21 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         $0.setSubTextColor()
     }
     
-    private lazy var pwTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "비밀번호를 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
+    private var pwTextField = DailyTextField(
+        type: .simple,
+        placeholder: "비밀번호를 입력해주세요."
+    ).then {
         $0.isSecureTextEntry = true
-        $0.leftPadding(width: 20)
     }
     
-    private lazy var pwCheckTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "비밀번호를 다시 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
-        $0.leftPadding(width: 20)
+    private var pwCheckTextField = DailyTextField(
+        type: .simple,
+        placeholder: "비밀번호를 다시 입력해주세요."
+    ).then {
+        $0.isSecureTextEntry = true
     }
     
-    private lazy var nextButton = UIButton().then {
+    private var nextButton = UIButton().then {
         let text = NSAttributedString(string: "다음")
         $0.setAttributedTitle(
             text,
@@ -111,7 +91,7 @@ class CreatePwViewController: BaseViewController<CreatePwViewModel>, Stepper{
         $0.textColor = UIColor.dailyLight!
     }
 
-    private lazy var backSignInButton = UIButton().then {
+    private var backSignInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(

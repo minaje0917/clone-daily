@@ -11,8 +11,7 @@ import Then
 import RxCocoa
 import RxFlow
 
-class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepper{
-    var steps = PublishRelay<Step>()
+class CreateEmailViewController: BaseViewController<CreateEmailViewModel>{
 
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -46,24 +45,12 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
         $0.setSubTextColor()
     }
     
-    private lazy var emailTextField = UITextField().then {
-        $0.setBackGroundColor()
-        $0.attributedPlaceholder = NSAttributedString(
-            string: "이메일을 입력해 주세요.",
-            attributes: [
-                .foregroundColor: UIColor.dailyLight!,
-                .font: UIFont.systemFont(
-                    ofSize: 16,
-                    weight: .regular
-                )
-        ])
-        $0.layer.cornerRadius = 20
-        $0.textColor = .black
-        $0.isSecureTextEntry = true
-        $0.leftPadding(width: 20)
-    }
+    private var emailTextField = DailyTextField(
+        type: .simple,
+        placeholder: "이메일을 입력해 주세요."
+    )
     
-    private lazy var getNumButton = UIButton().then {
+    private var getNumButton = UIButton().then {
         let text = NSAttributedString(string: "인증번호 받기")
         $0.setAttributedTitle(
             text,
@@ -95,7 +82,7 @@ class CreateEmailViewController: BaseViewController<CreateEmailViewModel>, Stepp
         $0.textColor = UIColor.dailyLight!
     }
 
-    private lazy var backSignInButton = UIButton().then {
+    private var backSignInButton = UIButton().then {
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(
