@@ -12,8 +12,37 @@ import Then
 
 final class SelectThemeCell: UICollectionViewCell {
     static let id = "SelectThemeCell"
+    private lazy var imageView = UIImageView()
     
-//    private let themeImage = UIImageView().then {
-////        $0.image = UIImage
-//    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+        
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupUI()
+    }
+}
+
+extension SelectThemeCell {
+    func setupUI() {
+        backgroundColor = .clear
+            
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        imageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 534).isActive = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 24
+    }
+}
+
+extension SelectThemeCell {
+    public func configure(image: UIImage?) {
+        imageView.image = image
+    }
 }
