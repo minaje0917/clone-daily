@@ -14,7 +14,12 @@ import RxSwift
 class ThemeViewController: BaseViewController<ThemeViewModel> {
 
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     private let theme = UIImageView().then {

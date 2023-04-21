@@ -14,11 +14,16 @@ import RxSwift
 class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegate{
 
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: .none, action: nil)
         placeholderSetting()
         textViewDidBeginEditing(dailyTextView)
         textViewDidEndEditing(dailyTextView)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private let dailyBackground = UIImageView().then {
