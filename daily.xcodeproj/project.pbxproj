@@ -25,7 +25,7 @@
 		770D6C3E29C15D380085A250 /* ProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3D29C15D380085A250 /* ProfileFlow.swift */; };
 		770D6C4029C15D460085A250 /* ThemeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C3F29C15D460085A250 /* ThemeFlow.swift */; };
 		770D6C4529C982050085A250 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = 770D6C4429C982050085A250 /* ViewAnimator */; };
-		770D6C4829CAF7640085A250 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4729CAF7640085A250 /* ProfileTableViewCell.swift */; };
+		770D6C4829CAF7640085A250 /* ProfileCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4729CAF7640085A250 /* ProfileCollectionCell.swift */; };
 		770D6C4E29CC3E8E0085A250 /* SelectThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4D29CC3E8E0085A250 /* SelectThemeCell.swift */; };
 		770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */; };
 		770D6C5229CD33280085A250 /* SelectThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */; };
@@ -117,7 +117,7 @@
 		770D6C3B29C15D230085A250 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
 		770D6C3D29C15D380085A250 /* ProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlow.swift; sourceTree = "<group>"; };
 		770D6C3F29C15D460085A250 /* ThemeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFlow.swift; sourceTree = "<group>"; };
-		770D6C4729CAF7640085A250 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		770D6C4729CAF7640085A250 /* ProfileCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionCell.swift; sourceTree = "<group>"; };
 		770D6C4D29CC3E8E0085A250 /* SelectThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeCell.swift; sourceTree = "<group>"; };
 		770D6C4F29CD32FD0085A250 /* SeletThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeletThemeViewController.swift; sourceTree = "<group>"; };
 		770D6C5129CD33280085A250 /* SelectThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeViewModel.swift; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 		770D6C4629CAF73B0085A250 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				770D6C4729CAF7640085A250 /* ProfileTableViewCell.swift */,
+				770D6C4729CAF7640085A250 /* ProfileCollectionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1235,7 +1235,7 @@
 				77F0738129E7DFD200EE1FC9 /* DailyButton.swift in Sources */,
 				77EE661C29DD37B6001423E4 /* DiaryListResponse.swift in Sources */,
 				77EE660C29DD0156001423E4 /* PasswordAuthKeyRequest.swift in Sources */,
-				770D6C4829CAF7640085A250 /* ProfileTableViewCell.swift in Sources */,
+				770D6C4829CAF7640085A250 /* ProfileCollectionCell.swift in Sources */,
 				77F1F1902986E3C000ED498E /* AppFlow.swift in Sources */,
 				77EE660E29DD019B001423E4 /* CheckAuthKeyRequest.swift in Sources */,
 				770D6C2F29B9A9DC0085A250 /* ProfileViewModel.swift in Sources */,
