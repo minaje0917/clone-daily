@@ -922,7 +922,6 @@
 				77F13A4D290AA4E100F7354A /* Info.plist */,
 				77F1F1952987CB8C00ED498E /* Sources */,
 				77F0725C29209BB7007FE1DD /* Resources */,
-				77F13A66290AA75200F7354A /* Support */,
 				77EE661F29DE441D001423E4 /* DesignSystem */,
 			);
 			path = daily;
@@ -937,13 +936,6 @@
 				77F13A6C290AA78500F7354A /* Base */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		77F13A66290AA75200F7354A /* Support */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 		77F13A67290AA75700F7354A /* Intro */ = {
