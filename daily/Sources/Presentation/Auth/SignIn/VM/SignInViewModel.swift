@@ -9,11 +9,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxFlow
+import Moya
 
 final class SignInViewModel: BaseViewModel, Stepper {
+    let keychain = Keychain()
+    let authProvider = MoyaProvider<AuthServices>()
+    var authData: LoginResponse?
     
     struct Input {
-        let signInButtonTap: Observable<Void>
         let backSignUpButtonTap: Observable<Void>
         let forgotPwButtonTap: Observable<Void>
     }
@@ -23,10 +26,6 @@ final class SignInViewModel: BaseViewModel, Stepper {
     }
     
     func transVC(input: Input) -> Output {
-        input.signInButtonTap.subscribe(
-            onNext: pushMainVC
-        ) .disposed(by: disposeBag)
-        
         input.backSignUpButtonTap.subscribe(
             onNext: pushCreateEmailVC
         ) .disposed(by: disposeBag)
@@ -37,10 +36,6 @@ final class SignInViewModel: BaseViewModel, Stepper {
         return Output()
     }
     
-    private func pushMainVC() {
-        self.steps.accept(DailyStep.mainTabBarIsRequired)
-    }
-    
     private func pushCreateEmailVC() {
         self.steps.accept(DailyStep.createEmailIsRequired)
     }
@@ -49,3 +44,42 @@ final class SignInViewModel: BaseViewModel, Stepper {
         self.steps.accept(DailyStep.forgotPasswordIsRequired)
     }
 }
+
+extension SignInViewModel {
+    func dailyLogin(email: String, password: String) {
+        let param = LoginRequest(email: email, password: password)
+        authProvider.request(.signIn(param: param)) { response in
+            switch response {
+            case .success(let result):
+                print(String(data: result.data, encoding: .utf8))
+                do {
+                    self.authData = try result.map(LoginResponse.self)
+                }catch(let err) {
+                    print(String(describing: err))
+                }
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                    self.addKeychainToken()
+                    self.steps.accept(DailyStep.mainTabBarIsRequired)
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
+    }
+    
+    func addKeychainToken() {
+        self.keychain.create(
+            key: Const.KeychainKey.accessToken,
+            token: self.authData?.accessToken ?? ""
+        )
+        self.keychain.create(
+            key: Const.KeychainKey.refreshToken,
+            token: self.authData?.refreshToken ?? ""
+        )
+    }
+}
+

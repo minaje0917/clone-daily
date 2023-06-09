@@ -16,16 +16,23 @@ class SignInViewController: BaseViewController<SignInViewModel>{
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        dailyLogin()
         self.navigationItem.backButton(title: "")
     }
     
     private func bindViewModel() {
         let input = SignInViewModel.Input(
-            signInButtonTap: signInButton.rx.tap.asObservable(),
             backSignUpButtonTap: backSignUpButton.rx.tap.asObservable(),
             forgotPwButtonTap: forgotPwButton.rx.tap.asObservable()
         )
         let output = viewModel.transVC(input: input)
+    }
+    
+    private func dailyLogin() {
+        signInButton.rx.tap
+            .bind { [self] in
+                viewModel.dailyLogin(email: emailTextField.text ?? "", password: pwTextField.text ?? "")
+            }.disposed(by: disposeBag)
     }
     
     private let signInText = UILabel().then {
