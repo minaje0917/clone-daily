@@ -34,6 +34,8 @@
 		776FF4472A31D589007620D6 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4462A31D589007620D6 /* LoginRequest.swift */; };
 		776FF44A2A32BF58007620D6 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4492A32BF58007620D6 /* AuthServices.swift */; };
 		776FF44C2A32C04C007620D6 /* DailyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF44B2A32C04C007620D6 /* DailyToken.swift */; };
+		776FF4502A32F2C4007620D6 /* WriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF44F2A32F2C4007620D6 /* WriteRequest.swift */; };
+		776FF4532A32F335007620D6 /* DiaryServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4522A32F335007620D6 /* DiaryServices.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */; };
@@ -104,6 +106,8 @@
 		776FF4462A31D589007620D6 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		776FF4492A32BF58007620D6 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		776FF44B2A32C04C007620D6 /* DailyToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyToken.swift; sourceTree = "<group>"; };
+		776FF44F2A32F2C4007620D6 /* WriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequest.swift; sourceTree = "<group>"; };
+		776FF4522A32F335007620D6 /* DiaryServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryServices.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 		776FF4402A31D4BC007620D6 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				776FF44D2A32F28E007620D6 /* Diary */,
 				776FF4452A31D56D007620D6 /* Auth */,
 			);
 			path = Request;
@@ -445,6 +450,7 @@
 		776FF4412A31D4C6007620D6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				776FF4512A32F323007620D6 /* Diary */,
 				776FF4482A32BF4A007620D6 /* Auth */,
 			);
 			path = Services;
@@ -472,6 +478,22 @@
 				776FF4492A32BF58007620D6 /* AuthServices.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		776FF44D2A32F28E007620D6 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				776FF44F2A32F2C4007620D6 /* WriteRequest.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		776FF4512A32F323007620D6 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				776FF4522A32F335007620D6 /* DiaryServices.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 		77EE65C229DC043E001423E4 /* ForgotPassword */ = {
@@ -925,6 +947,7 @@
 				77F0727C29288798007FE1DD /* DailyCalender.swift in Sources */,
 				77F1F1942987CABF00ED498E /* DailyStep.swift in Sources */,
 				77F13A6E290AA79700F7354A /* BaseViewController.swift in Sources */,
+				776FF4532A32F335007620D6 /* DiaryServices.swift in Sources */,
 				770D6C4029C15D460085A250 /* ThemeFlow.swift in Sources */,
 				77F0725F29209BDF007FE1DD /* DailyShadow.swift in Sources */,
 				77F07259291DDBD8007FE1DD /* HomeViewController.swift in Sources */,
@@ -936,6 +959,7 @@
 				77F13A40290AA4E000F7354A /* AppDelegate.swift in Sources */,
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
 				770D6C2129B87D730085A250 /* TextField.swift in Sources */,
+				776FF4502A32F2C4007620D6 /* WriteRequest.swift in Sources */,
 				77F0727829271064007FE1DD /* DailyViewModel.swift in Sources */,
 				776FF44A2A32BF58007620D6 /* AuthServices.swift in Sources */,
 				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
