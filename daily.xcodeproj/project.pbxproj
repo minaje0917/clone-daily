@@ -32,6 +32,7 @@
 		776FF43E2A31D44D007620D6 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF43D2A31D44D007620D6 /* BaseURL.swift */; };
 		776FF4442A31D4F1007620D6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4432A31D4F1007620D6 /* LoginModel.swift */; };
 		776FF4472A31D589007620D6 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4462A31D589007620D6 /* LoginRequest.swift */; };
+		776FF44A2A32BF58007620D6 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4492A32BF58007620D6 /* AuthServices.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */; };
@@ -100,6 +101,7 @@
 		776FF43D2A31D44D007620D6 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		776FF4432A31D4F1007620D6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		776FF4462A31D589007620D6 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		776FF4492A32BF58007620D6 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailViewController.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 		776FF4412A31D4C6007620D6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				776FF4482A32BF4A007620D6 /* Auth */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -457,6 +460,14 @@
 			isa = PBXGroup;
 			children = (
 				776FF4462A31D589007620D6 /* LoginRequest.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		776FF4482A32BF4A007620D6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				776FF4492A32BF58007620D6 /* AuthServices.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -923,6 +934,7 @@
 				77F13A42290AA4E000F7354A /* SceneDelegate.swift in Sources */,
 				770D6C2129B87D730085A250 /* TextField.swift in Sources */,
 				77F0727829271064007FE1DD /* DailyViewModel.swift in Sources */,
+				776FF44A2A32BF58007620D6 /* AuthServices.swift in Sources */,
 				77F13A7E290B64F000F7354A /* SignInViewModel.swift in Sources */,
 				77F13A6B290AA76D00F7354A /* IntroViewModel.swift in Sources */,
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
