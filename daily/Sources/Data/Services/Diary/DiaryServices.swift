@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum DiaryServices {
-    case write(authorization: String, date: Date)
+    case write(authorization: String, date: Date, param: WriteRequest)
 }
 
 
@@ -13,7 +13,7 @@ extension DiaryServices: TargetType {
     
     var path: String {
         switch self {
-        case let .write(_,date):
+        case let .write(_,date,_):
             return "/diary/\(date)"
         }
     }
@@ -31,14 +31,14 @@ extension DiaryServices: TargetType {
     
     var task: Task {
         switch self {
-        case .write:
-            return .requestPlain
+        case let .write(_,_,param):
+            return .requestJSONEncodable(param)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case let .write(authorization,_):
+        case let .write(authorization,_,_):
             return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
