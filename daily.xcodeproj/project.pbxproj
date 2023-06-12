@@ -809,9 +809,9 @@
 		77F1F1952987CB8C00ED498E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				77F13A65290AA74A00F7354A /* Presentation */,
-				770D6C1A29B850910085A250 /* Data */,
 				77F1F1962987CB9B00ED498E /* Application */,
+				770D6C1A29B850910085A250 /* Data */,
+				77F13A65290AA74A00F7354A /* Presentation */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

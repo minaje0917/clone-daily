@@ -19,7 +19,7 @@ class DailyViewModel: BaseViewModel, Stepper{
 }
 
 extension DailyViewModel {
-    func diaryWrite(date: String, content:String) {
+    func diaryWrite(date: String, content:String, completion: @escaping () -> Void) {
         let param = WriteRequest(content: content, theme: "GRASSLAND")
         diaryProvider.request(.write(authorization: accessToken, date: date, param: param)) { response in
             switch response {
@@ -43,5 +43,6 @@ extension DailyViewModel {
                 print(String(describing: err))
             }
         }
+        completion()
     }
 }

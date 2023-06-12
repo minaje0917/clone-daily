@@ -41,8 +41,9 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
     private func saveButtonDidTap() {
         navigationItem.rightBarButtonItem!.rx.tap
             .bind { [self] in
-                viewModel.diaryWrite(date: date, content: dailyTextView.text)
-                print(date)
+                viewModel.diaryWrite(date: date, content: dailyTextView.text) {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
     }
     
