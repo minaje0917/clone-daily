@@ -10,22 +10,45 @@ import Then
 import SnapKit
 
 class ProfileViewController: BaseViewController<ProfileViewModel> {
+    private var diaryContentList = [String]()
+    private var diaryDateList = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Task {
+            await bindViewModel()
+        }
         view.backgroundColor = UIColor(
             red: 249/255,
             green: 249/255,
             blue: 249/255,
             alpha: 1
         )
-        diaryList.dataSource = self
-        diaryList.delegate = self
-        diaryList.register(
-            ProfileCollectionCell.self,
-            forCellWithReuseIdentifier: ProfileCollectionCell.identifier
-        )
-        diaryList.collectionViewLayout = layout
+    }
+    
+    private func bindViewModel() async {
+        viewModel.getDiaryList { [weak self] in
+            self?.bindListData()
+        }
+    }
+    
+    private func bindListData() {
+        if viewModel.listData.isEmpty {
+            print("empty")
+        }
+        else {
+            for index in 0...viewModel.listData.endIndex - 1 {
+                diaryContentList.insert(viewModel.listData[index].content, at: index)
+                diaryDateList.insert(viewModel.listData[index].date, at: index)
+                print(viewModel.listData[index].content)
+            }
+            diaryList.dataSource = self
+            diaryList.delegate = self
+            diaryList.register(
+                ProfileCollectionCell.self,
+                forCellWithReuseIdentifier: ProfileCollectionCell.identifier
+            )
+        }
     }
     
     private let dailyUserImage = UIImageView().then {
@@ -42,7 +65,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     }
     
     private let userEmail = UILabel().then {
-        $0.text = "s21031@gsm.hs.kr"
+        $0.text = "s21023@gsm.hs.kr"
         $0.font = UIFont.systemFont(
             ofSize: 12,
             weight: .regular
@@ -111,7 +134,7 @@ extension ProfileViewController:
     UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return diaryContentList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -129,8 +152,8 @@ extension ProfileViewController:
             blur: 8,
             spread: 0
         )
-        cell.diaryText.text = "화장실에서 선민재를 봤는데 선민재가 갑자기 넘어졌다."
-        cell.dateText.text = "12월 12일"
+        cell.diaryText.text = "\(diaryContentList[indexPath.row])"
+        cell.dateText.text = "\(diaryDateList[indexPath.row])"
         return cell
     }
     
