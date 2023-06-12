@@ -27,8 +27,13 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
         $0.contentMode = .scaleAspectFill
     }
     
+    private var xmarkButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "xmark"), for: .normal)
+        $0.tintColor = .black
+    }
+    
     override func addView() {
-        [theme].forEach {
+        [theme, xmarkButton].forEach {
             view.addSubview($0)
         }
     }
@@ -38,6 +43,10 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
             $0.center.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.top.bottom.equalToSuperview()
+        }
+        xmarkButton.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(50)
+            $0.leading.equalToSuperview().offset(30)
         }
     }
 }
