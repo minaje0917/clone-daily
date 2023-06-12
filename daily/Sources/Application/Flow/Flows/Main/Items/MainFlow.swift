@@ -41,8 +41,8 @@ class HomeFlow: Flow {
         case .loginIsRequired:
             return .end(forwardToParentFlowWithStep: DailyStep.loginIsRequired)
             
-        case .dailyIsRequired:
-            return coordinateToDaily()
+        case let .dailyIsRequired(date):
+            return coordinateToDaily(date: date)
             
         case .mainIsRequired:
             return coordinateToHome()
@@ -52,9 +52,9 @@ class HomeFlow: Flow {
         }
     }
     
-    private func coordinateToDaily() -> FlowContributors {
+    private func coordinateToDaily(date: String) -> FlowContributors {
         let vm = DailyViewModel()
-        let vc = DailyViewController(vm)
+        let vc = DailyViewController(date: date)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

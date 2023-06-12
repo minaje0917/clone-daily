@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum DiaryServices {
-    case write(authorization: String, date: Date, param: WriteRequest)
+    case write(authorization: String, date: String, param: WriteRequest)
 }
 
 

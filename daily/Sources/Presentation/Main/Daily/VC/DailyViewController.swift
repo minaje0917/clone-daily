@@ -12,6 +12,8 @@ import RxCocoa
 import RxSwift
 
 class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegate{
+    var date: String
+    var vm = DailyViewModel()
 
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
@@ -20,10 +22,28 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
         placeholderSetting()
         textViewDidBeginEditing(dailyTextView)
         textViewDidEndEditing(dailyTextView)
+        saveButtonDidTap()
+    }
+    
+    init(date: String) {
+        self.date = date
+        super.init(vm)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func saveButtonDidTap() {
+        navigationItem.rightBarButtonItem!.rx.tap
+            .bind { [self] in
+                viewModel.diaryWrite(date: date, content: dailyTextView.text)
+                print(date)
+            }
     }
     
     private let dailyBackground = UIImageView().then {

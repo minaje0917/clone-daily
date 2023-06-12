@@ -16,20 +16,26 @@ class DailyViewModel: BaseViewModel, Stepper{
     let diaryProvider = MoyaProvider<DiaryServices>()
     lazy var accessToken = "Bearer " + (keychain.read(key: Const.KeychainKey.accessToken) ?? "")
 
-
 }
 
 extension DailyViewModel {
-    func dailyWrite(date: Date, content:String) {
+    func diaryWrite(date: String, content:String) {
         let param = WriteRequest(content: content, theme: "GRASSLAND")
         diaryProvider.request(.write(authorization: accessToken, date: date, param: param)) { response in
             switch response {
             case .success(let result):
-                print(String(data: result.data, encoding: .utf8))
                 let statusCode = result.statusCode
+                print(self.accessToken)
+                print(statusCode)
                 switch statusCode{
                 case 200..<300:
-                    self.steps.accept(DailyStep.mainTabBarIsRequired)
+                    self.steps.accept(DailyStep.mainIsRequired)
+                case 400:
+                    print("400")
+                case 401:
+                    print("401")
+                case 409:
+                    print("409")
                 default:
                     print("ERROR")
                 }
@@ -38,3 +44,4 @@ extension DailyViewModel {
             }
         }
     }
+}
