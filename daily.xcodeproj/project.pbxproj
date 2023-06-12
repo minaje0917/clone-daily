@@ -36,6 +36,8 @@
 		776FF44C2A32C04C007620D6 /* DailyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF44B2A32C04C007620D6 /* DailyToken.swift */; };
 		776FF4502A32F2C4007620D6 /* WriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF44F2A32F2C4007620D6 /* WriteRequest.swift */; };
 		776FF4532A32F335007620D6 /* DiaryServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4522A32F335007620D6 /* DiaryServices.swift */; };
+		776FF4562A371C1E007620D6 /* GetDiaryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4552A371C1E007620D6 /* GetDiaryListModel.swift */; };
+		776FF45A2A371C82007620D6 /* ProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4592A371C82007620D6 /* ProfileServices.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */; };
@@ -108,6 +110,8 @@
 		776FF44B2A32C04C007620D6 /* DailyToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyToken.swift; sourceTree = "<group>"; };
 		776FF44F2A32F2C4007620D6 /* WriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRequest.swift; sourceTree = "<group>"; };
 		776FF4522A32F335007620D6 /* DiaryServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryServices.swift; sourceTree = "<group>"; };
+		776FF4552A371C1E007620D6 /* GetDiaryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDiaryListModel.swift; sourceTree = "<group>"; };
+		776FF4592A371C82007620D6 /* ProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServices.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailViewController.swift; sourceTree = "<group>"; };
@@ -433,6 +437,7 @@
 		776FF43F2A31D4B4007620D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				776FF4542A371BF3007620D6 /* Profile */,
 				776FF4422A31D4DB007620D6 /* Auth */,
 			);
 			path = Model;
@@ -450,6 +455,7 @@
 		776FF4412A31D4C6007620D6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				776FF4582A371C69007620D6 /* Profile */,
 				776FF4512A32F323007620D6 /* Diary */,
 				776FF4482A32BF4A007620D6 /* Auth */,
 			);
@@ -494,6 +500,22 @@
 				776FF4522A32F335007620D6 /* DiaryServices.swift */,
 			);
 			path = Diary;
+			sourceTree = "<group>";
+		};
+		776FF4542A371BF3007620D6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				776FF4552A371C1E007620D6 /* GetDiaryListModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		776FF4582A371C69007620D6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				776FF4592A371C82007620D6 /* ProfileServices.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		77EE65C229DC043E001423E4 /* ForgotPassword */ = {
@@ -967,11 +989,13 @@
 				77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */,
 				770D6C3E29C15D380085A250 /* ProfileFlow.swift in Sources */,
 				770D6BF829B566470085A250 /* CreateEmailViewController.swift in Sources */,
+				776FF45A2A371C82007620D6 /* ProfileServices.swift in Sources */,
 				770D6C5029CD32FD0085A250 /* SeletThemeViewController.swift in Sources */,
 				77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */,
 				770D6BFD29B5B3A50085A250 /* CertificationNumberViewModel.swift in Sources */,
 				77F0738329E8181F00EE1FC9 /* Button.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* HomeViewModel.swift in Sources */,
+				776FF4562A371C1E007620D6 /* GetDiaryListModel.swift in Sources */,
 				770D6C2D29B9A9B70085A250 /* ThemeViewModel.swift in Sources */,
 				77F13A85290B658800F7354A /* CreatePwViewController.swift in Sources */,
 				77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */,
