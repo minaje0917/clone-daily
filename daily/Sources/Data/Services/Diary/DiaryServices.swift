@@ -5,6 +5,7 @@ enum DiaryServices {
     case write(authorization: String, date: String, param: WriteRequest)
     case detail(authorization: String, date: String)
     case edit(authorization: String, date: String, param: EditDiaryRequest)
+    case delete(authorization: String, date: String)
 }
 
 
@@ -15,7 +16,7 @@ extension DiaryServices: TargetType {
     
     var path: String {
         switch self {
-        case let .write(_,date,_), let .detail(_, date), let .edit(_, date, _):
+        case let .write(_,date,_), let .detail(_, date), let .edit(_, date, _), let .delete(_, date):
             return "/diary/\(date)"
         }
     }
@@ -28,6 +29,8 @@ extension DiaryServices: TargetType {
             return .get
         case .edit:
             return .patch
+        case .delete:
+            return .delete
         }
     }
     
@@ -39,7 +42,7 @@ extension DiaryServices: TargetType {
         switch self {
         case let .write(_,_,param):
             return .requestJSONEncodable(param)
-        case .detail:
+        case .detail, .delete:
             return .requestPlain
         case let .edit(_,_,param):
             return .requestJSONEncodable(param)
@@ -48,7 +51,10 @@ extension DiaryServices: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case let .write(authorization,_,_), let .detail(authorization,_), let .edit(authorization,_,_):
+        case let .write(authorization,_,_),
+            let .detail(authorization,_),
+            let .edit(authorization,_,_),
+            let .delete(authorization,_):
             return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
