@@ -39,6 +39,7 @@
 		776FF4562A371C1E007620D6 /* GetDiaryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4552A371C1E007620D6 /* GetDiaryListModel.swift */; };
 		776FF45A2A371C82007620D6 /* ProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4592A371C82007620D6 /* ProfileServices.swift */; };
 		776FF45D2A3809A1007620D6 /* DiaryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF45C2A3809A1007620D6 /* DiaryDetailModel.swift */; };
+		779265182A3868DA00A19CFE /* EditDiaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779265172A3868DA00A19CFE /* EditDiaryRequest.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */; };
@@ -114,6 +115,7 @@
 		776FF4552A371C1E007620D6 /* GetDiaryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDiaryListModel.swift; sourceTree = "<group>"; };
 		776FF4592A371C82007620D6 /* ProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServices.swift; sourceTree = "<group>"; };
 		776FF45C2A3809A1007620D6 /* DiaryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailModel.swift; sourceTree = "<group>"; };
+		779265172A3868DA00A19CFE /* EditDiaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiaryRequest.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailViewController.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				776FF44F2A32F2C4007620D6 /* WriteRequest.swift */,
+				779265172A3868DA00A19CFE /* EditDiaryRequest.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -1018,6 +1021,7 @@
 				77EE65DC29DC05C6001423E4 /* ChangePasswordViewController.swift in Sources */,
 				770D6C0A29B5D23D0085A250 /* CreateNicknameViewController.swift in Sources */,
 				776FF44C2A32C04C007620D6 /* DailyToken.swift in Sources */,
+				779265182A3868DA00A19CFE /* EditDiaryRequest.swift in Sources */,
 				77F0726529223303007FE1DD /* DailyTabBar.swift in Sources */,
 				77F13A7A290B64CB00F7354A /* SignInViewController.swift in Sources */,
 				770D6C3C29C15D230085A250 /* TabBarFlow.swift in Sources */,
