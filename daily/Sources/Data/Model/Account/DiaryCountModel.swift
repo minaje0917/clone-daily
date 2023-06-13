@@ -5,5 +5,5 @@ struct DiaryCountModel: Codable {
 }
 
 struct DiaryCountResponse: Codable {
-    let content: String
+    let count: Int
 }

@@ -13,7 +13,7 @@ extension ProfileServices: TargetType {
     
     var path: String {
         switch self {
-        case let .getDiaryList:
+        case .getDiaryList:
             return "/diary"
         }
     }

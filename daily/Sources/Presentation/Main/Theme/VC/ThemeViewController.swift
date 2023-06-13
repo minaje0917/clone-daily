@@ -14,6 +14,7 @@ import RxSwift
 class ThemeViewController: BaseViewController<ThemeViewModel> {
 
     override func viewDidLoad() {
+        viewModel.getDiaryCount()
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         bindViewModel()

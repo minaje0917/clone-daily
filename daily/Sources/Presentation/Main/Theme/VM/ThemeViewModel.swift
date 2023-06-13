@@ -37,12 +37,13 @@ class ThemeViewModel: BaseViewModel, Stepper{
 }
 
 extension ThemeViewModel {
-    func diaryCount(completion: @escaping () -> Void) {
+    func getDiaryCount() {
         let param = DiaryCountRequest(theme: "GRASSLAND")
         accountProvider.request(.diaryCount(authorization: accessToken, param: param)) { response in
             switch response {
             case .success(let result):
                 let statusCode = result.statusCode
+                print(statusCode)
                 do {
                     self.diaryCount = try result.map(DiaryCountResponse.self)
                     print(self.diaryCount)
@@ -65,6 +66,5 @@ extension ThemeViewModel {
                 print(String(describing: err))
             }
         }
-        completion()
     }
 }

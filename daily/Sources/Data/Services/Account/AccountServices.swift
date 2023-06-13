@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum AccountServices {
-    case diaryCount(authorization: String, param: DiaryCountRequest)
+    case diaryCount(authorization: String, theme: String)
 }
 
 
@@ -13,8 +13,8 @@ extension AccountServices: TargetType {
     
     var path: String {
         switch self {
-        case .diaryCount:
-            return "/account/theme-count"
+        case let .diaryCount(_, theme):
+            return "/account/theme-count/\(theme)"
         }
     }
     
@@ -31,8 +31,8 @@ extension AccountServices: TargetType {
     
     var task: Task {
         switch self {
-        case let .diaryCount(_,param):
-            return .requestJSONEncodable(param)
+        case .diaryCount:
+            return .requestPlain
         }
     }
     

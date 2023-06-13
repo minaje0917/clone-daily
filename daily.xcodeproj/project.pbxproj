@@ -41,7 +41,6 @@
 		776FF45D2A3809A1007620D6 /* DiaryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF45C2A3809A1007620D6 /* DiaryDetailModel.swift */; };
 		779265182A3868DA00A19CFE /* EditDiaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779265172A3868DA00A19CFE /* EditDiaryRequest.swift */; };
 		7792651D2A386DE200A19CFE /* DiaryCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7792651C2A386DE200A19CFE /* DiaryCountModel.swift */; };
-		779265202A386E1A00A19CFE /* DiaryCountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7792651F2A386E1A00A19CFE /* DiaryCountRequest.swift */; };
 		779265232A387E2E00A19CFE /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779265222A387E2E00A19CFE /* AccountServices.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
@@ -120,7 +119,6 @@
 		776FF45C2A3809A1007620D6 /* DiaryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailModel.swift; sourceTree = "<group>"; };
 		779265172A3868DA00A19CFE /* EditDiaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiaryRequest.swift; sourceTree = "<group>"; };
 		7792651C2A386DE200A19CFE /* DiaryCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCountModel.swift; sourceTree = "<group>"; };
-		7792651F2A386E1A00A19CFE /* DiaryCountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCountRequest.swift; sourceTree = "<group>"; };
 		779265222A387E2E00A19CFE /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
@@ -552,7 +550,6 @@
 		7792651E2A386E0D00A19CFE /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				7792651F2A386E1A00A19CFE /* DiaryCountRequest.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -1043,7 +1040,6 @@
 				770D6BFD29B5B3A50085A250 /* CertificationNumberViewModel.swift in Sources */,
 				77F0738329E8181F00EE1FC9 /* Button.swift in Sources */,
 				77F0725B291DDBE2007FE1DD /* HomeViewModel.swift in Sources */,
-				779265202A386E1A00A19CFE /* DiaryCountRequest.swift in Sources */,
 				776FF4562A371C1E007620D6 /* GetDiaryListModel.swift in Sources */,
 				770D6C2D29B9A9B70085A250 /* ThemeViewModel.swift in Sources */,
 				77F13A85290B658800F7354A /* CreatePwViewController.swift in Sources */,
