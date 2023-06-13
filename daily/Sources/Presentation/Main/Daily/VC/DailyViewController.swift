@@ -19,18 +19,21 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: .none, action: nil)
+        contentIsNotNil()
         placeholderSetting()
         textViewDidBeginEditing(dailyTextView)
         textViewDidEndEditing(dailyTextView)
         saveButtonDidTap()
-        contentIsNotNil()
     }
     
     private func contentIsNotNil() {
         if self.content != "" {
+            self.navigationItem.addRightBarButtonItem()
             dailyTextView.textColor = UIColor.black
             dailyTextView.text = content
+        }
+        else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: .none, action: nil)
         }
     }
     
