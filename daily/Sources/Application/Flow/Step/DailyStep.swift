@@ -6,6 +6,7 @@
 //
 
 import RxFlow
+import UIKit
 
 enum DailyStep: Step {
     //MARK: Splash
@@ -42,4 +43,8 @@ enum DailyStep: Step {
     
     // MARK: Main
     case mainIsRequired
+    
+    //MARK: Alert
+    case alert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction])
+    case failureAlert(title: String?, message: String?, action: [UIAlertAction] = [])
 }
