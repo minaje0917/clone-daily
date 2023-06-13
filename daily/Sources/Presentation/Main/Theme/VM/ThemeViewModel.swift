@@ -9,8 +9,14 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxFlow
+import Moya
 
 class ThemeViewModel: BaseViewModel, Stepper{
+    let keychain = Keychain()
+    let accountProvider = MoyaProvider<AccountServices>()
+    lazy var accessToken = "Bearer " + (keychain.read(key: Const.KeychainKey.accessToken) ?? "")
+    var diaryCount: DiaryCountResponse?
+    
     struct Input {
         let xmarkButtonDidTap: Observable<Void>
     }
@@ -27,5 +33,38 @@ class ThemeViewModel: BaseViewModel, Stepper{
     
     private func pushHomeVC() {
         self.steps.accept(DailyStep.profileIsRequired)
+    }
+}
+
+extension ThemeViewModel {
+    func diaryCount(completion: @escaping () -> Void) {
+        let param = DiaryCountRequest(theme: "GRASSLAND")
+        accountProvider.request(.diaryCount(authorization: accessToken, param: param)) { response in
+            switch response {
+            case .success(let result):
+                let statusCode = result.statusCode
+                do {
+                    self.diaryCount = try result.map(DiaryCountResponse.self)
+                    print(self.diaryCount)
+                }catch(let err) {
+                    print(String(describing: err))
+                }
+                switch statusCode{
+                case 200..<300:
+                    print("200")
+                case 400:
+                    print("400")
+                case 401:
+                    print("401")
+                case 409:
+                    print("409")
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
+        completion()
     }
 }
