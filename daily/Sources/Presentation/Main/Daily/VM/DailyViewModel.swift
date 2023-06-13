@@ -84,4 +84,36 @@ extension DailyViewModel {
         }
         completion()
     }
+    
+    func deleteDiary(date: String, completion: @escaping () -> Void) {
+        diaryProvider.request(.delete(authorization: accessToken, date: date)) { response in
+            switch response {
+            case .success(let result):
+                let statusCode = result.statusCode
+                print(self.accessToken)
+                print(statusCode)
+                switch statusCode{
+                case 200..<300:
+                    print("200")
+                case 400:
+                    self.steps.accept(DailyStep.failureAlert(
+                        title: "오류!",
+                        message: "일기 내용을 입력해주세요"
+                    ))
+                case 401:
+                    print("401")
+                case 409:
+                    self.steps.accept(DailyStep.failureAlert(
+                        title: "오류!",
+                        message: "이미 일기를 작성한 날짜입니다."
+                    ))
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
+        completion()
+    }
 }
