@@ -4,7 +4,7 @@ import Moya
 enum DiaryServices {
     case write(authorization: String, date: String, param: WriteRequest)
     case detail(authorization: String, date: String)
-    case edit(authorization: String, date: String)
+    case edit(authorization: String, date: String, param: EditDiaryRequest)
 }
 
 
@@ -15,7 +15,7 @@ extension DiaryServices: TargetType {
     
     var path: String {
         switch self {
-        case let .write(_,date,_), let .detail(_, date), let .edit(_, date):
+        case let .write(_,date,_), let .detail(_, date), let .edit(_, date, _):
             return "/diary/\(date)"
         }
     }
@@ -39,14 +39,16 @@ extension DiaryServices: TargetType {
         switch self {
         case let .write(_,_,param):
             return .requestJSONEncodable(param)
-        case .detail, .edit:
+        case .detail:
             return .requestPlain
+        case let .edit(_,_,param):
+            return .requestJSONEncodable(param)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case let .write(authorization,_,_), let .detail(authorization,_), let .edit(authorization,_):
+        case let .write(authorization,_,_), let .detail(authorization,_), let .edit(authorization,_,_):
             return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]

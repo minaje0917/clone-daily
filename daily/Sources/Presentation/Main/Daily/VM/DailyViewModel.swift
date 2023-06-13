@@ -51,4 +51,37 @@ extension DailyViewModel {
         }
         completion()
     }
+    
+    func editDiary(date: String, content:String, completion: @escaping () -> Void) {
+        let param = EditDiaryRequest(content: content)
+        diaryProvider.request(.edit(authorization: accessToken, date: date, param: param)) { response in
+            switch response {
+            case .success(let result):
+                let statusCode = result.statusCode
+                print(self.accessToken)
+                print(statusCode)
+                switch statusCode{
+                case 200..<300:
+                    print("200")
+                case 400:
+                    self.steps.accept(DailyStep.failureAlert(
+                        title: "오류!",
+                        message: "일기 내용을 입력해주세요"
+                    ))
+                case 401:
+                    print("401")
+                case 409:
+                    self.steps.accept(DailyStep.failureAlert(
+                        title: "오류!",
+                        message: "이미 일기를 작성한 날짜입니다."
+                    ))
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
+        completion()
+    }
 }
