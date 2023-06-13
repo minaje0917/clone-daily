@@ -38,7 +38,7 @@ enum DailyStep: Step {
     case signInIsRequired
     
     // MARK: Daily
-    case dailyIsRequired(date: String)
+    case dailyIsRequired(date: String, content: String)
     
     // MARK: Main
     case mainIsRequired

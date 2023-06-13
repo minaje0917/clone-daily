@@ -169,6 +169,15 @@ extension ProfileViewController:
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let date = diaryDateList[indexPath.row]
+        viewModel.getDiaryDetail(date: date, completion: { [self] in
+            viewModel.steps.accept(
+                DailyStep.dailyIsRequired(
+                    date: date,
+                    content: viewModel.diaryData?.content ?? ""
+                )
+            )
+        })
+        self.navigationItem.backButton(title: date)
     }
 }

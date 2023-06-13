@@ -13,6 +13,7 @@ import RxSwift
 
 class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegate{
     var date: String
+    var content: String
     var vm = DailyViewModel()
 
     override func viewDidLoad() {
@@ -23,10 +24,19 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
         textViewDidBeginEditing(dailyTextView)
         textViewDidEndEditing(dailyTextView)
         saveButtonDidTap()
+        contentIsNotNil()
     }
     
-    init(date: String) {
+    private func contentIsNotNil() {
+        if self.content != "" {
+            dailyTextView.textColor = UIColor.black
+            dailyTextView.text = content
+        }
+    }
+    
+    init(date: String, content: String) {
         self.date = date
+        self.content = content
         super.init(vm)
     }
     

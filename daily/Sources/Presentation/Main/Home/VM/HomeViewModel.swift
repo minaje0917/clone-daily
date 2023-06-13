@@ -12,7 +12,7 @@ import RxFlow
 
 class HomeViewModel: BaseViewModel, Stepper {
     
-    func pushDailyVC(date: String) {
-        self.steps.accept(DailyStep.dailyIsRequired(date: date))
+    func pushDailyVC(date: String, content: String) {
+        self.steps.accept(DailyStep.dailyIsRequired(date: date, content: content))
     }
 }

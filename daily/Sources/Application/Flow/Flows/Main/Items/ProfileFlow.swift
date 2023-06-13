@@ -39,6 +39,10 @@ class ProfileFlow: Flow {
         case .profileIsRequired:
             return coordinateToProfile()
             
+        case let .dailyIsRequired(date, content):
+            return coordinateToDaily(date: date, content: content)
+          
+            
         default:
             return .none
         }
@@ -47,6 +51,13 @@ class ProfileFlow: Flow {
     private func coordinateToProfile() -> FlowContributors {
         let vm = ProfileViewModel()
         let vc = ProfileViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToDaily(date: String, content: String) -> FlowContributors {
+        let vm = DailyViewModel()
+        let vc = DailyViewController(date: date, content: content)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

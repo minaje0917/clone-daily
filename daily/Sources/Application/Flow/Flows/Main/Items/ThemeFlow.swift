@@ -40,6 +40,9 @@ class ThemeFlow: Flow {
             
         case .mainTabBarIsRequired:
             return .one(flowContributor: .forwardToParentFlow(withStep: DailyStep.mainTabBarIsRequired))
+        
+        case let .dailyIsRequired(date, content):
+            return coordinateToDaily(date: date, content: content)
             
         default:
             return .none
@@ -49,6 +52,13 @@ class ThemeFlow: Flow {
     private func coordinateToTheme() -> FlowContributors {
         let vm = ThemeViewModel()
         let vc = ThemeViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToDaily(date: String, content: String) -> FlowContributors {
+        let vm = DailyViewModel()
+        let vc = DailyViewController(date: date, content: content)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
