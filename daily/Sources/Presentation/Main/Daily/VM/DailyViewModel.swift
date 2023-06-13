@@ -15,7 +15,7 @@ class DailyViewModel: BaseViewModel, Stepper{
     let keychain = Keychain()
     let diaryProvider = MoyaProvider<DiaryServices>()
     lazy var accessToken = "Bearer " + (keychain.read(key: Const.KeychainKey.accessToken) ?? "")
-
+    
 }
 
 extension DailyViewModel {
@@ -29,13 +29,19 @@ extension DailyViewModel {
                 print(statusCode)
                 switch statusCode{
                 case 200..<300:
-                    self.steps.accept(DailyStep.mainIsRequired)
+                    print("200")
                 case 400:
-                    print("400")
+                    self.steps.accept(DailyStep.failureAlert(
+                        title: "오류!",
+                        message: "일기 내용을 입력해주세요"
+                    ))
                 case 401:
                     print("401")
                 case 409:
-                    print("409")
+                    self.steps.accept(DailyStep.failureAlert(
+                        title: "오류!",
+                        message: "이미 일기를 작성한 날짜입니다."
+                    ))
                 default:
                     print("ERROR")
                 }
