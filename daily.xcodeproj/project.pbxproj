@@ -38,6 +38,7 @@
 		776FF4532A32F335007620D6 /* DiaryServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4522A32F335007620D6 /* DiaryServices.swift */; };
 		776FF4562A371C1E007620D6 /* GetDiaryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4552A371C1E007620D6 /* GetDiaryListModel.swift */; };
 		776FF45A2A371C82007620D6 /* ProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF4592A371C82007620D6 /* ProfileServices.swift */; };
+		776FF45D2A3809A1007620D6 /* DiaryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FF45C2A3809A1007620D6 /* DiaryDetailModel.swift */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */; };
@@ -112,6 +113,7 @@
 		776FF4522A32F335007620D6 /* DiaryServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryServices.swift; sourceTree = "<group>"; };
 		776FF4552A371C1E007620D6 /* GetDiaryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDiaryListModel.swift; sourceTree = "<group>"; };
 		776FF4592A371C82007620D6 /* ProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServices.swift; sourceTree = "<group>"; };
+		776FF45C2A3809A1007620D6 /* DiaryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailModel.swift; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 		776FF43F2A31D4B4007620D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				776FF45B2A380994007620D6 /* Diary */,
 				776FF4542A371BF3007620D6 /* Profile */,
 				776FF4422A31D4DB007620D6 /* Auth */,
 			);
@@ -516,6 +519,14 @@
 				776FF4592A371C82007620D6 /* ProfileServices.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		776FF45B2A380994007620D6 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				776FF45C2A3809A1007620D6 /* DiaryDetailModel.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 		77EE65C229DC043E001423E4 /* ForgotPassword */ = {
@@ -1000,6 +1011,7 @@
 				77F13A85290B658800F7354A /* CreatePwViewController.swift in Sources */,
 				77F0727A29271195007FE1DD /* DailyNavigation.swift in Sources */,
 				770D6C0829B5D2310085A250 /* CreateNicknameViewModel.swift in Sources */,
+				776FF45D2A3809A1007620D6 /* DiaryDetailModel.swift in Sources */,
 				77F0737E29E7C20E00EE1FC9 /* CarouselView.swift in Sources */,
 				770D6C0329B5B3DC0085A250 /* CertificationNumberViewController.swift in Sources */,
 				776FF4442A31D4F1007620D6 /* LoginModel.swift in Sources */,
