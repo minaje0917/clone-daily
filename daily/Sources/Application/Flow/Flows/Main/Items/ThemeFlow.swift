@@ -37,6 +37,10 @@ class ThemeFlow: Flow {
         switch step {
         case .themeIsRequired:
             return coordinateToTheme()
+            
+        case .mainTabBarIsRequired:
+            return .one(flowContributor: .forwardToParentFlow(withStep: DailyStep.mainTabBarIsRequired))
+            
         default:
             return .none
         }

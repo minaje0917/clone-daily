@@ -16,14 +16,22 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
+        bindViewModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    private func bindViewModel() {
+        let input = ThemeViewModel.Input(
+            xmarkButtonDidTap: xmarkButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
+    }
 
     private let theme = UIImageView().then {
-        $0.image = UIImage(named: "oceanFirstTheme.svg")
+        $0.image = UIImage(named: "fieldFirstTheme.svg")
         $0.contentMode = .scaleAspectFill
     }
     

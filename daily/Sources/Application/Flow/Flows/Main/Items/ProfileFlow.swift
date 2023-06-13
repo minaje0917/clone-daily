@@ -35,8 +35,10 @@ class ProfileFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? DailyStep else { return .none }
         switch step {
+            
         case .profileIsRequired:
             return coordinateToProfile()
+            
         default:
             return .none
         }

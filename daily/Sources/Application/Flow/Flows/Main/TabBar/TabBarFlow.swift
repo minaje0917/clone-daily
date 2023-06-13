@@ -33,8 +33,16 @@ final class TabBarFlow: Flow {
         guard let step = step as? DailyStep else {return .none}
         
         switch step {
+            
         case .mainTabBarIsRequired:
-            return coordinateToMainTabbar()
+            return coordinateToMainTabbar(index: 0)
+            
+        case .profileIsRequired:
+            return coordinateToMainTabbar(index: 1)
+            
+        case .themeIsRequired:
+            return coordinateToMainTabbar(index: 2)
+                        
         default:
             return .none
         }
@@ -43,7 +51,7 @@ final class TabBarFlow: Flow {
 }
 
 private extension TabBarFlow {
-    func coordinateToMainTabbar() -> FlowContributors {
+    func coordinateToMainTabbar(index: Int) -> FlowContributors {
         Flows.use(
             homeFlow, profileFlow, themeFlow,
             when: .ready
@@ -73,6 +81,7 @@ private extension TabBarFlow {
             root3.tabBarItem = themeItem
             
             self.rootVC.setViewControllers([root1,root2,root3], animated: true)
+            self.rootVC.selectedIndex = index
 
         }
         return .multiple(flowContributors: [
