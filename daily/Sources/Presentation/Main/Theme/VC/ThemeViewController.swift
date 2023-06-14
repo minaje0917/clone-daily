@@ -18,6 +18,7 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
         viewModel.getDiaryCount()
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
+        self.navigationItem.addLeftBarButtonItem()
         bindViewModel()
         gifImageView.animate(withGIFNamed: "ezgif 4")
     }
@@ -28,7 +29,7 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
     
     private func bindViewModel() {
         let input = ThemeViewModel.Input(
-            xmarkButtonDidTap: xmarkButton.rx.tap.asObservable()
+            xmarkButtonDidTap: navigationItem.leftBarButtonItem!.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }
@@ -42,13 +43,13 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
         $0.contentMode = .scaleAspectFill
     }
     
-    private var xmarkButton = UIButton().then {
-        $0.setImage(UIImage(systemName: "xmark"), for: .normal)
-        $0.tintColor = .black
-    }
+//    private var xmarkButton = UIButton().then {
+//        $0.setImage(UIImage(systemName: "xmark"), for: .normal)
+//        $0.tintColor = .black
+//    }
     
     override func addView() {
-        [theme, xmarkButton, gifImageView].forEach {
+        [theme, gifImageView].forEach {
             view.addSubview($0)
         }
     }
@@ -59,10 +60,11 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
             $0.leading.trailing.equalToSuperview()
             $0.top.bottom.equalToSuperview()
         }
-        xmarkButton.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(50)
-            $0.leading.equalToSuperview().offset(30)
-        }
+//        xmarkButton.snp.makeConstraints {
+//            $0.top.equalToSuperview().offset(50)
+//            $0.leading.equalToSuperview().offset(30)
+//            $0.height.width.equalTo(50)
+//        }
         gifImageView.snp.makeConstraints {
             $0.height.equalTo(470)
             $0.width.equalTo(481)

@@ -19,8 +19,8 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
-        contentIsNotNil()
         placeholderSetting()
+        contentIsNotNil()
         textViewDidBeginEditing(dailyTextView)
         textViewDidEndEditing(dailyTextView)
         saveButtonDidTap()

@@ -32,7 +32,7 @@ class ThemeViewModel: BaseViewModel, Stepper{
     }
     
     private func pushHomeVC() {
-        self.steps.accept(DailyStep.profileIsRequired)
+        self.steps.accept(DailyStep.mainTabBarIsRequired)
     }
 }
 

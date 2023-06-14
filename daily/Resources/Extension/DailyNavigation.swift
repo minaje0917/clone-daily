@@ -27,4 +27,12 @@ extension UINavigationItem {
         }
         self.setRightBarButtonItems([deleteButton,editButton], animated: true)
     }
+    
+    func addLeftBarButtonItem() {
+        let xButton = UIBarButtonItem().then {
+            $0.image = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)
+            $0.tintColor = .black
+        }
+        self.setLeftBarButton(xButton, animated: true)
+    }
 }

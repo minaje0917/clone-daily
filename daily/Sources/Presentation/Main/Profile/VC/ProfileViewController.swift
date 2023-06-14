@@ -14,6 +14,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     private var diaryDateList = [String]()
 
     override func viewDidLoad() {
+        self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
         Task {
             await bindViewModel()
