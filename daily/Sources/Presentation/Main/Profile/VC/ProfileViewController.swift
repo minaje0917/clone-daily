@@ -12,6 +12,8 @@ import SnapKit
 class ProfileViewController: BaseViewController<ProfileViewModel> {
     private var diaryContentList = [String]()
     private var diaryDateList = [String]()
+    private var refreshControl = UIRefreshControl()
+
 
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
@@ -19,6 +21,8 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
         Task {
             await bindViewModel()
         }
+        diaryList.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         view.backgroundColor = UIColor(
             red: 249/255,
             green: 249/255,
@@ -26,6 +30,44 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
             alpha: 1
         )
     }
+    
+    @objc func refresh() {
+        DispatchQueue.main.async() { [self] in
+            bindData { [unowned self] in
+                diaryList.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
+    private func bindData(completion: @escaping () -> Void) {
+        viewModel.getDiaryList {
+            self.diaryContentList = [String]()
+            self.diaryDateList = [String]()
+            self.diaryList.reloadData()
+            self.bindListData2()
+        }
+        completion()
+    }
+    
+    private func bindListData2() {
+        if viewModel.listData.isEmpty {
+            print("empty")
+        }
+        else {
+            for index in 0...viewModel.listData.endIndex - 1 {
+                diaryContentList.insert(viewModel.listData[index].content, at: index)
+                diaryDateList.insert(viewModel.listData[index].date, at: index)
+                print(viewModel.listData[index].content)
+            }
+            diaryList.dataSource = self
+            diaryList.delegate = self
+            diaryList.register(
+                ProfileCollectionCell.self,
+                forCellWithReuseIdentifier: ProfileCollectionCell.identifier
+            )
+        }
+    }
+
     
     private func bindViewModel() async {
         viewModel.getDiaryList { [weak self] in
