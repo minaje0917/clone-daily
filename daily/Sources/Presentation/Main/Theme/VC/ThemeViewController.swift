@@ -32,7 +32,7 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
     }
 
     private let theme = UIImageView().then {
-        $0.image = UIImage(named: "fieldFirstTheme.svg")
+        $0.image = UIImage(named: "grassland.svg")
         $0.contentMode = .scaleAspectFill
     }
     
