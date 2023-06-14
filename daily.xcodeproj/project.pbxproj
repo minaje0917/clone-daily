@@ -42,6 +42,7 @@
 		779265182A3868DA00A19CFE /* EditDiaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779265172A3868DA00A19CFE /* EditDiaryRequest.swift */; };
 		7792651D2A386DE200A19CFE /* DiaryCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7792651C2A386DE200A19CFE /* DiaryCountModel.swift */; };
 		779265232A387E2E00A19CFE /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779265222A387E2E00A19CFE /* AccountServices.swift */; };
+		779265262A3945BE00A19CFE /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 779265252A3945BE00A19CFE /* Gifu */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */; };
@@ -167,6 +168,7 @@
 				77F13A55290AA5AF00F7354A /* Moya in Frameworks */,
 				77F1F18A2986ACA000ED498E /* RxFlow in Frameworks */,
 				77F072682922547F007FE1DD /* FSCalendar in Frameworks */,
+				779265262A3945BE00A19CFE /* Gifu in Frameworks */,
 				770D6C1929B733F50085A250 /* DPOTPView in Frameworks */,
 				77F13A5B290AA5C900F7354A /* Then in Frameworks */,
 				770D6C4529C982050085A250 /* ViewAnimator in Frameworks */,
@@ -945,6 +947,7 @@
 				77F1F1892986ACA000ED498E /* RxFlow */,
 				770D6C1829B733F50085A250 /* DPOTPView */,
 				770D6C4429C982050085A250 /* ViewAnimator */,
+				779265252A3945BE00A19CFE /* Gifu */,
 			);
 			productName = daily;
 			productReference = 77F13A3C290AA4E000F7354A /* daily.app */;
@@ -983,6 +986,7 @@
 				77F1F1882986ACA000ED498E /* XCRemoteSwiftPackageReference "RxFlow" */,
 				770D6C1729B733F50085A250 /* XCRemoteSwiftPackageReference "DPOTPView" */,
 				770D6C4329C982050085A250 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
+				779265242A3945BE00A19CFE /* XCRemoteSwiftPackageReference "Gifu" */,
 			);
 			productRefGroup = 77F13A3D290AA4E000F7354A /* Products */;
 			projectDirPath = "";
@@ -1299,6 +1303,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		779265242A3945BE00A19CFE /* XCRemoteSwiftPackageReference "Gifu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaishin/Gifu";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		77F072662922547F007FE1DD /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
@@ -1359,6 +1371,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 770D6C4329C982050085A250 /* XCRemoteSwiftPackageReference "ViewAnimator" */;
 			productName = ViewAnimator;
+		};
+		779265252A3945BE00A19CFE /* Gifu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 779265242A3945BE00A19CFE /* XCRemoteSwiftPackageReference "Gifu" */;
+			productName = Gifu;
 		};
 		77F072672922547F007FE1DD /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
