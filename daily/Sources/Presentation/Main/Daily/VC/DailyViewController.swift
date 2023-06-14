@@ -23,18 +23,43 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
         contentIsNotNil()
         textViewDidBeginEditing(dailyTextView)
         textViewDidEndEditing(dailyTextView)
-        saveButtonDidTap()
+        deleteButtonDidTap()
+        editButtonDidTap()
     }
     
     private func contentIsNotNil() {
         if self.content != "" {
-            self.navigationItem.addRightBarButtonItem()
+            self.navigationItem.rightBarButtonItems = [deleteButton,editButton]
             dailyTextView.textColor = UIColor.black
             dailyTextView.text = content
         }
         else {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: .none, action: nil)
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: .none, action: #selector(saveButtonDidTap))
         }
+    }
+    
+    @objc func saveButtonDidTap() {
+        self.viewModel.diaryWrite(date: self.date, content: self.dailyTextView.text) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    private func editButtonDidTap() {
+        editButton.rx.tap
+            .bind { [unowned self] in
+                viewModel.editDiary(date: date, content: dailyTextView.text, completion: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
+    }
+    
+    private func deleteButtonDidTap() {
+        deleteButton.rx.tap
+            .bind { [unowned self] in
+                viewModel.deleteDiary(date: date, completion: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
     }
     
     init(date: String, content: String) {
@@ -51,13 +76,14 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    private func saveButtonDidTap() {
-        navigationItem.rightBarButtonItem!.rx.tap
-            .bind { [unowned self] in
-                self.viewModel.diaryWrite(date: self.date, content: self.dailyTextView.text) {
-                    self.navigationController?.popViewController(animated: true)
-                }
-            }
+    private let editButton = UIBarButtonItem().then {
+        $0.image = UIImage(named: "EditButton.svg")?.withRenderingMode(.alwaysTemplate)
+        $0.tintColor = .n10
+    }
+    
+    private let deleteButton = UIBarButtonItem().then {
+        $0.image = UIImage(named: "DeleteButton.svg")?.withRenderingMode(.alwaysTemplate)
+        $0.tintColor = .error
     }
     
     private let dailyBackground = UIImageView().then {

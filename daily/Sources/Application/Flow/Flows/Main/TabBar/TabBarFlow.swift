@@ -91,7 +91,7 @@ private extension TabBarFlow {
             root2.tabBarItem = profileItem
             root3.tabBarItem = themeItem
             
-            self.rootVC.setViewControllers([root1,root2,root3], animated: true)
+            self.rootVC.setViewControllers([root1,root2,root3], animated: false)
             self.rootVC.selectedIndex = index
 
         }
