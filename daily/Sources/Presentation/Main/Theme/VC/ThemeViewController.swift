@@ -10,6 +10,7 @@ import SnapKit
 import Then
 import RxCocoa
 import RxSwift
+import Gifu
 
 class ThemeViewController: BaseViewController<ThemeViewModel> {
 
@@ -18,6 +19,7 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         bindViewModel()
+        gifImageView.animate(withGIFNamed: "ezgif 4")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -29,6 +31,10 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
             xmarkButtonDidTap: xmarkButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
+    }
+    
+    private let gifImageView = GIFImageView().then {
+        $0.isHidden = false
     }
 
     private let theme = UIImageView().then {
@@ -42,7 +48,7 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
     }
     
     override func addView() {
-        [theme, xmarkButton].forEach {
+        [theme, xmarkButton, gifImageView].forEach {
             view.addSubview($0)
         }
     }
@@ -56,6 +62,12 @@ class ThemeViewController: BaseViewController<ThemeViewModel> {
         xmarkButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(50)
             $0.leading.equalToSuperview().offset(30)
+        }
+        gifImageView.snp.makeConstraints {
+            $0.height.equalTo(470)
+            $0.width.equalTo(481)
+            $0.bottom.equalToSuperview().inset(92)
+            $0.trailing.equalToSuperview().offset(70)
         }
     }
 }

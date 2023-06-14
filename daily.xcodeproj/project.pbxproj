@@ -43,6 +43,7 @@
 		7792651D2A386DE200A19CFE /* DiaryCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7792651C2A386DE200A19CFE /* DiaryCountModel.swift */; };
 		779265232A387E2E00A19CFE /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779265222A387E2E00A19CFE /* AccountServices.swift */; };
 		779265262A3945BE00A19CFE /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 779265252A3945BE00A19CFE /* Gifu */; };
+		779265282A3946A900A19CFE /* ezgif 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 779265272A3946A900A19CFE /* ezgif 4.gif */; };
 		77C22EC1298916AF004CC9EC /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C22EC0298916AF004CC9EC /* LoginFlow.swift */; };
 		77CB722C2994E46900FB2336 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB722B2994E46900FB2336 /* MainFlow.swift */; };
 		77EE65D429DC055A001423E4 /* CheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */; };
@@ -121,6 +122,7 @@
 		779265172A3868DA00A19CFE /* EditDiaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiaryRequest.swift; sourceTree = "<group>"; };
 		7792651C2A386DE200A19CFE /* DiaryCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCountModel.swift; sourceTree = "<group>"; };
 		779265222A387E2E00A19CFE /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
+		779265272A3946A900A19CFE /* ezgif 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "ezgif 4.gif"; path = "../../../../../Downloads/ezgif 4.gif"; sourceTree = "<group>"; };
 		77C22EC0298916AF004CC9EC /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		77CB722B2994E46900FB2336 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
 		77EE65D329DC055A001423E4 /* CheckEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailViewController.swift; sourceTree = "<group>"; };
@@ -694,6 +696,7 @@
 		77F0725C29209BB7007FE1DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				779265272A3946A900A19CFE /* ezgif 4.gif */,
 				77F13A48290AA4E100F7354A /* Assets.xcassets */,
 				77F13A4A290AA4E100F7354A /* LaunchScreen.storyboard */,
 				77F0725D29209BBF007FE1DD /* Extension */,
@@ -1004,6 +1007,7 @@
 			files = (
 				77F13A4C290AA4E100F7354A /* LaunchScreen.storyboard in Resources */,
 				77F13A49290AA4E100F7354A /* Assets.xcassets in Resources */,
+				779265282A3946A900A19CFE /* ezgif 4.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
