@@ -39,7 +39,7 @@ class DailyViewController: BaseViewController<DailyViewModel>, UITextViewDelegat
     }
     
     @objc func saveButtonDidTap() {
-        self.viewModel.diaryWrite(date: self.date, content: self.dailyTextView.text) {
+        self.viewModel.diaryWrite(date: self.date, content: self.dailyTextView.text, theme: "GRASSLAND") {
             self.navigationController?.popViewController(animated: true)
         }
     }

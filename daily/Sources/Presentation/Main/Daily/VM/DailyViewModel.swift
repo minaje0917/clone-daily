@@ -19,8 +19,8 @@ class DailyViewModel: BaseViewModel, Stepper{
 }
 
 extension DailyViewModel {
-    func diaryWrite(date: String, content:String, completion: @escaping () -> Void) {
-        let param = WriteRequest(content: content, theme: "GRASSLAND")
+    func diaryWrite(date: String, content:String, theme: String, completion: @escaping () -> Void) {
+        let param = WriteRequest(content: content, theme: theme)
         diaryProvider.request(.write(authorization: accessToken, date: date, param: param)) { response in
             switch response {
             case .success(let result):
@@ -70,11 +70,6 @@ extension DailyViewModel {
                     ))
                 case 401:
                     print("401")
-                case 409:
-                    self.steps.accept(DailyStep.failureAlert(
-                        title: "오류!",
-                        message: "이미 일기를 작성한 날짜입니다."
-                    ))
                 default:
                     print("ERROR")
                 }
@@ -98,15 +93,10 @@ extension DailyViewModel {
                 case 400:
                     self.steps.accept(DailyStep.failureAlert(
                         title: "오류!",
-                        message: "일기 내용을 입력해주세요"
+                        message: "날짜를 선택해주세요"
                     ))
                 case 401:
                     print("401")
-                case 409:
-                    self.steps.accept(DailyStep.failureAlert(
-                        title: "오류!",
-                        message: "이미 일기를 작성한 날짜입니다."
-                    ))
                 default:
                     print("ERROR")
                 }
