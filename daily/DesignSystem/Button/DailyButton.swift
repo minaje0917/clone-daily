@@ -52,12 +52,13 @@ private extension DailyButton {
     func setButtonColor() {
         let backgroundColor: UIColor
         if isEnabled {
-            backgroundColor = UIColor(
-                red: 255/255,
-                green: 199/255,
-                blue: 216/255,
-                alpha: 1.00
-            )
+//            backgroundColor = UIColor(
+//                red: 255/255,
+//                green: 199/255,
+//                blue: 216/255,
+//                alpha: 1.00
+//            )
+            backgroundColor = UIColor.mainColor!
         } else {
             backgroundColor = UIColor.mainColor!
         }
